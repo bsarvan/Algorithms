@@ -20,7 +20,7 @@ int StringInt(string s)
         digit = s[i] - '0';
         result = result * 10 + digit;
     }
-    return result;
+    return is_negative? -result:result;
 }
 
 void IntToString(int n)

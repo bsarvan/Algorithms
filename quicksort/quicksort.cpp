@@ -35,7 +35,7 @@ int partition (int arr[], int low, int high)
 		// If current element is smaller than or
 		// equal to pivot
         cout<<"Index i - "<<i<<", arr[j] - "<<arr[j]<<", Pivot - "<<pivot<<endl;
-		if (arr[j] > pivot)
+		if (arr[j] < pivot)
 		{
 			//i++;    // increment index of smaller element
             cout<<arr[i]<<" "<<arr[j]<<endl;

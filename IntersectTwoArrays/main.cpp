@@ -35,7 +35,8 @@ int main(int argc, const char * argv[]) {
     
     cout<<"The intersection of two arrays A and B is "<<endl;
     vector<int> result = intersectArrays(A,B);
-    
+   
+    cout<<"Intersected Array - ";
     for(auto c:result){
         cout<<c<<" ";
     }

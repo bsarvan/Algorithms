@@ -16,7 +16,7 @@ using namespace std;
 
 int main ()
 {
-#if 0
+
     std::unordered_set<std::string> myset =
     {"Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"};
     
@@ -32,8 +32,14 @@ int main ()
             std::cout << " " << *local_it;
         std::cout << std::endl;
     }
-#endif
     
+    unordered_set<string>::iterator it;
+    it = myset.find("Venus");
+    
+    cout<<"Bharat - "<<*it<<endl;
+    
+
+#if 0
     cout<<"Program to test unordered_map"<<endl;
     unordered_map<int,list<int>> mp;
     
@@ -49,6 +55,8 @@ int main ()
             cout<<c<<" ";
         }
     }
+#endif
+    
     cout<<endl;
     return 0;
 }

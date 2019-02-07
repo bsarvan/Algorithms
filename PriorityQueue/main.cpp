@@ -40,12 +40,26 @@ int main(int argc, const char * argv[]) {
     pushpq(q, 91);
     pushpq(q, 90);
     pushpq(q, 95);
+    
     showpq(q);
     
+    vector<int> vec = {1,2,3,4};
+    
+    
+    showpq(q);
+    q.pop();
+    pushpq(q, 89);
+    pushpq(q, 99);
+    showpq(q);
+    
+    
+    
+    /*
     pushpq(q, 89);
     showpq(q);
     pushpq(q, 97);
     showpq(q);
+     */
     return 0;
 }
 

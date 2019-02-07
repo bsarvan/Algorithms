@@ -13,6 +13,7 @@
 #include <list>
 #include <stack>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ struct node
 {
     int key;
     struct node *left, *right;
+    node(int x) : key(x), left(NULL), right(NULL) {}
 };
 
 // A utility function to create a new BST node
@@ -123,6 +125,27 @@ int MaxNodeAtLevel(struct node *root){
     
 }
 
+void printLevelOrder(struct node *root){
+    queue<struct node *> q;
+    q.push(root);
+    
+    while(!q.empty()) {
+        int  NodeCount = q.size();
+        
+        while(NodeCount){
+            struct node *n = q.front();
+            cout<<n->key<<" ";
+            if(n->left)
+                q.push(n->left);
+            if(n->right)
+                q.push(n->right);
+            q.pop();
+            NodeCount--;
+        }
+        cout<<endl;
+    }
+}
+
 
 void createLinkedList(struct node *root, unordered_map<int,list<struct node *>> &lists, int level) {
     if (root == NULL){
@@ -148,7 +171,7 @@ void buildNodeLevelList(struct node *root) {
     unordered_map<int, list<struct node *>> ll;
     createLinkedList(root,ll, 0);
     
-    
+    /* Print the list of nodes at each level */
     unordered_map<int, list<struct node *>>::iterator iter;
     for(iter = ll.begin(); iter !=ll.end();iter++){
         cout<<"Nodes at level - "<<iter->first<<" - ";
@@ -317,6 +340,112 @@ void createListofLeaves(struct node *root) {
     cout<<endl;
 }
 
+struct node* RebuildBST(vector<int> A, int start, int end) {
+    if (start >= end) {
+        return nullptr;
+    }
+    
+    cout<<"Root - "<<A[start]<<endl;
+    
+    int transition = start + 1;
+    
+    cout<<"Transtion Point -";
+    while((transition < end) &&
+          A[transition] < A[start]) {
+        ++transition;
+        cout<<" "<<transition;
+    }
+    cout<<endl;
+    cout<<"Left Subtree Root - "<<A[start+1]<<", Right Subtree Root - "<<A[transition]<<endl;
+    
+    struct node *N = new node(A[start]);
+    N->left = RebuildBST(A, start+1, transition);
+    N->right = RebuildBST(A, transition, end);
+    
+    return N;
+ }
+
+#if 0
+int longestUnivaluePath(node* root) {
+    int lup = 0;
+    if (root) dfs(root, lup);
+    return lup;
+}
+
+private:
+int dfs(node* N, int& lup) {
+    int l = N->left ? dfs(N->left, lup) : 0;
+    int r = N->right ? dfs(N->right, lup) : 0;
+    int resl = N->left && N->left->val == N->val ? l + 1 : 0;
+    int resr = N->right && N->right->val == N->val ? r + 1 : 0;
+    lup = max(lup, resl + resr);
+    return max(resl, resr);
+}
+#endif
+
+
+void postOrder(node *root) {
+    if (root) {
+        postOrder(root->left);
+        postOrder(root->right);
+        cout<<root->key<<" ";
+    }
+    return;
+}
+
+
+void postOrderIterative(node *root) {
+    stack<node *> S;
+    S.emplace(root);
+    
+    while(!S.empty()) {
+        auto curr = S.top();
+        S.pop();
+        if(curr) {
+            cout<<curr->key<<" ";
+            S.emplace(curr->right);
+            S.emplace(curr->left);
+        }
+    }
+    cout<<endl;
+}
+
+string getNextElem(string s, size_t &offset) {
+    size_t end = s.find(',', offset);
+    if (end == string::npos) {
+        end = s.length();
+    }
+    string sValue = s.substr(offset,end - offset);
+    offset = end + 1;
+    return (sValue);
+}
+
+void serialize(struct node *root, string &s) {
+    if (root == NULL) {
+        s = s + '#';
+        s += ',';
+        return;
+    }
+    
+    s += to_string(root->key);
+    s += ',';
+    serialize(root->left, s);
+    serialize(root->right, s);
+}
+
+
+void deserialize(struct node *&root, string s, size_t &offset) {
+    string sVal = getNextElem(s, offset);
+    if (s.empty() || sVal == "#") {
+        return;
+    }
+    root = new node(stoi(sVal));
+    deserialize(root->left, s, offset);
+    deserialize(root->right, s, offset);
+}
+
+
+
 // Driver Program to test above functions
 int main()
 {
@@ -332,21 +461,49 @@ int main()
     insert(root, 20);
     insert(root, 40);
     insert(root, 70);
-    //insert(root, 60);
+    insert(root, 60);
     insert(root, 80);
     
+    string S;
+    serialize(root, S);
+    //postOrder(root);
+    cout<<S<<endl;
+    
+    struct node *N;
+    size_t i = 0;
+    deserialize(N, S, i );
+    
+    inorder(N);
+    cout<<endl;
+    
+    //postOrderIterative(root);
+    
+    //vector<int> PreOrder = {50, 30, 20, 40, 70, 60, 80};
+    
     // print inoder traversal of the BST
-    MaxNodeAtLevel(root);
+    //MaxNodeAtLevel(root);
     //Delete(root,70);
     //PreOrderTraversal(root);
     //createListofLeaves(root);
-    inorder(root);
+    //inorder(root);
+    //printLevelOrder(root);
     cout<<endl;
+    
+#if 0
+    cout<<"Build BST from PreOrder Traversed Info"<<endl;
+    
+    struct node *N = RebuildBST(PreOrder, 0, PreOrder.size());
+    cout<<endl;
+    inorder(N);
+    cout<<endl;
+#endif
+    
     //levelOrderTraversal(root);
+    cout<<endl;
     //int level = MaxNodeAtLevel(root);
     //cout<<"Level "<<level<<" has the maximum number of nodes"<<endl;
     //printf("Height of BST is %d\n", height(root));
-    //buildNodeLevelList(root);
+    buildNodeLevelList(root);
     //InOrderTraversal(root);
     //cout<<"Iterative Preorder Traversal - ";
     //PreOrderTraversal(root);

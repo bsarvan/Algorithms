@@ -64,7 +64,8 @@ int findKth(int k, int arr[], int size){
 
 int main(){
     cout<<"Program to find the Kth Largest element in array"<<endl;
-    int arr[] = {8,20,6,10,12,15};
+   // int arr[] = {8,20,6,10,12,15};
+    int arr[] = {3,2,1,5,6,4};
     int n = sizeof(arr) / sizeof(int);
     cout<<"Length - "<<n<<endl;
     printArray(arr,n);

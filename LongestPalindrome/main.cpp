@@ -20,32 +20,38 @@ string longestPalindrome(string A) {
     
     for(int i = 1; i < length; i++){
         
+        /* For extracting the palindrome of even length */
         low = i-1;
-        high = i;
-        
+        high = i+1;
+        cout<<"Low - "<<low<<", High - "<<high<<endl;
+        /* Expand the string around ith index, and check for equality */
         while((low >= 0) && (high < length) && (A[low] == A[high])){
             if((high - low + 1) > maxLen){
                 maxLen = high-low+1;
                 start = low;
             }
-            cout<<"Start - "<<low<<",maxLen - "<<maxLen<<endl;
+            cout<<"Start - "<<low<<", high - "<<high<<",maxLen - "<<maxLen<<endl;
             low--;
             high++;
         }
  
+#if 0
+        /* For extracting the palindrome of odd length */
         low = i-1;
         high = i+1;
-        cout<<"String considered - "<<A.substr(0,i)<<endl;
         while((low >= 0) && (high < length) && A[low] == A[high]){
             if((high - low + 1) > maxLen){
                 maxLen = high-low+1;
                 start = low;
             }
-            cout<<"Start - "<<low<<",maxLen - "<<maxLen<<endl;
+            cout<<"Start - "<<low<<", high - "<<high<<",maxLen - "<<maxLen<<endl;
             low--;
             high++;
  
         }
+#endif
+        
+ 
 
     }
     
@@ -63,8 +69,8 @@ string longestPalindrome(string A) {
 
 int main(int argc, const char * argv[]) {
     std::cout << "Program to find the longest palindrome substring!\n";
-    //string ip_str = "aaaabaaa";
-    string ip_str = "forgeeksskeegfor";
+    string ip_str = "aaaabaaa";
+    //string ip_str = "abbaghdj";
     cout<<"Input String is - "<<ip_str<<endl;
     string pal = longestPalindrome(ip_str);
     cout<<"The Longest Palindrome String is "<<pal<<endl;

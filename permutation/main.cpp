@@ -48,6 +48,8 @@ int main()
 {
     char str[] = "ABC";
     int n = strlen(str);
+    cout<<"Input String is "<<str<<endl;
+    cout<<"Size of string is "<<n<<endl;
     permute(str, 0, n-1);
     return 0;
 }

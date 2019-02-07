@@ -231,6 +231,9 @@ Node* delete_evens(Node *head)
 }
 
 Node *ReverseSubList(Node *head, int start, int finish){
+    if (start == finish)
+        return head;
+    
     Node *dummy = head;
     Node *subList_head = dummy;
     int k = 1;
@@ -243,17 +246,18 @@ Node *ReverseSubList(Node *head, int start, int finish){
     Node *subList_iter = subList_head->next;
     while(start++ < finish){
         Node *temp = subList_iter->next;
+        
         subList_iter->next = temp->next;
         temp->next = subList_head->next;
         subList_head->next = temp;
-        cout<<"temp - "<<temp->data<<",subList_iter - "<<subList_iter->data;
-        cout<<",subList_head - "<<subList_head->data<<endl;
+        
         Print(head);
     }
-    return dummy;
+    return dummy->next;
     
 }
 
+/* Function to delete duplicates from a sorted list */
 Node *RemoveDuplicates(Node *head){
     auto iter = head;
     while(iter) {
@@ -267,11 +271,37 @@ Node *RemoveDuplicates(Node *head){
     return head;
 }
 
+/* Remove all duplicates from a sorted linked list */
+Node *RemoveAllDuplicates (Node* A) {
+        
+        if (A == NULL) {
+            return NULL;
+        }
+        
+        Node* fakeHead = new Node();
+        fakeHead->next = A;
+        Node* pre = fakeHead;
+        Node* cur = A;
+        while (cur != NULL) {
+            while (cur->next != NULL && cur->data == cur->next->data) {
+                cur = cur->next;
+            }
+            if (pre->next == cur) {
+                pre = pre->next;
+            } else {
+                pre->next = cur->next;
+            }
+            cur = cur->next;
+        }
+        return fakeHead->next;
+}
+
+/* Function to remove duplicates from unsorted list */
 void remove_dups(Node *head){
     unordered_set<int> unique_map;
     Node *prev=NULL;
     while(head) {
-        if(unique_map.find(head->data) != unique_map.end()) {
+        if(unique_map.find(head->data) != unique_map.end()){
             cout<<"Duplicate - "<<head->data<<endl;
             prev->next = head->next;
         } else  {
@@ -331,6 +361,26 @@ Node *Reverse(Node *head){
     return p;
 }
 
+Node *ReverseKNodes(Node *head, int K){
+    Node *p = NULL;
+    Node *q = NULL;
+    Node *curr = head;
+    
+    Node *t = NULL;
+    for(int i=0;i<K;i++) {
+        q = p;
+        p = curr;
+        curr = curr->next;
+        p->next = q;
+        
+        if (!t) {
+            t = p;
+        }
+    }
+    cout<<t->data<<endl;
+    return p;
+}
+
 
 Node *DeleteNode(Node *head, int data) {
     Node *curr = head;
@@ -352,23 +402,99 @@ Node *DeleteNode(Node *head, int data) {
     return head;
 }
 
+
+
+
+Node* reverseAndClone(Node *A) {
+    Node *node = A;
+    Node *head = NULL;
+    
+    while (node != NULL) {
+        Node *n = new Node;
+        cout<<node->data<<" ";
+        n->data = node->data;
+        n->next = head;
+        head = n;
+        node = node->next;
+    }
+    cout<<endl;
+    return head;
+}
+
+int lPalin(Node* A) {
+
+    Node *X = A;
+
+    Node *Y = reverseAndClone(A);
+    
+    while(X != NULL && Y != NULL) {
+        cout<<"X - "<<X->data<<", Y - "<<Y->data<<endl;
+        if (X->data != Y->data) {
+            cout<<"REturning 0"<<endl;
+            return 0;
+        }
+        X=X->next;
+        Y=Y->next;
+    }
+    
+    return (X==NULL && Y==NULL);
+}
+
+
+void ListTraverse(Node *A) {
+    int k = 3;
+    Node *curr = A;
+    while(k > 0) {
+        k--;
+        curr = curr->next;
+        cout<<"k = "<<k<<", node = "<<curr->data<<endl;
+    }
+    cout<<"Current pointing to Node - "<<curr->data<<endl;
+    
+    k = 0;
+    curr = A;
+    while(k < 3) {
+        k++;
+        curr = curr->next;
+        cout<<"k = "<<k<<", node = "<<curr->data<<endl;
+    }
+    cout<<"Current pointing to Node - "<<curr->data<<endl;
+    
+    return ;
+}
 int main()
 {
     Node *head = NULL;
 
     cout<<"Test program on linked list"<<endl;
+    
     head = Insert(head,1);
     head = Insert(head,2);
+    head = Insert(head,2);
     head = Insert(head,3);
-    head = Insert(head,4);
+    head = Insert(head,3);
+    head = Insert(head,5);
+#if 0
     head = Insert(head,5);
     head = Insert(head,6);
     head = Insert(head,7);
     head = Insert(head,8);
     Insert(head,9);
+#endif
+    
 
     Print(head);
+    
+    //ListTraverse(head);
+    
  
+    head = RemoveAllDuplicates(head);
+    //head = ReverseKNodes(head,2);
+    Print(head);
+   // int result = lPalin(head);
+    //cout<<"Is Palindrome - "<<result<<endl;
+    
+    //remove_dups(head);
     //head = RemoveDuplicates(head);
     //head = InsertNth(head,9,8);
     //Node *node = findKthLastNode(head, 2);
@@ -385,9 +511,9 @@ int main()
     //    cout<<"Value of k - "<<k<<", Node - "<<L->data<<endl;
     //}
     
-        //head = ReverseSubList(head, 3, 5);
-		head = deleteOdd(head);
-		Print(head);
+    //head = ReverseSubList(head, 1, 5);
+		//head = deleteOdd(head);
+	//Print(head);
 		//head = createCycle(head);
 		//Node *cyclePtr = HasCycle(head);
 		//cout<<"Cycle Start at Node - "<<cyclePtr->data<<endl;

@@ -16,7 +16,6 @@ void countAndSay(int A) {
     string tmp;
     
     while(A-1>0){
-        int j = 0;
         //cout<<"Input String - "<<s<<endl;
         for(int i=0;i<s.length();i++){
             cnt++;
@@ -26,15 +25,16 @@ void countAndSay(int A) {
                 cnt = 0;
             }
         }
+        cout<<tmp<<endl;
         s = tmp;
         tmp = "";
         A--;
     }
-    cout<<s<<endl;
+    cout<<endl<<s<<endl;
 }
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    countAndSay(10);
+    countAndSay(5);
     return 0;
 }

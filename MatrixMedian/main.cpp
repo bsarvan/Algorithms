@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 int findMedian(vector<vector<int> > &A) {
@@ -41,6 +42,11 @@ int main(int argc, const char * argv[]) {
     cout<<"Program to find median of matrix"<<endl;
     vector<vector<int>> A = {{1,3,5},{2,6,9},{3,6,9}};
     int median = findMedian(A);
-    cout<<"Median of Matrix is - "<<median<<endl;
+    cout<<"Median of Matrix is - "<<median<<endl<<endl;
+    
+    cout<<A[0][3]<<endl;
+    long cnt = upper_bound(&A[0][0], &A[0][3], 5) - &A[0][0];
+    cout<<"Count - "<<cnt<<endl<<endl;
+    
     return 0;
 }

@@ -18,7 +18,6 @@ vector<int> plusOne(vector<int> &A) {
     // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
     
     int n = A.size();
-    int plus = 1;
     int carry = 1;
     
     
@@ -70,12 +69,12 @@ int main(int argc, const char * argv[]) {
     
     vector<int> res;
     
-    //res = plusOne(arr);
-    res = plusone1(arr);
+    res = plusOne(arr);
+    //res = plusone1(arr);
     
-    for (auto a=res.begin();a < res.end();a++)
+    for(auto a:res)
     {
-        cout<<*a;
+        cout<<a;
     }
     cout<<endl;
     return 0;

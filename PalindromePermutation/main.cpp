@@ -11,19 +11,33 @@
 using namespace std;
 
 
-void BuildFreqTable(string A){
+unordered_map<char,int> BuildFreqTable(string A){
     unordered_map<char,int> C;
     
     for(char c:A){
         C[c]++;
     }
+    return C;
     
 }
 
 int main(int argc, const char * argv[]) {
     
     cout<<"Test program to calculate the character frequency count."<<endl;
-    string s = "Bharat Sarvan";
+    string s = "abababa";
+    unordered_map<char,int> M = BuildFreqTable(s);
+    
+    bool oddCount = false;
+    for(auto c:M) {
+        if (c.second % 2 == 1) {
+            if (oddCount == true) {
+                cout<<"More than one odd characters"<<endl;
+                break;
+            }
+            oddCount = true;
+        }
+    }
+    
     
     return 0;
 }
