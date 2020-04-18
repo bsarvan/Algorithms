@@ -52,7 +52,7 @@ string nextClosestTime(string time) {
             cout<<"Not largest "<<*it<<endl;
             res[i] = *it;
             cout<<res<<endl;
-            if((i>=3 && stoi(res.substr(3,2))<60) ||(i<2&&stoi(res.substr(0,2))<24))
+            if((i>=3 && stoi(res.substr(3,2))<60) ||((i<2) && stoi(res.substr(0,2))<24))
                 return res;
         }
         cout<<"Here "<<endl;
@@ -64,7 +64,8 @@ string nextClosestTime(string time) {
 
 
 int main(int argc, const char * argv[]) {
-    string time = "23:29";
+    string time = "19:54";
+    
     string res = nextClosestTime(time);
     cout<<"Next Closest Time to "<<time<<" is "<<res<<endl;
     return 0;

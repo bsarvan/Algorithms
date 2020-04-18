@@ -42,12 +42,15 @@ int kEmptySlots(vector<int>& flowers, int k) {
     
     int res = INT_MAX;
     int *day = new int[flowers.size() + 1];
+    
+    memset(day,'\0',flowers.size());
+    
     for (int i = 0; i < flowers.size(); i++) {
         // day[i] is the day when the flower at position i blooms
         // day[0] is useless here
         day[flowers[i]] = i+1;
     }
-    
+    cout<<"Postion / Days - ";
     for(int m=1;m<=flowers.size();m++){
         cout<<day[m]<<" ";
     }
@@ -58,7 +61,7 @@ int kEmptySlots(vector<int>& flowers, int k) {
     int left = 1, right = k + 2;
     for (int i = 2; right < flowers.size()+1; i++) {
         if (i == right) {
-            cout<<"Here"<<endl;
+            cout<<"Here i = "<<i<<", Day[left] "<<day[left]<<", Day[right] "<<day[right]<<endl;
             // found a sub array
             res = min(res, max(day[left], day[right]));
             left = i;
@@ -76,6 +79,12 @@ int kEmptySlots(vector<int>& flowers, int k) {
 int main(int argc, const char * argv[]) {
     
     vector<int> flowers = {1,3,2,5,7,6};
+    
+    cout<<"Flowers Positions - ";
+    for(auto c:flowers) {
+        cout<<c<<" ";
+    }
+    cout<<endl;
     
     int day = kEmptySlots(flowers, 1);
     cout<<"Day - "<<day<<endl;

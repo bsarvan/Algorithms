@@ -20,10 +20,10 @@ void printArray(int a[], int len) {
 int main(int argc, const char * argv[]) {
     cout<<"Program to remove duplicated from sorted array"<<endl;
     
-    int arr[6] = {1,3,4,4,5,6};
-    printArray(arr, 6);
+    int arr[7] = {1,1,4,4,5,6,6};
+    printArray(arr, 7);
     int write_index = 1;
-    for(int i=1;i<6;i++) {
+    for(int i=1;i<7;i++) {
         if(arr[write_index-1] != arr[i]) {
             arr[write_index++] = arr[i];
         }

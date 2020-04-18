@@ -24,23 +24,26 @@ public:
 };
     
 int insertNode(TreeNode *root, int val) {
+    TreeNode *curr;
     int thisCount = 0;
+    
+    curr = root;
     while(true) {
-        if(val <= root->val) {
-            root->count++;
-            if(root->left == NULL) {
-                root->left = new TreeNode(val);
+        if(val <= curr->val) {
+            curr->count++;
+            if(curr->left == NULL) {
+                curr->left = new TreeNode(val);
                 break;
             } else {
-                root = root->left;
+                curr = curr->left;
             }
         } else {
-            thisCount += root->count;
-            if(root->right == NULL) {
-                root->right = new TreeNode(val);
+            thisCount += curr->count;
+            if(curr->right == NULL) {
+                curr->right = new TreeNode(val);
                 break;
             } else {
-                root = root->right;
+                curr = curr->right;
             }
         }
     }

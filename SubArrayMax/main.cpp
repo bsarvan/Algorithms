@@ -34,8 +34,10 @@ int main(int argc, const char * argv[]) {
     int k = 3;
     int sub_len = 0;
     for(int i=0;i <= V.size() - 1;i++){
-        cout<<"Pushing on PQ - "<<V[i]<<", ";
+        cout<<"Pushing on PQ - "<<V[i]<<endl;
         pq.push(V[i]);
+        
+        cout<<"Queue Size - "<<pq.size()<<endl;
         sub_len++;
         if (sub_len == k) {
             cout<<"Top of PQ is - "<<pq.top()<<endl;
@@ -45,6 +47,8 @@ int main(int argc, const char * argv[]) {
                 pq.pop();
             sub_len--;
         }
+        
+        cout<<"Size of the Queue - "<<pq.size()<<endl;
     }
     
     for(auto c:max_list) {

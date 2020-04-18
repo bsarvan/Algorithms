@@ -14,6 +14,7 @@
 #include <stack>
 #include <vector>
 #include <string>
+#include <unordered_set>
 
 using namespace std;
 
@@ -35,7 +36,7 @@ struct node *newNode(int item)
 
 int height(struct node *root){
     if(root == NULL)
-        return -1;
+        return 0;
     
     return (max(height(root->right),height(root->left)) + 1);
 }
@@ -55,7 +56,9 @@ void inorder(struct node *root)
 struct node* insert(struct node* node, int key)
 {
     /* If the tree is empty, return a new node */
-    if (node == NULL) return newNode(key);
+    if (node == NULL) {
+        return newNode(key);
+    }
     
     /* Otherwise, recur down the tree */
     if (key < node->key)
@@ -153,7 +156,8 @@ void createLinkedList(struct node *root, unordered_map<int,list<struct node *>> 
     }
     list<struct node*> nodeList;
     unordered_map<int, list<struct node *>>::iterator iter = lists.find(level);
-    if(iter == lists.end()) {
+    //if(iter == lists.end()) {
+    if (lists.size() == level) {
         nodeList.emplace_back(root);
         lists.emplace(level,nodeList);
     } else {
@@ -189,6 +193,7 @@ void buildNodeLevelList(struct node *root) {
 void InOrderTraversal(struct node *root) {
     stack<struct node *> q;
     struct node* curr = root;
+    int inorder = 0;
     
     while(!q.empty() || curr) {
         if(curr) {
@@ -197,12 +202,35 @@ void InOrderTraversal(struct node *root) {
         } else {
             curr = q.top();
             q.pop();
-            cout<<curr->key<<" ";
+            cout<<inorder<<" "<<curr->key<<endl;
+            inorder = curr->key;
             curr = curr->right;
         }
     }
 }
 
+
+bool isValidBST(struct node *root) {
+    stack<struct node *> S;
+    struct node *curr = root;
+    int prevNode = 0;
+    
+    while(!S.empty() || curr) {
+        if (curr) {
+            S.push(curr);
+            curr = curr->left;
+        } else {
+            curr = S.top();
+            S.pop();
+            if (prevNode > curr->key) {
+                return false;
+            }
+            prevNode = curr->key;
+            curr = curr->right;
+        }
+    }
+    return true;
+}
 
 
 void PreOrderTraversal(struct node *root){
@@ -340,6 +368,7 @@ void createListofLeaves(struct node *root) {
     cout<<endl;
 }
 
+/* Rebuild a BST from a PreOrder Sequence of numbers */
 struct node* RebuildBST(vector<int> A, int start, int end) {
     if (start >= end) {
         return nullptr;
@@ -364,6 +393,29 @@ struct node* RebuildBST(vector<int> A, int start, int end) {
     
     return N;
  }
+
+
+struct node* RebuildBSTFromRange(vector<int> A, int low, int high, int *root_index_ptr) {
+    int &root_index = *root_index_ptr;
+    
+    if (root_index == A.size()) {
+        return nullptr;
+    }
+    
+    int root = A[root_index];
+    
+    if ( root < low || root > high) {
+        return nullptr;
+    }
+    
+    auto left = RebuildBSTFromRange(A, low, root, root_index_ptr);
+    auto right = RebuildBSTFromRange(A, root, high, root_index_ptr);
+    struct node *N = new node(root);
+    N->left = left;
+    N->right = right;
+    return (N);
+}
+
 
 #if 0
 int longestUnivaluePath(node* root) {
@@ -445,6 +497,147 @@ void deserialize(struct node *&root, string s, size_t &offset) {
 }
 
 
+void buildTreeFromPreorderSeq(struct node *&root, vector<int> V, size_t &offset) {
+    int key = V[offset++];
+    
+    if (key == -1) {
+        return;
+    }
+    root = new node(key);
+    buildTreeFromPreorderSeq(root->left, V, offset);
+    buildTreeFromPreorderSeq(root->right, V, offset);
+    return;
+}
+
+void inorderFindPair(struct node *root, unordered_set<int> &S, int K) {
+    if (root != NULL) {
+        inorderFindPair(root->left, S, K);
+        
+        if (S.find(K - root->key) != S.end()) {
+            cout<<root->key<<" , "<<K-root->key<<endl;
+            return;
+        }
+        
+        S.insert(root->key);
+        
+        inorderFindPair(root->right, S, K);
+    }
+}
+
+
+int findLeftHeight(struct node *root) {
+    int height = 0;
+    struct node* tmp = root;
+    
+    while(tmp){
+        height++;
+        tmp = tmp->left;
+    }
+    return (height-1);
+}
+
+int findRightHeight(struct node *root) {
+    int height = 0;
+    struct node* tmp = root;
+    
+    while(tmp){
+        height++;
+        tmp = tmp->right;
+    }
+    return (height-1);
+}
+
+/*
+ Given a complete binary tree, count the number of nodes in faster than O(n) time.
+ Recall that a complete binary tree has every level filled except the last,
+ and the nodes in the last level are filled starting from the left.
+ */
+int countNodes(struct node* root) {
+
+    if (root == NULL) {
+        return 0;
+    }
+    
+    int lh = findLeftHeight(root);
+    int rh = findRightHeight(root);
+    
+    if (lh == rh) {
+        return ((2 << lh) - 1);
+    } else {
+        return (countNodes(root->left) + countNodes(root->right) + 1);
+    }
+    
+}
+
+
+int countNodes_v2(struct node *root) {
+    if (root == NULL) {
+        return 0;
+    }
+    
+    return (1 + countNodes_v2(root->left) + countNodes_v2(root->right));
+}
+
+
+struct node * cloneTree(struct node *root) {
+    if (root == NULL) {
+        return NULL;
+    }
+    
+    struct node *cloned = new node(root->key);
+    cloned->left = cloneTree(root->left);
+    cloned->right = cloneTree(root->right);
+    
+    return cloned;
+}
+
+
+//Compute the exterior of binary tree
+
+bool isLeaf(struct node* root) {
+    if (root->left == nullptr && root->right == nullptr)
+        return true;
+    else
+        return false;
+}
+
+void LeftBoundaryAndLeaves(struct node *root, bool boundary, vector<int> &exterior) {
+    if (root) {
+        if (boundary || isLeaf(root)) {
+            exterior.emplace_back(root->key);
+        }
+        
+        LeftBoundaryAndLeaves(root->left, boundary, exterior);
+        LeftBoundaryAndLeaves(root->right, boundary && root->left == nullptr, exterior);
+    }
+}
+
+void RightBoundaryAndLeaves(struct node *root, bool boundary, vector<int> &exterior) {
+    if (root) {
+        RightBoundaryAndLeaves(root->left, boundary && root->right == nullptr, exterior);
+        RightBoundaryAndLeaves(root->right, boundary, exterior);
+        
+        if (boundary || isLeaf(root)) {
+            exterior.emplace_back(root->key);
+        }
+    }
+}
+
+
+void BuildExteriorOfBinaryTree(struct node* root) {
+    vector<int> exterior;
+    if (root) {
+        exterior.emplace_back(root->key);
+        LeftBoundaryAndLeaves(root->left, true, exterior);
+        RightBoundaryAndLeaves(root->right, true, exterior);
+    }
+    
+    for(auto e:exterior)
+        cout<<e<<" ";
+    
+    cout<<endl;
+    
+}
 
 // Driver Program to test above functions
 int main()
@@ -463,6 +656,30 @@ int main()
     insert(root, 70);
     insert(root, 60);
     insert(root, 80);
+    inorder(root);
+    cout<<endl;
+    
+    //BuildExteriorOfBinaryTree(root);
+    buildNodeLevelList(root);
+    
+//    unordered_set<int> S;
+//  inorderFindPair(root, S, 100);
+       
+#if 0
+    vector<int> preOrder = {50,30,20,-1,-1,40,-1,-1,70,60,-1,-1,80,-1,-1};
+    struct node *BinaryTree;
+    size_t j = 0;
+    buildTreeFromPreorderSeq(BinaryTree, preOrder, j);
+    inorder(BinaryTree);
+    
+
+    
+    printf("Height of BST is %d\n", height(root));
+    cout<<"Number of Nodes in Tree - "<<countNodes(root)<<endl;
+    cout<<"Number of Nodes in Tree - "<<countNodes_v2(root)<<endl;
+    
+    
+
     
     string S;
     serialize(root, S);
@@ -472,38 +689,50 @@ int main()
     struct node *N;
     size_t i = 0;
     deserialize(N, S, i );
-    
+
     inorder(N);
     cout<<endl;
+
     
+    vector<int> preOrder = {50,30,20,-1,-1,40,-1,-1,70,60,-1,-1,80,-1,-1};
+    struct node *BinaryTree;
+    size_t j = 0;
+    buildTreeFromPreorderSeq(BinaryTree, preOrder, j);
+    inorder(BinaryTree);
+
     //postOrderIterative(root);
     
-    //vector<int> PreOrder = {50, 30, 20, 40, 70, 60, 80};
+    vector<int> PreOrder = {50, 30, 20, 40, 70, 60, 80};
     
     // print inoder traversal of the BST
     //MaxNodeAtLevel(root);
     //Delete(root,70);
     //PreOrderTraversal(root);
     //createListofLeaves(root);
-    //inorder(root);
+
+    inorder(root);
+    
+    struct node *ClonedRoot = cloneTree(root);
+    
+    cout<<endl<<"Inorder Traversal of cloned tree"<<endl;
+    inorder(ClonedRoot);
+    
     //printLevelOrder(root);
     cout<<endl;
-    
-#if 0
+
     cout<<"Build BST from PreOrder Traversed Info"<<endl;
     
     struct node *N = RebuildBST(PreOrder, 0, PreOrder.size());
     cout<<endl;
     inorder(N);
     cout<<endl;
-#endif
+
     
     //levelOrderTraversal(root);
     cout<<endl;
     //int level = MaxNodeAtLevel(root);
     //cout<<"Level "<<level<<" has the maximum number of nodes"<<endl;
-    //printf("Height of BST is %d\n", height(root));
-    buildNodeLevelList(root);
+    //buildNodeLevelList(root);
     //InOrderTraversal(root);
     //cout<<"Iterative Preorder Traversal - ";
     //PreOrderTraversal(root);
@@ -511,6 +740,7 @@ int main()
     //preorder(root);
     //cout<<"4th Node in Inorder Traversal is - ";
     //NthInorder(root, 4);
+#endif
     
 #if 0
     struct node* node1 = newNode(20);

@@ -203,28 +203,31 @@ Node* delete_evens(Node *head)
 		Node *temp,*step,*prev ; 
 		if (head==NULL)
 				return NULL;
-		while(head!=NULL && head->data%2==0)
-		{   
-				temp = head ; 
-				head = head->next ; 
-				delete temp ;  
+		
+        while(head!=NULL && head->data%2==0)
+		{
+            cout<<"Executing first"<<endl;
+            temp = head ;
+            head = head->next ;
+            delete temp ;
 		}
 		step=head;
 
 		while (step!=NULL)
 		{
-				if (step->data %2==0)
-				{ 
-						temp = step ; 
-						step = step->next ; 
-						prev->next=step;
-						delete temp ; 
-				}       
-				else
-				{
-						prev=step;
-						step = step->next ; 
-				}
+            cout<<"Executing second"<<endl;
+            if (step->data %2==0)
+            {
+                    temp = step ;
+                    step = step->next ;
+                    prev->next=step;
+                    delete temp ;
+            }
+            else
+            {
+                    prev=step;
+                    step = step->next ;
+            }
 		}
 		step=NULL;
 		return head;
@@ -462,6 +465,48 @@ void ListTraverse(Node *A) {
     
     return ;
 }
+
+
+/*
+ Given a linked list, remove all consecutive nodes that sum to zero. Print out the remaining nodes.
+
+ For example, suppose you are given the input 3 -> 4 -> -7 -> 5 -> -6 -> 6.
+ 
+ In this case, you should first remove 3 -> 4 -> -7, then -6 -> 6, leaving only 5.
+ */
+#if 0
+Node * removeSumZero(Node *head) {
+    Node *curr = head;
+    Node *fakehead = new Node();
+    fakehead->next = curr;
+    
+    Node *pre = fakehead;
+    
+    int sum = 0;
+    
+    Node *p = curr;
+    Node *q = curr;
+    
+    while(curr) {
+        int sum=sum + curr->data;
+        Node *tmp = curr->next;
+        while(tmp && sum >0) {
+            sum += tmp->data;
+            tmp = tmp->next;
+        }
+        
+        if (pre->next != tmp) {
+            pre->next = tmp->next;
+        } else {
+            pre = pre->next;
+        }
+        
+        curr = tmp->next;
+    }
+}
+#endif
+
+
 int main()
 {
     Node *head = NULL;
@@ -469,11 +514,13 @@ int main()
     cout<<"Test program on linked list"<<endl;
     
     head = Insert(head,1);
-    head = Insert(head,2);
-    head = Insert(head,2);
-    head = Insert(head,3);
-    head = Insert(head,3);
-    head = Insert(head,5);
+    Insert(head,2);
+    Insert(head,3);
+    Insert(head,4);
+    Insert(head,5);
+    Insert(head,6);
+    Insert(head,7);
+    Insert(head,8);
 #if 0
     head = Insert(head,5);
     head = Insert(head,6);
@@ -485,12 +532,16 @@ int main()
 
     Print(head);
     
+    //Node *h = deleteOdd(head);
+    Node *node = deleteKNodeFromLast(head,3);
+    
+    Print(node);
     //ListTraverse(head);
     
  
-    head = RemoveAllDuplicates(head);
+    //head = RemoveAllDuplicates(head);
     //head = ReverseKNodes(head,2);
-    Print(head);
+    //Print(head);
    // int result = lPalin(head);
     //cout<<"Is Palindrome - "<<result<<endl;
     
@@ -500,7 +551,7 @@ int main()
     //Node *node = findKthLastNode(head, 2);
     //cout<<node->data<<endl;
     //Node *node = deleteKNodeFromLast(head,3);
-    //Node *node  = DeleteNode(head, 6);
+    //Node *node  = DeleteNode(head, 5);
     //Node *node = DeleteKthNode(head,5);
     //Print(node);
     

@@ -42,6 +42,7 @@ vector<int> findDiagonalOrder(vector<vector<int>>& matrix) {
     for (int k = 0; k <= m + n - 2; k++) {
         const int start = max(0, k - n + 1);
         const int end = min(m - 1, k);
+        cout<<"Start - "<<start<<", End - "<<end<<endl;
         if ((k % 2) == 0) {
             for (int i = end; i >= start; i--) {
                 r.push_back(matrix[i][k - i]);
@@ -57,7 +58,9 @@ vector<int> findDiagonalOrder(vector<vector<int>>& matrix) {
 }
 
 int main(int argc, const char * argv[]) {
-    vector<vector<int>> M = {{1,2,3},{4,5,6},{7,8,9}};
+    vector<vector<int>> M = {{1,2,3},
+                             {4,5,6},
+                             {7,8,9}};
     cout<<"Testing diagonal traversal of matrix"<<endl;
     
     vector<int> result = findDiagonalOrder(M);

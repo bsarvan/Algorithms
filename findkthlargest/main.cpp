@@ -27,22 +27,22 @@ void printArray(int arr[], int size)
 int partition (int arr[], int low, int high)
 {
     int pivot = arr[high];    // pivot
-    int i = (low - 1);  // Index of smaller element
+    int i = low;
     cout<<endl<<"Partitioning the array - "<<endl;
     for (int j = low; j <= high- 1; j++)
     {
-        // If current element is smaller than or
+        // If current element is larger than or
         // equal to pivot
         if (arr[j] >= pivot)
         {
-            i++;    // increment index of smaller element
             cout<<arr[i]<<" "<<arr[j]<<endl;
             swap(&arr[i], &arr[j]);
+            i++; // increment index of smaller element
         }
     }
-    swap(&arr[i + 1], &arr[high]);
+    swap(&arr[i], &arr[high]);
     printArray(arr,6);
-    return (i + 1);
+    return (i);
 }
 
 int findKth(int k, int arr[], int size){

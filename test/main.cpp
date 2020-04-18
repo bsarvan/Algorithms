@@ -16,6 +16,14 @@ struct name {
     string last;
 };
 
+class qq {
+    vector<int> s;
+public:
+    qq(int cap):s(cap) {}
+    void print() {
+        cout<<"Size of qq - "<<s.size()<<endl;
+    }
+};
 
 struct name SampleFunc(){
     return {"Bharat","Sarvan"};
@@ -23,8 +31,13 @@ struct name SampleFunc(){
 
 int main()
 {
+    
+    qq obj(10);
+    obj.print();
+#if 0
     auto data = SampleFunc();
     cout<<"Output - "<<data.first<<" "<<data.last<<endl;
+#endif
     return 0;
 }
 

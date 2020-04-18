@@ -12,32 +12,32 @@
 using namespace std;
 
 
-
-struct Name {
+class Name {
+    string first_name, last_name;
+public:
+    Name(string f, string l):first_name(f), last_name(l) {}
     bool operator==(const Name & that) const {
         return first_name ==  that.first_name;
     }
     
-    bool operator <(const Name &that) const {
-        if (first_name != that.first_name) {
+    bool operator<(const Name &that) const {
+        if (first_name == that.first_name) {
             return (last_name < that.last_name);
         }
         return (first_name < that.first_name);
     }
-    
-    string first_name, last_name;
-};
 
-bool myComp(string A, string B) {
-    return (A<B?1:0);
-}
+    void print() {
+        cout<<first_name<<" "<<last_name<<endl;
+    }
+};
 
 
 int main(int argc, const char * argv[]) {
     
     cout<<"Program to test comparator function in sorting"<<endl;
     
-    vector<string> S = {"Zeoon", "Bharat", "Tavish", "Rupal"};
+    //vector<string> S = {"Zeoon", "Bharat", "Tavish", "Rupal"};
     vector<Name> V;
     
     V.emplace_back("Ian","Botham");
@@ -47,19 +47,15 @@ int main(int argc, const char * argv[]) {
     V.emplace_back("Ian","Bell");
     
     
-    for (auto v:V){
-        cout<<v.first_name<<endl;
-    }
-    
-    for (auto c:S){
-        cout<<c<<" ";
-    }
+   // for (auto c:S){
+   //     cout<<c<<" ";
+   // }
     cout<<endl;
     
-    sort(S.begin(),S.end(),myComp);
+    sort(V.begin(),V.end());
     
-    for(auto b:S){
-        cout<<b<<" ";
+    for(auto b:V){
+        b.print();
     }
     cout<<endl;
     

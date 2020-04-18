@@ -36,6 +36,31 @@ int findMaxConsecutiveOnes(vector<int> nums) {
     return ans;
 }
 
+
+int flipBit(int a) {
+    /* If all ls, this is already the longest sequence. */
+    if (a==0) {
+        return 8;
+    }
+    
+    int currentLength = 0;
+    int previousLength= 0;
+    int maxlength = 1; // We can always have a sequence of at least one 1
+    while (a!= 0) {
+        if ((a & 1) == 1) { // Current bit is a 1
+            currentLength++;
+        } else if ((a & 1) == 0) { // Current bit is a 0
+            /* Update to 0 (if next bit is 0) or currentlength (if next bit is 1). */
+            previousLength= (a & 2)== 0? 0 : currentLength;
+            currentLength= 0;
+        }
+        maxlength= max(previousLength + currentLength + 1, maxlength);
+        a>>= 1;
+    }
+    return maxlength;
+}
+
+
 int main(int argc, const char * argv[]) {
     
     cout<<"Program to find max consecutive ones"<<endl;
@@ -44,5 +69,9 @@ int main(int argc, const char * argv[]) {
     int res = findMaxConsecutiveOnes(V);
     cout<<"Max Consecutive ones after flipping one 0 is "<<res<<endl;
     cout<<endl;
+    
+    
+    int result2 = flipBit(1775);
+    cout<<"Max Consecutive Bits - "<<result2<<endl;
     return 0;
 }

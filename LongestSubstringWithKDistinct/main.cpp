@@ -13,6 +13,29 @@
 #define MAX_CHARS 26
 using namespace std;
 
+
+
+/*
+Given a string you need to print longest possible substring that has exactly M unique characters.
+If there are more than one substring of longest possible length, then print any one of them.
+
+Examples -
+ "aabbcc", k = 1
+ Max substring can be any one from {"aa" , "bb" , "cc"}.
+ 
+ "aabbcc", k = 2
+ Max substring can be any one from {"aabb" , "bbcc"}.
+ 
+ "aabbcc", k = 3
+ There are substrings with exactly 3 unique characters
+ {"aabbcc" , "abbcc" , "aabbc" , "abbc" }
+ Max is "aabbcc" with length 6.
+ 
+ "aaabbb", k = 3
+ There are only two unique characters, thus show error message.
+ 
+ */
+
 // This function calculates number of unique characters
 // using a associative array count[]. Returns true if
 // no. of characters are less than required else returns
@@ -99,6 +122,32 @@ void kUniques(string s, int k)
     << " with length " << max_window_size << endl;
 }
 
+
+int lengthOfLongestSubstringKDistinct(string s, int k) {
+    int count[256] = {0};
+    int f = 0, b = 0, distinct = 0;
+    int start = 0, max_window = INT_MIN;
+    
+    for (f = 0; f < s.size(); ++f) {
+        if(!count[s[f]]++)
+           distinct++;
+        
+        while(distinct > k) {
+            if (!--count[s[b++]])
+                distinct--;
+        }
+        
+        if (f - b + 1 > max_window) {
+            max_window = f - b + 1;
+            start = b;
+        }
+    }
+    
+    cout<<s.substr(start, max_window)<<endl;
+    
+    return 0;
+}
+
 // Driver function
 int main()
 {
@@ -106,5 +155,6 @@ int main()
     string s = "aebbcc";
     int k = 2;
     kUniques(s, k);
+    lengthOfLongestSubstringKDistinct(s, 2);
     return 0;
 }

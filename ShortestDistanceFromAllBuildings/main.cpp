@@ -19,7 +19,7 @@ int shortestDistance(vector<vector<int>>& grid) {
     for (int i=0; i<m; ++i) {
         for (int j=0; j<n; ++j) {
             if (grid[i][j] == 1) {
-                cout<<"Building at ("<<i<<","<<j<<")"<<endl;
+              
                 mindist = -1;
                 auto dist = grid;
                 queue<pair<int, int>> q;
@@ -27,22 +27,20 @@ int shortestDistance(vector<vector<int>>& grid) {
                 while (q.size()) {
                     auto ij = q.front();
                     q.pop();
-                    cout<<"Processing Loc - ("<<ij.first<<","<<ij.second<<")"<<endl;
+                    
                     for (int d=0; d<4; ++d) {
                         int i = ij.first + delta[d];
                         int j = ij.second + delta[d+1];
-                        cout<<"i = "<<i<<",j = "<<j;
+                        
                         if (i >= 0 && i < m && j >= 0 && j < n && grid[i][j] == walk) {
-                            cout<<" -> Walking";
-                            grid[i][j]--;
-                            cout<<", dist[ij.first][ij.second] - "<<dist[ij.first][ij.second]<<endl;
-                            dist[i][j] = dist[ij.first][ij.second] + 1;
+                            grid[i][j]--; // This is to mark as visited.
+                            dist[i][j] = dist[ij.first][ij.second] + 1; // Increment the distance till this node
                             total[i][j] += dist[i][j] - 1;
-                            q.emplace(i, j);
+                            cout<<"Distance at "<<i<<" , "<<j<<" - "<<dist[i][j]<<", Total - "<<total[i][j]<<endl;
+                            q.emplace(i, j); 
                             if (mindist < 0 || mindist > total[i][j])
                                 mindist = total[i][j];
                         }
-                        cout<<endl;
                     }
                 }
                 walk--;

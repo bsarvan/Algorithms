@@ -11,23 +11,32 @@ using namespace std;
 
 class Singleton {
     static Singleton *instance;
-public:
-    Singleton() {
-        cout<<"singleton()"<<endl;
+    Singleton(string s):name(s) {
+        cout<<"Single Constructor"<<endl;
+        cout<<"Instance - "<<instance<<endl;
     }
     
-    static Singleton *getInstance() {
+    string name;
+public: 
+    static Singleton *getInstance(string s) {
         if(instance == NULL) {
-            instance  = new Singleton;
+            cout<<"Object is NULL. Creating new one"<<endl;
+            instance  = new Singleton(s);
+            return instance;
         }
+        cout<<"Returning existing instance"<<endl;
         return instance;
+    }
+    void print() {
+        cout<<"I'm "<<name<<endl;
     }
 };
 
 Singleton *Singleton::instance = NULL;
 
 void foo(void) {
-    Singleton::getInstance();
+    Singleton *obj = Singleton::getInstance("Singleton");
+    obj->print();
     return;
 }
 
@@ -35,5 +44,8 @@ void foo(void) {
 int main(int argc, const char * argv[]) {
     cout<<"Program to test Singleon Design Pattern"<<endl;
     foo();
+    Singleton *obj2  = Singleton::getInstance("NewSingleTon");
+    obj2->print();
+    
     return 0;
 }

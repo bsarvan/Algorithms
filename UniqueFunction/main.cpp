@@ -15,8 +15,8 @@ int main()
     vector<int> v = {1,2,3,3,3,4,5,5,6};
     vector<int>::iterator it;
     it = unique(v.begin(),v.end());
-    cout<<*it<<endl;
-    //v.erase(it,v.end());
+
+    v.erase(it,v.end());
     
     for(auto c:v){
         cout<<c<<" ";

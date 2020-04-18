@@ -10,33 +10,32 @@
 #include <string>
 using namespace std;
 
-int RobinKarp(string s, string t) {
+size_t RobinKarp(string s, string t) {
     if (s.size() > t.size()) {
         cout<<"Error: S cannot be a substring of t"<<endl;
         return -1;
     }
     
-    const int kbase = 26;
-    int t_hash, s_hash = 0;
+    const int kbase = 11;
+    int t_hash = 0, s_hash = 0;
     int power_s = 1;
     
     for(int i=0;i<s.size();i++){
         power_s = i ? power_s*kbase:1;
-        cout<<"Power - "<<power_s<<endl;
+        cout<<"Character - "<<t[i]<<", Power - "<<power_s<<", t_hash - "<<t_hash<<", kbase - "<<kbase<<endl;
         t_hash = t_hash*kbase + t[i];
         s_hash = s_hash*kbase + s[i];
     }
     
-    for(int i=s.size();i<t.size();i++){
+    for(size_t i=s.size();i<t.size();i++){
         cout<<"t_hash - "<<t_hash<<", s_hash - "<<s_hash<<endl;
         if ((t_hash == s_hash) && t.compare(i-s.size(),s.size(),s)) {
             cout<<"Found a match"<<endl;
             return (i-s.size());
         }
-        cout<<"i - "<<i<<endl;
-        cout<<"t[i-s.size()] - "<<t[i-s.size()]<<endl;
-        t_hash -= t[i-s.size()] * power_s;
-        
+        cout<<i<<endl;
+        cout<<"t[i-s.size()] - "<<t[i-s.size()]<<", power_s - "<<power_s<<", hash - "<<t[i-s.size()] * power_s<<endl;
+        t_hash -= t[i-s.size()]*power_s;
         t_hash = t_hash*kbase + t[i];
     }
     
@@ -50,9 +49,47 @@ int RobinKarp(string s, string t) {
 
 
 
+int RobinKarp_v2(string T, string P) {
+    if (P.size() > T.size()) {
+        cout<<"Error, Search not possible"<<endl;
+        return -1;
+    }
+    
+    int prime = 11;
+    int t_hash = 0;
+    int p_hash = 0;
+    int power = 0;
+    
+    for (int i = 0; i < P.size(); i++) {
+        power = i ? power*prime : 1;
+        t_hash = t_hash + T[i]*power;
+        p_hash = p_hash + P[i]*power;
+    }
+    
+    cout<<"Hash of Pattern - "<<p_hash<<endl;
+    
+    for (size_t i = P.size(); i < T.size(); i++ ){
+        if ((t_hash == p_hash) && (T.compare(i - P.size(), P.size(), P) == 0)) {
+            cout<<"Found a match at index  - "<<i - P.size()<<endl;
+        }
+        
+        t_hash -= T[i-P.size()];
+        t_hash /= prime;
+        t_hash += (T[i] * power);
+        
+//        cout<<"Index - "<<i<<", Hash - "<<t_hash<<endl;
+    }
+    
+    if ((t_hash == p_hash) && (T.compare(T.size() - P.size(), P.size(), P) == 0)) {
+        cout<<"Found a match at index  - "<<T.size() - P.size()<<endl;
+    }
+    
+    return 0;
+}
+
 int main(int argc, const char * argv[]) {
     cout<<"Program to test Robin Karp Algorithm"<<endl;
-    int result = RobinKarp("babc", "abaacbabc");
-    cout<<"Result of Substring Search - "<<result<<endl;
+    size_t result = RobinKarp_v2("abadcadc","adc");
+    cout<<"Substring found at index - "<<result<<endl;
     return 0;
 }

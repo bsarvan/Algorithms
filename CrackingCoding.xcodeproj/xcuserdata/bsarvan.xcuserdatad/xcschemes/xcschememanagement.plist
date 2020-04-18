@@ -4,7 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AbstractFactoryMethod.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>147</integer>
+		</dict>
+		<key>AbstractFactoryMethod.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>143</integer>
+		</dict>
+		<key>AddBinaryString.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>234</integer>
+		</dict>
 		<key>AddBoldTag.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>111</integer>
+		</dict>
+		<key>AddBoldTag.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>107</integer>
@@ -12,69 +32,254 @@
 		<key>AddSearchWords.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>122</integer>
+			<integer>127</integer>
+		</dict>
+		<key>AddSearchWords.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>123</integer>
+		</dict>
+		<key>AdvancingArray.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>160</integer>
+		</dict>
+		<key>AdvancingArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>158</integer>
+		</dict>
+		<key>AlienDictionary.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>236</integer>
+		</dict>
+		<key>AllUniquePermutation.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>238</integer>
+		</dict>
+		<key>ApplePicking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>178</integer>
+		</dict>
+		<key>ApplePicking.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>178</integer>
 		</dict>
 		<key>ArrayPermute.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>75</integer>
+			<integer>78</integer>
 		</dict>
-		<key>AssignOperatorOverloading.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>61</integer>
-		</dict>
-		<key>BFS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>88</integer>
-		</dict>
-		<key>BFS_New.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>131</integer>
-		</dict>
-		<key>BST.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>43</integer>
-		</dict>
-		<key>BiDirectionalBFS.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>128</integer>
-		</dict>
-		<key>BinarySearch.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>50</integer>
-		</dict>
-		<key>BitShifting.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>76</integer>
-		</dict>
-		<key>BreadthFirstSearch.xcscheme</key>
+		<key>ArrayPermute.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>73</integer>
 		</dict>
-		<key>BuyNSellTwice.xcscheme</key>
+		<key>ArrayProductExceptSelf.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>127</integer>
+			<integer>240</integer>
 		</dict>
-		<key>CheckIdenticalTree.xcscheme</key>
+		<key>AssignOperatorOverloading.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>64</integer>
+		</dict>
+		<key>AssignOperatorOverloading.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>59</integer>
+		</dict>
+		<key>BFS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>91</integer>
 		</dict>
+		<key>BFS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>86</integer>
+		</dict>
+		<key>BFS_New.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>134</integer>
+		</dict>
+		<key>BFS_New.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>130</integer>
+		</dict>
+		<key>BST.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>46</integer>
+		</dict>
+		<key>BST.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>41</integer>
+		</dict>
+		<key>BackSpaceString.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>217</integer>
+		</dict>
+		<key>BiDirectionalBFS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>132</integer>
+		</dict>
+		<key>BiDirectionalBFS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>128</integer>
+		</dict>
+		<key>BicyclePart.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>156</integer>
+		</dict>
+		<key>BicyclePart.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>154</integer>
+		</dict>
+		<key>BinarySearch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>53</integer>
+		</dict>
+		<key>BinarySearch.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>49</integer>
+		</dict>
+		<key>BinaryTreeCloneWithRandomPtr.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>220</integer>
+		</dict>
+		<key>BinaryTreePath.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>233</integer>
+		</dict>
+		<key>BinaryTreeSearchRange.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>204</integer>
+		</dict>
+		<key>BitArray.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>167</integer>
+		</dict>
+		<key>BitArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>167</integer>
+		</dict>
+		<key>BitMapFlagsToSwitchStatement.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>225</integer>
+		</dict>
+		<key>BitShifting.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>79</integer>
+		</dict>
+		<key>BitShifting.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>75</integer>
+		</dict>
+		<key>BitVector.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>211</integer>
+		</dict>
+		<key>BreadthFirstSearch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>76</integer>
+		</dict>
+		<key>BreadthFirstSearch.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>72</integer>
+		</dict>
+		<key>BuildOrder.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>235</integer>
+		</dict>
+		<key>BusiestPeriod.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>168</integer>
+		</dict>
+		<key>BusiestPeriod.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>166</integer>
+		</dict>
+		<key>BuyNSellTwice.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>128</integer>
+		</dict>
+		<key>BuyNSellTwice.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>124</integer>
+		</dict>
+		<key>CharFrequencyTable.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>142</integer>
+		</dict>
+		<key>CharFrequencyTable.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>138</integer>
+		</dict>
+		<key>CheckIdenticalTree.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>95</integer>
+		</dict>
+		<key>CheckIdenticalTree.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>90</integer>
+		</dict>
+		<key>CheckInclusion.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>242</integer>
+		</dict>
 		<key>ChoooseRandomFromStream.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>125</integer>
+			<integer>131</integer>
+		</dict>
+		<key>ChoooseRandomFromStream.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>126</integer>
 		</dict>
 		<key>CircularQueue.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>124</integer>
+		</dict>
+		<key>CircularQueue.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>120</integer>
@@ -82,9 +287,29 @@
 		<key>ClimbingStairs.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>120</integer>
+		</dict>
+		<key>ClimbingStairs.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>116</integer>
 		</dict>
+		<key>CloneGraph.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>223</integer>
+		</dict>
+		<key>CodeSample.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>215</integer>
+		</dict>
 		<key>ComparatorFunction.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>100</integer>
+		</dict>
+		<key>ComparatorFunction.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>95</integer>
@@ -92,84 +317,344 @@
 		<key>ConstReference.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>49</integer>
+		</dict>
+		<key>ConstReference.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>45</integer>
 		</dict>
 		<key>ConstructBTree.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>38</integer>
+			<integer>42</integer>
+		</dict>
+		<key>ConstructBTree.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
 		</dict>
 		<key>ConstructTree.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>43</integer>
+		</dict>
+		<key>ConstructTree.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>37</integer>
+		</dict>
+		<key>ConstructorConversion.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>141</integer>
+		</dict>
+		<key>ConstructorConversion.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>137</integer>
 		</dict>
 		<key>ContactListHash.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>56</integer>
+			<integer>60</integer>
+		</dict>
+		<key>ContactListHash.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>55</integer>
 		</dict>
 		<key>CopyCon.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>62</integer>
+			<integer>65</integer>
+		</dict>
+		<key>CopyCon.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>60</integer>
 		</dict>
 		<key>CopyConstructor.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>47</integer>
+			<integer>51</integer>
+		</dict>
+		<key>CopyConstructor.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>46</integer>
+		</dict>
+		<key>CountPathsWithSum.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>248</integer>
 		</dict>
 		<key>CountSay.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>24</integer>
+		</dict>
+		<key>CountSay.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 		<key>CountSmallerUsingSTL.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>94</integer>
+			<integer>99</integer>
 		</dict>
-		<key>CountSmallersNumbersToRight.xcscheme</key>
+		<key>CountSmallerUsingSTL.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>93</integer>
 		</dict>
+		<key>CountSmallersNumbersToRight.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>96</integer>
+		</dict>
+		<key>CountSmallersNumbersToRight.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>91</integer>
+		</dict>
 		<key>Counting Sort.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>84</integer>
+			<integer>87</integer>
 		</dict>
-		<key>CrackingCoding.xcscheme</key>
+		<key>Counting Sort.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>82</integer>
+		</dict>
+		<key>CourseSchedule.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>205</integer>
+		</dict>
+		<key>CourseScheduleII.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>246</integer>
+		</dict>
+		<key>CrackingCoding.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>DecodeString.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>192</integer>
 		</dict>
 		<key>DecodeWays.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>121</integer>
 		</dict>
+		<key>DecodeWays.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>117</integer>
+		</dict>
+		<key>DecryptMessage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>185</integer>
+		</dict>
+		<key>DecryptMessage.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>185</integer>
+		</dict>
+		<key>DetectCycleInDirectedGraph.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>212</integer>
+		</dict>
+		<key>DetectCycleInGraph.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>201</integer>
+		</dict>
+		<key>DetectLoopDirectedGraph.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>206</integer>
+		</dict>
+		<key>DiameterOfTree.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>218</integer>
+		</dict>
+		<key>EdgePriorityQueue.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>183</integer>
+		</dict>
+		<key>EdgePriorityQueue.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>183</integer>
+		</dict>
+		<key>EdgeWeightedGraphAPI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>169</integer>
+		</dict>
+		<key>EdgeWeightedGraphAPI.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>169</integer>
+		</dict>
 		<key>External Sorting.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>83</integer>
+			<integer>90</integer>
+		</dict>
+		<key>External Sorting.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>84</integer>
+		</dict>
+		<key>FactoryMethodPattern.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>146</integer>
+		</dict>
+		<key>FactoryMethodPattern.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>142</integer>
+		</dict>
+		<key>FibFindNhtNumber.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>175</integer>
+		</dict>
+		<key>FibFindNhtNumber.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>174</integer>
+		</dict>
+		<key>FindAllAnagrams.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>226</integer>
+		</dict>
+		<key>FindFirstPositive.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>153</integer>
+		</dict>
+		<key>FindFirstPositive.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>151</integer>
 		</dict>
 		<key>FindKEmptySlots.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>100</integer>
+			<integer>103</integer>
+		</dict>
+		<key>FindKEmptySlots.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>98</integer>
+		</dict>
+		<key>FindMajority.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>190</integer>
+		</dict>
+		<key>FindMissingRanges.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>191</integer>
+		</dict>
+		<key>FindPeakIndex.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>243</integer>
 		</dict>
 		<key>FindUnreachableNode.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>70</integer>
+			<integer>74</integer>
+		</dict>
+		<key>FindUnreachableNode.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>69</integer>
+		</dict>
+		<key>FlipXY.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>189</integer>
 		</dict>
 		<key>FormatLicenseKey.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>103</integer>
+			<integer>104</integer>
+		</dict>
+		<key>FormatLicenseKey.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>101</integer>
+		</dict>
+		<key>GenerateParenthisis.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>213</integer>
+		</dict>
+		<key>GeneratePermutation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>166</integer>
+		</dict>
+		<key>GeneratePermutation.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>165</integer>
+		</dict>
+		<key>GenerateRandomNumNotInList.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>176</integer>
+		</dict>
+		<key>GenerateRandomNumNotInList.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>175</integer>
+		</dict>
+		<key>GetMinNumberSquares.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>159</integer>
+		</dict>
+		<key>GetMinNumberSquares.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>157</integer>
+		</dict>
+		<key>GetRankofNumberInStream.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>154</integer>
+		</dict>
+		<key>GetRankofNumberInStream.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>152</integer>
 		</dict>
 		<key>Graph.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>73</integer>
+		</dict>
+		<key>Graph.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>68</integer>
@@ -177,19 +662,54 @@
 		<key>GreedyIntervalCoveringProblem.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>104</integer>
+			<integer>108</integer>
+		</dict>
+		<key>GreedyIntervalCoveringProblem.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>103</integer>
+		</dict>
+		<key>GroupAnagrams.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>144</integer>
+		</dict>
+		<key>GroupAnagrams.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>140</integer>
 		</dict>
 		<key>GroupByAge.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>32</integer>
+		</dict>
+		<key>GroupByAge.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
+		<key>HasPathSum.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>222</integer>
 		</dict>
 		<key>HashMapList.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>14</integer>
+		</dict>
+		<key>HashMapList.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>HeapSort.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>86</integer>
+		</dict>
+		<key>HeapSort.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>81</integer>
@@ -197,14 +717,39 @@
 		<key>HeapSortVersion2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>86</integer>
+			<integer>89</integer>
+		</dict>
+		<key>HeapSortVersion2.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>85</integer>
+		</dict>
+		<key>HitCounter.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>145</integer>
+		</dict>
+		<key>HouseRobDP.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>188</integer>
 		</dict>
 		<key>Inheritence.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>52</integer>
+			<integer>55</integer>
+		</dict>
+		<key>Inheritence.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>50</integer>
 		</dict>
 		<key>InitTable.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>47</integer>
+		</dict>
+		<key>InitTable.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>42</integer>
@@ -212,39 +757,169 @@
 		<key>IntToRoman.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>28</integer>
+		</dict>
+		<key>IntToRoman.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
 		</dict>
 		<key>IntersectTwoArrays.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>58</integer>
+			<integer>61</integer>
+		</dict>
+		<key>IntersectTwoArrays.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>56</integer>
 		</dict>
 		<key>KPairsWithSmallestSum.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>117</integer>
 		</dict>
+		<key>KPairsWithSmallestSum.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>113</integer>
+		</dict>
+		<key>KPalindromeString.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>245</integer>
+		</dict>
+		<key>KnapSack.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>209</integer>
+		</dict>
+		<key>KruskalsAlgorithm.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>199</integer>
+		</dict>
 		<key>LRUCache.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
+		</dict>
+		<key>LRUCache.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>25</integer>
 		</dict>
+		<key>LRUCache_LeetCode.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>227</integer>
+		</dict>
+		<key>LargestDivisibleSubSet.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>182</integer>
+		</dict>
+		<key>LargestDivisibleSubSet.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>179</integer>
+		</dict>
 		<key>LargestNumber.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>20</integer>
+		</dict>
+		<key>LargestNumber.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>LengthLongestSubstringWithoutRepeatCharac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>186</integer>
+		</dict>
+		<key>LengthLongestSubstringWithoutRepeatCharac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>184</integer>
+		</dict>
+		<key>LengthOfLastWord.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>162</integer>
+		</dict>
+		<key>LengthOfLastWord.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>162</integer>
+		</dict>
+		<key>LexographicSortingOfStrings.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>171</integer>
+		</dict>
+		<key>LexographicSortingOfStrings.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>171</integer>
 		</dict>
 		<key>LinkedList.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>25</integer>
+		</dict>
+		<key>LinkedList.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>List.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>157</integer>
+		</dict>
+		<key>List.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>155</integer>
 		</dict>
 		<key>ListOfDepths.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>80</integer>
+		</dict>
+		<key>ListOfDepths.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>74</integer>
 		</dict>
+		<key>LongestConsecutiveElements.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>148</integer>
+		</dict>
+		<key>LongestConsecutiveElements.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>144</integer>
+		</dict>
+		<key>LongestIncreasingPath.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>193</integer>
+		</dict>
+		<key>LongestIncreasingSubsequence.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>208</integer>
+		</dict>
 		<key>LongestPalindrome.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
+		<key>LongestPalindrome.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>23</integer>
@@ -252,9 +927,34 @@
 		<key>LongestPrefix.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>21</integer>
+		</dict>
+		<key>LongestPrefix.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>LongestSubArray.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>184</integer>
+		</dict>
+		<key>LongestSubArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>182</integer>
+		</dict>
+		<key>LongestSubsequence.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>207</integer>
 		</dict>
 		<key>LongestSubstringWithKDistinct.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>106</integer>
+		</dict>
+		<key>LongestSubstringWithKDistinct.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>102</integer>
@@ -262,19 +962,44 @@
 		<key>LongestUnivaluePath.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>101</integer>
+			<integer>105</integer>
+		</dict>
+		<key>LongestUnivaluePath.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>100</integer>
+		</dict>
+		<key>LongestValidParenthesis.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>237</integer>
 		</dict>
 		<key>MatrixDiagonalTraversal.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>114</integer>
+			<integer>119</integer>
+		</dict>
+		<key>MatrixDiagonalTraversal.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>115</integer>
 		</dict>
 		<key>MatrixMedian.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>22</integer>
+		</dict>
+		<key>MatrixMedian.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 		<key>MatrixSearch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>59</integer>
+		</dict>
+		<key>MatrixSearch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>54</integer>
@@ -282,69 +1007,249 @@
 		<key>MaxConsecutiveOnes_II.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>109</integer>
+		</dict>
+		<key>MaxConsecutiveOnes_II.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>105</integer>
 		</dict>
 		<key>MaxGap.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>110</integer>
+			<integer>113</integer>
 		</dict>
-		<key>MaxSetSubarray.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>64</integer>
-		</dict>
-		<key>MedianSortedArrays.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>77</integer>
-		</dict>
-		<key>MergeTwoSortedArray.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>49</integer>
-		</dict>
-		<key>MinWindowString.xcscheme</key>
+		<key>MaxGap.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>109</integer>
 		</dict>
-		<key>NextClosestTime.xcscheme</key>
+		<key>MaxProductSubArray.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>99</integer>
+			<integer>221</integer>
 		</dict>
-		<key>NextGreaterElement.xcscheme</key>
+		<key>MaxSetSubarray.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>36</integer>
+			<integer>67</integer>
 		</dict>
-		<key>NumOfBitsSet.xcscheme</key>
+		<key>MaxSetSubarray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>63</integer>
+		</dict>
+		<key>MedianSortedArrays.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>83</integer>
+		</dict>
+		<key>MedianSortedArrays.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>78</integer>
 		</dict>
+		<key>MeetingRooms.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>196</integer>
+		</dict>
+		<key>MergeIntervals.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>163</integer>
+		</dict>
+		<key>MergeIntervals.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>160</integer>
+		</dict>
+		<key>MergeTwoSortedArray.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>54</integer>
+		</dict>
+		<key>MergeTwoSortedArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>48</integer>
+		</dict>
+		<key>MinCoinsForValueN.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>170</integer>
+		</dict>
+		<key>MinCoinsForValueN.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>168</integer>
+		</dict>
+		<key>MinWindowString.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>112</integer>
+		</dict>
+		<key>MinWindowString.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>108</integer>
+		</dict>
+		<key>MinimumCostPath.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>197</integer>
+		</dict>
+		<key>MinimumRemoveValidParenthesis.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>230</integer>
+		</dict>
+		<key>MultiplyStrings.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>200</integer>
+		</dict>
+		<key>NQueensProblem.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>224</integer>
+		</dict>
+		<key>NegativeCycleInGraph.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>228</integer>
+		</dict>
+		<key>NextClosestTime.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>99</integer>
+		</dict>
+		<key>NextClosestTime_2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>172</integer>
+		</dict>
+		<key>NextClosestTime_2.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>170</integer>
+		</dict>
+		<key>NextGreaterElement.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>39</integer>
+		</dict>
+		<key>NextGreaterElement.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>35</integer>
+		</dict>
+		<key>NumOfBitsSet.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>81</integer>
+		</dict>
+		<key>NumOfBitsSet.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>76</integer>
+		</dict>
+		<key>NumberOfIslands.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>180</integer>
+		</dict>
+		<key>NumberOfIslands.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>181</integer>
+		</dict>
+		<key>ObjectCollaboration.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>155</integer>
+		</dict>
+		<key>ObjectCollaboration.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>153</integer>
+		</dict>
 		<key>ObjectSlicing.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>53</integer>
+			<integer>58</integer>
+		</dict>
+		<key>ObjectSlicing.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>52</integer>
 		</dict>
 		<key>PaintHouse.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>130</integer>
+			<integer>133</integer>
+		</dict>
+		<key>PaintHouse.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>129</integer>
+		</dict>
+		<key>PaintVertextUndirectedGraph.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>138</integer>
+		</dict>
+		<key>PaintVertextUndirectedGraph.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>134</integer>
 		</dict>
 		<key>PalindromePermutation.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>27</integer>
 		</dict>
-		<key>Practice.xcscheme</key>
+		<key>PalindromePermutation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>20</integer>
+		</dict>
+		<key>ParseEquation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>177</integer>
+		</dict>
+		<key>ParseEquation.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>176</integer>
+		</dict>
+		<key>PathNameNormalization.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>203</integer>
+		</dict>
+		<key>PeakAndValley.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>241</integer>
+		</dict>
+		<key>PrintAllPaths.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>231</integer>
+		</dict>
+		<key>PrintAllValidWordsInArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>195</integer>
 		</dict>
 		<key>PrintMissingNRepeatedNumber.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>77</integer>
+		</dict>
+		<key>PrintMissingNRepeatedNumber.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>71</integer>
@@ -352,19 +1257,44 @@
 		<key>PrintPretty.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>19</integer>
+		</dict>
+		<key>PrintPretty.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>PrintRepeatedNumber.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>48</integer>
+			<integer>52</integer>
+		</dict>
+		<key>PrintRepeatedNumber.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>47</integer>
+		</dict>
+		<key>PrintRootToLeafPathsWithSum.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>247</integer>
 		</dict>
 		<key>PriorityQueue.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>35</integer>
+			<integer>40</integer>
+		</dict>
+		<key>PriorityQueue.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>33</integer>
 		</dict>
 		<key>PureVirtualDestructor.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>71</integer>
+		</dict>
+		<key>PureVirtualDestructor.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>65</integer>
@@ -372,29 +1302,69 @@
 		<key>PureVirtualFunction.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>56</integer>
+		</dict>
+		<key>PureVirtualFunction.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>51</integer>
 		</dict>
 		<key>RadixSort.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>17</integer>
+		</dict>
+		<key>RadixSort.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>RainWaterTrapping.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>126</integer>
+			<integer>129</integer>
+		</dict>
+		<key>RainWaterTrapping.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>125</integer>
+		</dict>
+		<key>RankFromStream.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>145</integer>
+		</dict>
+		<key>RankFromStream.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>141</integer>
 		</dict>
 		<key>RealSquareRoot.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>115</integer>
+			<integer>118</integer>
+		</dict>
+		<key>RealSquareRoot.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>114</integer>
 		</dict>
 		<key>RealToBinary.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>13</integer>
+		</dict>
+		<key>RealToBinary.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>RecursiveCall.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>97</integer>
+		</dict>
+		<key>RecursiveCall.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>92</integer>
@@ -402,14 +1372,29 @@
 		<key>RemoveDupSortedArr.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>46</integer>
+			<integer>50</integer>
 		</dict>
-		<key>RemoveDupSortedArray.xcscheme</key>
+		<key>RemoveDupSortedArr.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>44</integer>
 		</dict>
+		<key>RemoveDupSortedArray.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>48</integer>
+		</dict>
+		<key>RemoveDupSortedArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>43</integer>
+		</dict>
 		<key>RemoveDuplicateFirstName.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>62</integer>
+		</dict>
+		<key>RemoveDuplicateFirstName.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>57</integer>
@@ -417,14 +1402,39 @@
 		<key>RemoveDuplicateFromArray.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>106</integer>
+			<integer>107</integer>
+		</dict>
+		<key>RemoveDuplicateFromArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>104</integer>
+		</dict>
+		<key>ReorderList.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>239</integer>
+		</dict>
+		<key>ReversePolishNotation.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>202</integer>
 		</dict>
 		<key>ReverseWords.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>60</integer>
+			<integer>68</integer>
+		</dict>
+		<key>ReverseWords.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>62</integer>
 		</dict>
 		<key>RobinKarp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>102</integer>
+		</dict>
+		<key>RobinKarp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>97</integer>
@@ -432,29 +1442,114 @@
 		<key>RodCutting.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>118</integer>
+			<integer>123</integer>
+		</dict>
+		<key>RodCutting.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>119</integer>
+		</dict>
+		<key>RotateArray.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>161</integer>
+		</dict>
+		<key>RotateArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>159</integer>
+		</dict>
+		<key>RunningMedia.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>136</integer>
+		</dict>
+		<key>RunningMedia.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>132</integer>
+		</dict>
+		<key>RunningMedian.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>137</integer>
+		</dict>
+		<key>RunningMedian.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>133</integer>
+		</dict>
+		<key>SampleOfflineData.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>143</integer>
+		</dict>
+		<key>SampleOfflineData.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>139</integer>
 		</dict>
 		<key>SearchForRange.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>55</integer>
+			<integer>57</integer>
+		</dict>
+		<key>SearchForRange.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>53</integer>
 		</dict>
 		<key>SearchingAlgorithms.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>79</integer>
+			<integer>82</integer>
+		</dict>
+		<key>SearchingAlgorithms.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>77</integer>
 		</dict>
 		<key>SelectionSort.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>33</integer>
+			<integer>37</integer>
+		</dict>
+		<key>SelectionSort.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>32</integer>
+		</dict>
+		<key>SetUserDefinedType.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>198</integer>
+		</dict>
+		<key>ShortestDistance.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>140</integer>
+		</dict>
+		<key>ShortestDistance.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>136</integer>
 		</dict>
 		<key>ShortestDistanceFromAllBuildings.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>111</integer>
+			<integer>114</integer>
+		</dict>
+		<key>ShortestDistanceFromAllBuildings.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>110</integer>
 		</dict>
 		<key>ShortestPath.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>92</integer>
+		</dict>
+		<key>ShortestPath.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>87</integer>
@@ -462,29 +1557,79 @@
 		<key>ShortestPathMaze.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>123</integer>
+			<integer>125</integer>
+		</dict>
+		<key>ShortestPathMaze.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>121</integer>
+		</dict>
+		<key>ShortestWordDistance.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>244</integer>
 		</dict>
 		<key>Singleton.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>67</integer>
+			<integer>70</integer>
+		</dict>
+		<key>Singleton.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>66</integer>
 		</dict>
 		<key>SingletonThreadSafe.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>69</integer>
+			<integer>72</integer>
+		</dict>
+		<key>SingletonThreadSafe.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>67</integer>
 		</dict>
 		<key>SmallestDistancePairInArray.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>112</integer>
+			<integer>115</integer>
+		</dict>
+		<key>SmallestDistancePairInArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>111</integer>
+		</dict>
+		<key>SmallestPositiveNotSumInArray.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>174</integer>
+		</dict>
+		<key>SmallestPositiveNotSumInArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>173</integer>
+		</dict>
+		<key>SmallestSubarrayCoveringAllValues.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>232</integer>
 		</dict>
 		<key>SmartPtrOperatorOverloading.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>59</integer>
+			<integer>63</integer>
+		</dict>
+		<key>SmartPtrOperatorOverloading.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>58</integer>
 		</dict>
 		<key>SoccerStack.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>41</integer>
+		</dict>
+		<key>SoccerStack.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>34</integer>
@@ -492,99 +1637,369 @@
 		<key>SortStack.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>41</integer>
+			<integer>45</integer>
 		</dict>
-		<key>SpiralMatrix.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>108</integer>
-		</dict>
-		<key>SquareRootOfInteger.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>113</integer>
-		</dict>
-		<key>StableSelectionSort.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>96</integer>
-		</dict>
-		<key>StandardListOperations.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>80</integer>
-		</dict>
-		<key>StringConversion.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>63</integer>
-		</dict>
-		<key>SubArrayMax.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>129</integer>
-		</dict>
-		<key>SumOfLists.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>82</integer>
-		</dict>
-		<key>TestPriorityQueue.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>89</integer>
-		</dict>
-		<key>Tinybool.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>72</integer>
-		</dict>
-		<key>TopologicalSort.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>90</integer>
-		</dict>
-		<key>Trie Searching.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>85</integer>
-		</dict>
-		<key>UnionOfIntervals.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>98</integer>
-		</dict>
-		<key>UniqueFunction.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>66</integer>
-		</dict>
-		<key>UniquePtr.xcscheme</key>
+		<key>SortStack.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>40</integer>
 		</dict>
+		<key>SpiralMatrix.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>110</integer>
+		</dict>
+		<key>SpiralMatrix.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>106</integer>
+		</dict>
+		<key>SquareRootOfInteger.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>116</integer>
+		</dict>
+		<key>SquareRootOfInteger.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>112</integer>
+		</dict>
+		<key>StableSelectionSort.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>98</integer>
+		</dict>
+		<key>StableSelectionSort.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>94</integer>
+		</dict>
+		<key>StackCheckTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>151</integer>
+		</dict>
+		<key>StackCheckTest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>148</integer>
+		</dict>
+		<key>StackTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>150</integer>
+		</dict>
+		<key>StackTest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>147</integer>
+		</dict>
+		<key>StackUsingHeap.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>164</integer>
+		</dict>
+		<key>StackUsingHeap.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>163</integer>
+		</dict>
+		<key>StandardListOperations.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>84</integer>
+		</dict>
+		<key>StandardListOperations.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>79</integer>
+		</dict>
+		<key>StringConversion.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>66</integer>
+		</dict>
+		<key>StringConversion.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>61</integer>
+		</dict>
+		<key>StringPermute.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>135</integer>
+		</dict>
+		<key>StringPermute.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>131</integer>
+		</dict>
+		<key>StringReplaceOperations.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>216</integer>
+		</dict>
+		<key>StroboGrammatic.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>187</integer>
+		</dict>
+		<key>StroboGrammatic.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>186</integer>
+		</dict>
+		<key>SubArrayMax.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>130</integer>
+		</dict>
+		<key>SubArrayMax.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>127</integer>
+		</dict>
+		<key>SubSetOfSizeK.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>165</integer>
+		</dict>
+		<key>SubSetOfSizeK.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>164</integer>
+		</dict>
+		<key>SubString.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>152</integer>
+		</dict>
+		<key>SubString.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>149</integer>
+		</dict>
+		<key>Sub_String.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>150</integer>
+		</dict>
+		<key>SubsequenceOfString.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>161</integer>
+		</dict>
+		<key>SumOfLists.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>85</integer>
+		</dict>
+		<key>SumOfLists.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>80</integer>
+		</dict>
+		<key>T9.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>139</integer>
+		</dict>
+		<key>T9.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>135</integer>
+		</dict>
+		<key>TestPriorityQueue.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>93</integer>
+		</dict>
+		<key>TestPriorityQueue.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>88</integer>
+		</dict>
+		<key>Tinybool.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>75</integer>
+		</dict>
+		<key>Tinybool.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>70</integer>
+		</dict>
+		<key>Toeplitz.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>219</integer>
+		</dict>
+		<key>ToggleBit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>210</integer>
+		</dict>
+		<key>TopologicalSort.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>94</integer>
+		</dict>
+		<key>TopologicalSort.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>89</integer>
+		</dict>
+		<key>TreeDeleteNodeReturnForest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>214</integer>
+		</dict>
+		<key>Trie Searching.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>88</integer>
+		</dict>
+		<key>Trie Searching.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>83</integer>
+		</dict>
+		<key>UnionOfIntervals.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>101</integer>
+		</dict>
+		<key>UnionOfIntervals.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>96</integer>
+		</dict>
+		<key>UniqueEmails.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>194</integer>
+		</dict>
+		<key>UniqueFunction.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>69</integer>
+		</dict>
+		<key>UniqueFunction.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>64</integer>
+		</dict>
+		<key>UniquePtr.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>44</integer>
+		</dict>
+		<key>UniquePtr.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>38</integer>
+		</dict>
+		<key>ValidPalindromeOnDelete.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>229</integer>
+		</dict>
+		<key>ValidUTF8.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>179</integer>
+		</dict>
+		<key>ValidUTF8.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>177</integer>
+		</dict>
+		<key>VectorPointer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>173</integer>
+		</dict>
+		<key>VectorPointer.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>172</integer>
+		</dict>
+		<key>VeriticalOrderTraversal.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>249</integer>
+		</dict>
 		<key>WallsAndGates.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>124</integer>
+			<integer>126</integer>
+		</dict>
+		<key>WallsAndGates.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>122</integer>
 		</dict>
 		<key>WordBreak.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>119</integer>
+			<integer>122</integer>
 		</dict>
-		<key>duplicateArray.xcscheme</key>
+		<key>WordBreak.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>118</integer>
+		</dict>
+		<key>WordLadder.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>181</integer>
+		</dict>
+		<key>WordLadder.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>180</integer>
+		</dict>
+		<key>WordSquares.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>188</integer>
+		</dict>
+		<key>WordSquares.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>187</integer>
+		</dict>
+		<key>XORLinkedList.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>158</integer>
+		</dict>
+		<key>XORLinkedList.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>156</integer>
+		</dict>
+		<key>duplicateArray.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>findkthlargest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>9</integer>
+		</dict>
+		<key>findkthlargest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>fullJustify.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>33</integer>
+		</dict>
+		<key>fullJustify.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>28</integer>
@@ -592,14 +2007,29 @@
 		<key>getNext.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>12</integer>
+		</dict>
+		<key>getNext.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>isUnique.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>10</integer>
+		</dict>
+		<key>isUnique.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>median.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>median.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>14</integer>
@@ -607,9 +2037,19 @@
 		<key>mergeSort.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>15</integer>
+		</dict>
+		<key>mergeSort.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>minDepth.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>41</integer>
+		</dict>
+		<key>minDepth.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>39</integer>
@@ -617,9 +2057,14 @@
 		<key>palindrome.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>26</integer>
 		</dict>
-		<key>permutation.xcscheme</key>
+		<key>palindrome.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
+		<key>permutation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
@@ -627,51 +2072,95 @@
 		<key>pivotPartition.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>31</integer>
+			<integer>35</integer>
 		</dict>
-		<key>plusOne.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>29</integer>
-		</dict>
-		<key>quicksort.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>recursiveMultiplication.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>sherlock.xcscheme</key>
+		<key>pivotPartition.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>30</integer>
 		</dict>
+		<key>plusOne.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>34</integer>
+		</dict>
+		<key>plusOne.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
+		</dict>
+		<key>quicksort.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>quicksort.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>recursiveMultiplication.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>recursiveMultiplication.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>sherlock.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
+		</dict>
+		<key>sherlock.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
+		<key>sizeofTest.cpp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>149</integer>
+		</dict>
+		<key>sizeofTest.cpp.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>146</integer>
+		</dict>
 		<key>test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>23</integer>
+		</dict>
+		<key>test.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
 		</dict>
 		<key>unordered_set.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>32</integer>
+			<integer>38</integer>
+		</dict>
+		<key>unordered_set.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
 		</dict>
 		<key>validIPAddresses.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>30</integer>
+		</dict>
+		<key>validIPAddresses.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>D9D909291FD9B88100739FE5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

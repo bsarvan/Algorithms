@@ -56,7 +56,10 @@ vector<int> maxset_v2(vector<int> &A) {
         sumTillNow =0;
         length =0;
         
+        cout<<"max till now - "<<maxTillNow<<", sum till now - "<<sumTillNow<<endl;
         while(maxTillNow < sumTillNow && i<A.size()){
+            cout<<"max till now - "<<maxTillNow<<", sum till now - "<<sumTillNow<<endl;
+            cout<<"Here"<<endl;
             sumTillNow +=A[i];
             i++;
         }
@@ -82,9 +85,9 @@ vector<int> maxset_v2(vector<int> &A) {
 
 
 int main(int argc, const char * argv[]) {
-    //vector<int> vec = {1, 2, 5, -7, 2, 3};
-    vector<int> vec = {-2,1,-3,4,-1,2,1,-5,4};
-    vector<int> result = maxset_v2(vec);
+    vector<int> vec = {1, 2, 5, -7, 2, 3};
+    //vector<int> vec = {-2,1,-3,4,-1,2,1,-5,4};
+    vector<int> result = maxset(vec);
     
     for(auto c:result) {
         cout<<c<<" ";

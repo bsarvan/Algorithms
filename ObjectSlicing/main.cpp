@@ -33,7 +33,7 @@ public:
 };
 
 // Global method, Base class object is passed by value
-void somefunc (Base obj)
+void somefunc (Base &obj)
 {
     obj.display();
 }

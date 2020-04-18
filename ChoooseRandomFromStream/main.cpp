@@ -22,16 +22,19 @@ int selectRandom(int x)
     count++; // increment count of numbers seen so far
     
     // If this is the first element from stream, return it
-    if (count == 1)
+    if (count == 1) {
+        printf("First element in the stream\n");
         res = x;
-    else
+    } else
     {
         // Generate a random number from 0 to count - 1
         int i = rand() % count;
         
         // Replace the prev random number with new number with 1/count probability
-        if (i == count - 1)
+        if (i == count - 1) {
+            printf("Updating the last result\n");
             res = x;
+        }
     }
     return res;
 }

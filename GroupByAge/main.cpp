@@ -77,6 +77,8 @@ void GroupByAge(vector<Person> person){
         }
     }
     cout<<"=============================="<<endl;
+    
+    cout<<"Persons group by age"<<endl;
     for(auto &k:person){
         cout<<"Name - "<<k.name<<",Age - "<<k.age<<endl;
     }
@@ -98,7 +100,6 @@ int main(int argc, const char * argv[]) {
     print(person);
     
     GroupByAge(person);
-    
     return 0;
     
 }

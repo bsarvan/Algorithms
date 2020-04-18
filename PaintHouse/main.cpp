@@ -31,10 +31,30 @@
 #include <vector>
 using namespace std;
 
+void printMatrix(vector<vector<int>> mat) {
+    for (auto r:mat) {
+        for (auto c:r) {
+            cout<<c<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void printRow(vector<vector<int>> mat, int row) {
+    cout<<"Row - ";
+    for(auto c:mat[row]){
+        cout<<c<<" ";
+    }
+    cout<<endl;
+}
 
 int minCost(vector<vector<int>>& costs, int row, int idx)
 {
     int costMin = INT_MAX;
+    cout<<"Finding the minimum paint cost for house "<<row<<endl;
+    
+    printRow(costs, row);
+    
     for(int i=0; i<costs[row].size(); i++)
     {
         if(i != idx)
@@ -42,6 +62,8 @@ int minCost(vector<vector<int>>& costs, int row, int idx)
             costMin = min(costMin, costs[row][i]);
         }
     }
+    
+    cout<<"MinCost for House "<<row<<", Color "<<idx<<" is "<<costMin<<endl;
     return costMin;
 }
 
@@ -53,6 +75,8 @@ int minCostII(vector<vector<int>>& costs) {
         return  0;
     }
     
+    printMatrix(costs);
+    
     if(costs.size() == 1)
     {
         return minCost(costs, 0, -1);
@@ -63,11 +87,21 @@ int minCostII(vector<vector<int>>& costs) {
         for(int j=0; j<costs[0].size(); j++)
         {
             costs[i][j] += minCost(costs, i-1, j);
+            printMatrix(costs);
+            
         }
+        
+        cout<<"=============================="<<endl;
+        
     }
     return minCost(costs, costs.size()-1, -1);
 }
 int main(int argc, const char * argv[]) {
-    cout<<"
+    cout<<"Paint House Problem. No two neigboring houses can have the same color"<<endl;
+    
+    vector<vector<int>> costs = {{1,5,3},{2,9,4}, {1,5,2}};
+    int res = minCostII(costs);
+    cout<<"MinCost to Paint all houses - "<<res<<endl;
+    
     return 0;
 }

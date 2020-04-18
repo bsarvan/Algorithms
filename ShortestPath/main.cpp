@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <stack>
 #include <set>
+#include <queue>
 using namespace std;
 
 ifstream infile("/Users/bsarvan/Personal/Xcode Projects/CrackingCoding/ShortestPath/input.txt");
@@ -75,7 +76,7 @@ public:
     }
 };
 
-
+#if 0
 template<typename T>
 class custom_priority_queue : public std::priority_queue<T, std::vector<T>>
 {
@@ -125,11 +126,13 @@ public:
     }
     
 };
-
+#endif
+    
 class DijkstrasSP {
     DirectedEdge *edgeTo;
     double *distTo;
-    multiset<pair<int,double>> pq;
+    multiset<pair<int, double>> pq;
+    
     
 public:
     DijkstrasSP(EdgeWeightedDigraph G, int s) {
@@ -141,11 +144,11 @@ public:
             distTo[v] = INT_MAX;
         }
         distTo[s]=0.0;
-        pq.insert({s,0.0});
+        pq.emplace(s,0.0);
         while(!pq.empty()) {
             pair<int,double> p = *pq.begin();
             pq.erase(pq.begin());
-            
+            cout<<"PQ First - "<<p.first<<",PQ Second - "<<p.second<<endl;
             relax(G,p.second);
             
         }
@@ -158,20 +161,38 @@ public:
             if (distTo[w] > distTo[v] + e.getWeight()) {
                 distTo[w] = distTo[v] + e.getWeight();
                 edgeTo[w] = e;
-            }
-            
-            pq.find({w,edgeTo[w]});
-            if (pq.find({w,edgeTo[w]})) {
-                pq.insert({w,distTo[w]});
-            } else {
-                
+                pq.insert(make_pair(w,distTo[w]));
             }
         }
-        
+        return;
     }
     
     
+    bool hasPathTo(int w) {
+        return (distTo[w] != INT_MAX);
+    }
+    
 };
+
+void BellmanFord(EdgeWeightedDigraph graph) {
+    vector<int> d(graph.getV(), INT_MAX);
+
+    //d[0] = 0;
+
+    for (int u = 0; u< graph.getV() - 1;u++) {
+        bool flag = false;
+        for (auto e:graph.getAdj(u)) {
+            int v = e.to();
+            if (d[v] > d[u] + e.getWeight()) {
+                d[v] = d[u] + e.getWeight();
+    flag = true;
+            }
+            
+        }
+    }
+    return;
+}
+    
 
 int main(int argc, const char * argv[]) {
     cout<<"Sample Program for Shortest Path Algorithm"<<endl;
@@ -185,8 +206,13 @@ int main(int argc, const char * argv[]) {
     while (infile >> v >> w >> weight) {
         graph.addEdge(DirectedEdge(v,w,weight));
     }
-    
+
     graph.printEdgeList();
 
+    DijkstrasSP *SP = new DijkstrasSP(graph, 0);
+    
+    cout<<SP->hasPathTo(4)<<endl;
+    
+    
     return 0;
 }

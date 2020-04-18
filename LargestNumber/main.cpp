@@ -41,7 +41,7 @@ string LargestNumber(vector<int> A){
 
 
 int main(int argc, const char * argv[]) {
-    vector<int> vec = {0,8,4,5,7,3};
+    vector<int> vec = {8,4,5,7,3,0};
     cout<<"Program to arrange the elements of array to Largest Number"<<endl;
     cout<<LargestNumber(vec)<<endl;
     return 0;

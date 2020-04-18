@@ -13,7 +13,8 @@ using namespace std;
 
 /*
  
- You are given a string. The only operation allowed is to insert characters in the beginning of the string. How many minimum characters are needed to be inserted to make the string a palindrome string
+ You are given a string. The only operation allowed is to insert characters in the beginning of the string.
+ How many minimum characters are needed to be inserted to make the string a palindrome string
  
  Example:
  Input: ABC
@@ -75,11 +76,34 @@ int findMinimumCharactersforPalindrome(string A) {
     return A.length()-(end+1);
 }
 
+
+size_t findMinimumCharactersToAddAtEndforPalindrome(string A) {
+    size_t start = 0 , end = A.length()-1;
+    size_t temp_start = start;
+    /*Idea is to find longest palindrome length starting from index 0 . Differece of
+     this length from string length is the required value*/
+    while(temp_start<=end)
+    {
+        if(A[temp_start]==A[end])
+        {
+            temp_start++;
+            end--;
+        }
+        else
+        {
+            end = A.length() - 1;
+            temp_start = start++;
+        }
+    }
+    return start - 1;
+}
+
 int main(int argc, const char * argv[]) {
     cout<<"Program to find minimum characters to make the string palindrome"<<endl;
-    int num = solve("AACECAAAA");
+    //int num = solve("AACECAAAA");
     int num2 = findMinimumCharactersforPalindrome("AACECAAAA");
-    cout<<"Number of characters needed to make string palindrom - "<<num<<endl;
-    cout<<"Number of characters needed to make string palindrom - "<<num2<<endl;
+    size_t num3 = findMinimumCharactersToAddAtEndforPalindrome("AAACAB");
+    cout<<"Number of characters needed to insert before the string to make it palindrom - "<<num2<<endl;
+    cout<<"Number of characters to append at the end of the string to make it palindrome - "<<num3<<endl;
     return 0;
 }

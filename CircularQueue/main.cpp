@@ -26,9 +26,14 @@ public:
         size = k;
     }
     
+    int getSize(){
+        return size;
+    }
+    
     /** Insert an element into the circular queue. Return true if the operation is successful. */
     bool enQueue(int value) {
         if (isFull()) {
+            cout<<"Queue is Full"<<endl;
             return false;
         }
         if (isEmpty()) {
@@ -61,7 +66,7 @@ public:
         return data[head];
     }
     
-    /** Get the last item from the queue. */
+    /**Get the last item from the queue. */
     int Rear() {
         if (isEmpty()) {
             return -1;
@@ -93,6 +98,21 @@ public:
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    std::cout << "Test function for Circular Queue"<<endl;
+    MyCircularQueue *Q = new MyCircularQueue(4);
+    Q->enQueue(1);
+    Q->enQueue(2);
+    Q->enQueue(3);
+    Q->enQueue(4);
+    Q->enQueue(5);
+    Q->enQueue(6);
+    
+    for(int i=0;i<Q->getSize();i++) {
+        cout<<Q->Front()<<" ";
+        Q->deQueue();
+    }
+    
+    cout<<endl;
+    
     return 0;
 }

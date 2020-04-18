@@ -21,7 +21,7 @@ public:
     
     Base(int data):basedata(data){ cout<<"In Base(int)"<<endl;}
     
-    virtual ~Base()
+    ~Base()
     {
         cout<<"In ~Base"<<endl;
     }
@@ -73,14 +73,14 @@ void myinterface (Base *b)
 int main()
 {
     //unique_ptr<Base> base = make_unique<DA>(9);
-    DA *d = new DA();
+    Base *d = new DA();
     //DA d;
     
     //b.basic();
     //d.basic();
     //base->basic();
     //d.basic();
-    myinterface(d);
+    //myinterface(d);
     
     delete d;
     return 0;

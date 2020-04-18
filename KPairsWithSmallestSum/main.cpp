@@ -36,11 +36,18 @@ using namespace std;
 
 
 
+void printVector(vector<int> V) {
+    for (auto v:V)
+        cout<<v<<" ";
+    
+    cout<<endl;
+}
+
 vector<pair<int,int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2, int k) {
     vector<pair<int,int>> R;
 
-    int n1 = nums1.size() - 1;
-    int n2 = nums2.size() - 1;
+    int n1 = nums1.size();
+    int n2 = nums2.size();
 
     vector<int> index2(n2,0);
 
@@ -48,7 +55,11 @@ vector<pair<int,int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2, int
         int min_sum = INT_MAX;
         int min_index = 0;
         
+        cout<<"Index2 - ";
+        printVector(index2);
+        
         for(int i = 0; i < n2; i++) {
+            cout<<"nums1 - "<<nums1[i]<<", nums2 - "<<nums2[index2[i]]<<endl;
             if (index2[i] < n2 && ((nums1[i] + nums2[index2[i]]) < min_sum)) {
                 min_index = i;
                 min_sum = nums1[i] + nums2[index2[i]];
@@ -85,10 +96,10 @@ vector<pair<int,int>> kSmallestPairs(vector<int> &A, vector<int> &B, int k) {
 #endif
 
 int main(int argc, const char * argv[]) {
-    vector<int> A = {1,1,4};
-    vector<int> B = {1,2,6};
+    vector<int> A = {1,3,11};
+    vector<int> B = {2,4,8};
     
-    vector<pair<int,int>> result = kSmallestPairs(A,B,2);
+    vector<pair<int,int>> result = kSmallestPairs(A,B,3);
     for(auto c:result) {
         cout<<c.first<<", "<<c.second<<endl;
     }

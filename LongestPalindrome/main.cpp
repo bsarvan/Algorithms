@@ -22,7 +22,7 @@ string longestPalindrome(string A) {
         
         /* For extracting the palindrome of even length */
         low = i-1;
-        high = i+1;
+        high = i;
         cout<<"Low - "<<low<<", High - "<<high<<endl;
         /* Expand the string around ith index, and check for equality */
         while((low >= 0) && (high < length) && (A[low] == A[high])){
@@ -34,8 +34,7 @@ string longestPalindrome(string A) {
             low--;
             high++;
         }
- 
-#if 0
+
         /* For extracting the palindrome of odd length */
         low = i-1;
         high = i+1;
@@ -49,7 +48,7 @@ string longestPalindrome(string A) {
             high++;
  
         }
-#endif
+
         
  
 

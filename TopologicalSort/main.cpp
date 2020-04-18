@@ -89,6 +89,17 @@ void Graph::topologicalSort()
 // Driver program to test above functions
 int main()
 {
+    /*
+                5-->2-->3-->1
+                |
+                V
+           4--> 0
+     
+     
+     
+     */
+    
+    
     // Create a graph given in the above diagram
     Graph g(6);
     g.addEdge(5, 2);

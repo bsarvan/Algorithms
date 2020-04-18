@@ -10,6 +10,27 @@
 #include <vector>
 using namespace std;
 
+/* Function to find the Longest Unique Prefix */
+
+string uniquePrefixUtil(string str1, string str2) {
+    string result;
+    size_t n1 = str1.length();
+    size_t n2 = str2.length();
+    
+    for (size_t i=0,j=0; i<n1 && j<n2; i++,j++) {
+        if (str1[i] != str2[j]) {
+            result.push_back(str1[i]);
+            break;
+        } else {
+            result.push_back((str1[i]));
+        }
+    
+    }
+    
+    return result;
+}
+
+
 /*
  So, you can pick any random string from the array and start checking its characters
  from the beginning in order to see if they can be a part of the common substring.
@@ -25,7 +46,8 @@ string commonPrefixUtil(string str1, string str2)
     {
         if (str1[i] != str2[j])
             break;
-        result.push_back(str1[i]);
+        
+        result += str2[j];
     }
     
     return (result);

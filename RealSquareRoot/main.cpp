@@ -17,8 +17,10 @@ int myModifiedSqrt(int x) {
     int hi = x;
     while(lo<=hi) {
         int mid = lo + (hi-lo)/2;
-        if(mid <= x/mid) lo = mid+1;
-        else hi = mid-1;
+        if(mid <= x/mid)
+            lo = mid+1;
+        else
+            hi = mid-1;
     }
     return hi;
 }
@@ -46,13 +48,14 @@ int mySqrt(int x) {
         }
         
     }
-    return left;
+    return left - 1;
 }
 
 int main(int argc, const char * argv[]) {
     cout<<"Program to compute Square Root"<<endl;
     
     cout<<"Square Root is "<<myModifiedSqrt(8)<<endl<<endl;
+    cout<<"Square Root is "<<mySqrt(8)<<endl<<endl;
     
     return 0;
 }

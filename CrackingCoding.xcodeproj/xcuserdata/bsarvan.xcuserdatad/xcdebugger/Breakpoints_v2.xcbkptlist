@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "A36C5EC7-30D7-4A9B-B8DD-D0E31CEE678B"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3134D9C6-36E0-4C0A-ACEA-35E0D657ECB9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BST/main.cpp"
-            timestampString = "571232902.3092279"
+            filePath = "MinWindowString/main.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
-            landmarkName = "createListofLeavesHelper(struct node* root, vector&lt;int&gt; &amp;list)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "minWindow(s, t)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28E99E9F-71C2-40E2-87D9-E92763A364FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MaxSetSubarray/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "maxset_v2(A)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

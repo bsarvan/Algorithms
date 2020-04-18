@@ -19,7 +19,7 @@ void MaxHeapify(vector<int> &A, int i, int n) {
     int l = LEFT(i);
     int r = RIGHT(i);
     
-    cout<<"L - "<<l<<", R - "<<r<<endl;
+    cout<<"i - "<<i<<", L - "<<l<<", R - "<<r<<endl;
     
     int largest = i;
     

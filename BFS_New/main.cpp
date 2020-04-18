@@ -27,12 +27,18 @@ public:
     
     // function to add an edge to graph
     void addEdge(int v, int w);
+    int numOfVertices() {
+        return V;
+    }
     
     // prints BFS traversal from a given source s
     void BFS(int s);
     void DFS_recursive(int s);
     void DFS_Iterative(int s);
     void DFS(int s);
+    list<int> getAdj(int v) {
+        return adj[v];
+    }
 };
 
 Graph::Graph(int V)
@@ -137,6 +143,48 @@ void Graph::DFS_Iterative(int s) {
         
     }
 }
+
+class Paths  {
+    Graph G;
+    int source;
+public:
+    Paths(Graph G, int S):G(G), source(S) {}
+    bool hasPathTo(int v);
+    vector<int> pathTo(int v);
+};
+
+bool Paths::hasPathTo(int v) {
+    for (auto n:G.getAdj(source)) {
+        if (n == v) {
+            cout<<source<<" and "<<v<<" are connected"<<endl;
+            return true;
+        }
+    }
+    cout<<"There is no path connecting to "<<source<<" and "<<v<<endl;
+    return false;
+}
+
+
+
+class Search {
+    Graph G;
+    int source;
+public:
+    Search(Graph G,int s):G(G),source(s) {}
+    void marked(int v);
+    int count(int v);
+};
+
+void Search::marked(int d) {
+    for (int i = 0; i < G.numOfVertices();i++) {
+        for (auto v : G.getAdj(i)){
+            if (v == d) {
+                cout<<i<<" and "<<v<<" are connected"<<endl;
+            }
+        }
+    }
+    return;
+}
 // Driver program to test methods of graph class
 int main()
 {
@@ -153,7 +201,13 @@ int main()
     << "(starting from vertex 2) \n";
     //g.BFS(0);
     //g.DFS(0);
-    g.DFS_Iterative(0);
+    //g.DFS_Iterative(0);
+    
+    Paths path(g,1);
+    path.hasPathTo(2);
+    
+    //Search search(g,2);
+    //search.marked(3);
     
     cout<<endl;
     

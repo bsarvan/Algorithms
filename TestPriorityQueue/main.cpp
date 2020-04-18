@@ -64,5 +64,10 @@ int main(int argc, const char * argv[]) {
     q.push(make_pair(0.50,3));
     
     showpq(q);
+    cout<<"Printing the output again "<<endl;
+    
+    
+    q.push(make_pair(0.40,3));
+    showpq(q);
     return 0;
 }
