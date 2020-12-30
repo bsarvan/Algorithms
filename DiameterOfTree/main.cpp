@@ -22,13 +22,14 @@ void dfsUtil(int node, int count, bool visited[],
 {
     visited[node] = true;
     count++;
-    for (auto i = adj[node].begin(); i != adj[node].end(); ++i) {
-        if (!visited[*i]) {
+//    for (auto i = adj[node].begin(); i != adj[node].end(); ++i) {
+    for (auto adjacent_node : adj[node]) {
+        if (!visited[adjacent_node]) {
             if (count >= maxCount) {
                 maxCount = count;
-                x = *i;
+                x = adjacent_node;
             }
-            dfsUtil(*i, count, visited, maxCount, adj);
+            dfsUtil(adjacent_node, count, visited, maxCount, adj);
         }
     }
 }

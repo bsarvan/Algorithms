@@ -82,8 +82,9 @@ Node* newNode(int key)
 void printPathsUtil(Node* curr_node, int sum,
             int sum_so_far, vector<int> &path)
 {
-    if (curr_node == NULL)
+    if (curr_node == NULL) {
         return;
+    }
 
     // add the current node's value
     sum_so_far += curr_node->key;
@@ -101,17 +102,13 @@ void printPathsUtil(Node* curr_node, int sum,
         cout << endl;
     }
 
-    // if left child exists
-    if (curr_node->left != NULL)
-        printPathsUtil(curr_node->left, sum, sum_so_far, path);
 
-    // if right child exists
-    if (curr_node->right != NULL)
-        printPathsUtil(curr_node->right, sum, sum_so_far, path);
+    printPathsUtil(curr_node->left, sum, sum_so_far, path);
+    printPathsUtil(curr_node->right, sum, sum_so_far, path);
 
 
-    // Remove last element from path
-    // and move back to parent
+    // Remove the element from path vector
+    // before moving back to parent
     path.pop_back();
 }
 
@@ -125,6 +122,8 @@ void printPaths(Node *root, int sum)
 // Driver program
 int main ()
 {
+    
+    cout<<"Algorith to find all the root to leaf path that are equal to a given sum"<<endl;
     /* 10
     /     \
     28     13

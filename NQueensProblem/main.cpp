@@ -75,7 +75,7 @@ bool solveNQUtil(int board[N][N], int col)
             /* If placing queen in board[i][col]
             doesn't lead to a solution, then
             remove queen from board[i][col] */
-            board[i][col] = 0; // BACKTRACK
+            board[i][col] = 0; // BACKTRACK 
         }
     }
 

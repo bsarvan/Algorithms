@@ -54,7 +54,15 @@ public:
 
 int main(int argc, const char * argv[]) {
     
-    string S = "aabxaa";
+    string S = "aabyxaa";
+    
+    Solution sol;
+    
+    bool output = sol.validPalindrome(S);
+    
+    string result = output == true ? "YES" : "FALSE";
+    
+    cout<<result<<endl;
     return 0;
 }
 

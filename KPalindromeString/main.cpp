@@ -6,6 +6,15 @@
 //  Copyright © 2020 bsarvan. All rights reserved.
 //
 
+
+/*
+ 
+ A string is K palindrome if it becomes a palindrome on removing at most K characters from it.
+ Write an algorithm to check if a given string is K-Palindrome or not.
+ 
+ */
+
+
 // A Naive recursive C++ program to find
 // if given string is K-Palindrome or not
 #include <iostream>
@@ -51,6 +60,6 @@ int main()
 {
     string str = "acdcb";
     int k = 2;
-    isKPal(str, k)? cout << "Yes" : cout << "No"<<endl;
+    isKPal(str, k)? cout << "Yes"<<endl : cout << "No"<<endl;
     return 0;
 }

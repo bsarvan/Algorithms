@@ -34,11 +34,12 @@ public:
         int i;
         for (i = 0; i < v.size(); ++i) {
             if (v[i] > timestamp - 300) {
+                cout<<"Breaking for i "<<i<<endl;
                 break;
             }
         }
         cout<<"Returning - "<<i<<endl;
-        return v.size() - i;
+        return v.size() ;
     }
 };
 
@@ -53,7 +54,7 @@ int main() {
     counter.hit(1);
     counter.hit(2);
     counter.hit(3);
-    cout<<counter.getHits(302)<<endl;
+    cout<<counter.getHits(300)<<endl;
     
     
     

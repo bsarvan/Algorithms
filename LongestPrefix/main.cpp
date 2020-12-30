@@ -64,6 +64,7 @@ string commonPrefix (vector<string> A, int n)
     
     return (prefix);
 }
+
 int main(int argc, const char * argv[]) {
     vector<string> S = {"abcd", "abd"};
     

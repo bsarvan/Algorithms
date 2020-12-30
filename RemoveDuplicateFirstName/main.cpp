@@ -27,9 +27,15 @@ struct Name {
 };
 
 void eliminateDuplicate(vector<Name> *A) {
-  sort(A->begin(),A->end());
-  vector<Name>::iterator iter = unique(A->begin(),A->end());
+  sort(A->begin(),A->end());    
+  auto iter = unique(A->begin(),A->end());
   A->erase(iter, A->end());
+}
+
+void eliminateDuplicateWithReferenceArgument(vector<Name> &A) {
+  sort(A.begin(),A.end());
+  auto iter = unique(A.begin(),A.end());
+  A.erase(iter, A.end());
 }
 
 int main(int argc, const char * argv[]) {

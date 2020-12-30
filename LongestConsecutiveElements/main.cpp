@@ -17,6 +17,7 @@
 #include <iostream>
 #include <unordered_set>
 #include <vector>
+#include <set>
 using namespace std;
 
 /*
@@ -65,28 +66,57 @@ int findLongestConseqSubseq(int arr[], int n)
     return ans + 1;
 }
 
+
+
+int findLongestConsecutiveSubsequence(vector<int> num) {
+    set<int> S;
+    
+    for( auto n:num) {
+        S.emplace(n);
+    }
+    
+    
+    int len = 0;
+    int max_len = INT_MIN;
+    int tmp = *(S.begin()) - 1;
+    for (auto s:S) {
+        if (tmp + 1 == s) {
+            cout<<"Consecutive"<<endl;
+            len++;
+        } else {
+            cout<<"Break"<<endl;
+            len = 0;
+        }
+        tmp = s;
+        max_len = max(max_len, len);
+    }
+    
+    cout<<"Max consecutive len "<<max_len<<endl;
+    return max_len;
+}
+
 int main(int argc, const char * argv[]) {
     cout<<"Coding Challenge - Find the longest consecutive elements in the stream of numbers"<<endl;
-    vector<int> v = {100,4,200,1,3,2};
-    
-    cout<<"Vector Elements - ";
-    for (auto c:v) {
-        cout<<c<<" ";
-    }
-    cout<<endl;
-    
-    sort(v.begin(), v.end());
-    
-    int max_len = 0;
-    int count = 0;
-    for (int i=0; i<v.size() - 1;i++) {
-        if (v[i] + 1 == v[i+1]) {
-            count++;
-        } else {
-            max_len = max(max_len, count);
-        }
-    }
-    
-    cout<<"Max Len - "<<max_len<<endl;
+    vector<int> v = {100,4,200,1,3,2,10, 15, 13, 12, 11, 14, 16};
+    findLongestConsecutiveSubsequence(v);
+//    cout<<"Vector Elements - ";
+//    for (auto c:v) {
+//        cout<<c<<" ";
+//    }
+//    cout<<endl;
+//
+//    sort(v.begin(), v.end());
+//
+//    int max_len = 0;
+//    int count = 0;
+//    for (int i=0; i<v.size() - 1;i++) {
+//        if (v[i] + 1 == v[i+1]) {
+//            count++;
+//        } else {
+//            max_len = max(max_len, count);
+//        }
+//    }
+//
+//    cout<<"Max Len - "<<max_len<<endl;
     return 0;
 }

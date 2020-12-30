@@ -24,6 +24,18 @@ int binarysearch(int a[],int low, int high, int val) {
     }
     return -1;
 }
+
+
+int binarysearch(vector<int> arr) {
+    int low = 0;
+    int high = arr.size() - 1;
+    int mid = 0;
+    
+    while(low <= high) {
+        if (arr[mid] == )
+        
+    }
+}
 int main(int argc, const char * argv[]) {
     cout<<"Program for binary search"<<endl;
     int arr[10] = {1,2,3,4,5,6,7,8,9,10};

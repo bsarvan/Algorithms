@@ -13,10 +13,10 @@
 #include <stack>
 #include <set>
 #include <queue>
+#include <float.h>
 using namespace std;
 
-ifstream infile("/Users/bsarvan/Personal/Xcode Projects/CrackingCoding/ShortestPath/input.txt");
-
+ifstream infile("/Users/bharat.sarvan/Me/workspace/Programming/ShortestPath/input.txt");
 
 
 class DirectedEdge
@@ -76,92 +76,39 @@ public:
     }
 };
 
-#if 0
-template<typename T>
-class custom_priority_queue : public std::priority_queue<T, std::vector<T>>
-{
-public:
-  
-    bool find(const T& value) {
-        auto it = std::find(this->c.begin(), this->c.end(), value);
-        if (it != this->c.end()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
-    bool remove(const T& value) {
-        auto it = std::find(this->c.begin(), this->c.end(), value);
-        if (it != this->c.end()) {
-            this->c.erase(it);
-            std::make_heap(this->c.begin(), this->c.end(), this->comp);
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-};
-
-class MyPQ {
-    
-    priority_queue<pair<int,int>,vector<pair<int,int>,greater<>> pq;
-public:
-    addPQ(int v, double w) {
-        pq.push(make_pair<w,v>);
-    }
-    erasePQ(int v, double w) {
-        pq.pop();
-    }
-    
-    bool findPQ(int v) {
-        priority_queue< pair<int,int>,vector<pair<int,int>> ,greater<> > qq = pq;
-        while(!qq.empty()) {
-            pair<int, int> tmp = qq.top();
-            if (tmp.second == v) {
-                return true;
-            }
-        }
-    }
-    
-};
-#endif
     
 class DijkstrasSP {
-    DirectedEdge *edgeTo;
-    double *distTo;
-    multiset<pair<int, double>> pq;
+    vector<DirectedEdge> edgeTo;
+    vector<double> distTo;
+    priority_queue<pair<double, int>, vector<pair<double,int>>, greater<>> pq;
     
     
 public:
     DijkstrasSP(EdgeWeightedDigraph G, int s) {
-        edgeTo = new DirectedEdge[G.getV()];
-        distTo = new double[G.getV()];
-       
+//        edgeTo = new DirectedEdge[G.getV()];
+//        distTo = new double[G.getV()];
+        edgeTo.resize(G.getV());
+        distTo.resize(G.getV(), DBL_MAX);
         
-        for(int v=0;v<G.getV();v++) {
-            distTo[v] = INT_MAX;
-        }
         distTo[s]=0.0;
         pq.emplace(s,0.0);
         while(!pq.empty()) {
-            pair<int,double> p = *pq.begin();
-            pq.erase(pq.begin());
-            cout<<"PQ First - "<<p.first<<",PQ Second - "<<p.second<<endl;
+            pair<double,int> p = pq.top();
+            pq.pop();
+            // Relax the edges originating from the vertex p.second
             relax(G,p.second);
             
         }
     }
     
     void relax(EdgeWeightedDigraph G, int v) {
-        
+        // Get all the adjacent edges for the vertex v and relax.
         for(auto e:G.getAdj(v)) {
             int w = e.to();
             if (distTo[w] > distTo[v] + e.getWeight()) {
                 distTo[w] = distTo[v] + e.getWeight();
                 edgeTo[w] = e;
-                pq.insert(make_pair(w,distTo[w]));
+                pq.push(make_pair(distTo[w], w));
             }
         }
         return;
@@ -172,30 +119,16 @@ public:
         return (distTo[w] != INT_MAX);
     }
     
-};
-
-void BellmanFord(EdgeWeightedDigraph graph) {
-    vector<int> d(graph.getV(), INT_MAX);
-
-    //d[0] = 0;
-
-    for (int u = 0; u< graph.getV() - 1;u++) {
-        bool flag = false;
-        for (auto e:graph.getAdj(u)) {
-            int v = e.to();
-            if (d[v] > d[u] + e.getWeight()) {
-                d[v] = d[u] + e.getWeight();
-    flag = true;
-            }
-            
+    void printDistTo(EdgeWeightedDigraph G) {
+        for (int i = 0; i < G.getV(); i++) {
+            cout<<i<<" - "<<distTo[i]<<endl;
         }
     }
-    return;
-}
     
+};
 
 int main(int argc, const char * argv[]) {
-    cout<<"Sample Program for Shortest Path Algorithm"<<endl;
+    cout<<"Algorithm to find the shortest path"<<endl;
     int vertices, edges;
     infile >> vertices >> edges;
     int v,w;
@@ -211,7 +144,8 @@ int main(int argc, const char * argv[]) {
 
     DijkstrasSP *SP = new DijkstrasSP(graph, 0);
     
-    cout<<SP->hasPathTo(4)<<endl;
+    cout<<"Distance of the vertices form the source vertex 0 is as below - "<<endl;
+    SP->printDistTo(graph);
     
     
     return 0;

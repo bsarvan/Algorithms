@@ -54,7 +54,7 @@ int longestValidParentisUsingStack(string S) {
         if (S[i] == '(') {
             cout<<"Pushing 1 - "<<i<<endl;
             stack.push(i);
-        } else {
+        } else if (!stack.empty()){
             stack.pop();
             if (stack.empty()) {
                 cout<<"Pushing 2 - "<<i<<endl;
@@ -81,7 +81,7 @@ int longestValidParenthesesNoExtraSpace(string s) {
         }
         if (left == right) {
             maxlength = max(maxlength, 2 * right);
-        } else if (right >= left) {
+        } else if (right > left) {
             left = right = 0;
         }
     }
@@ -96,10 +96,11 @@ int longestValidParenthesesNoExtraSpace(string s) {
         }
         if (left == right) {
             maxlength = max(maxlength, 2 * left);
-        } else if (left >= right) {
+        } else if (left > right) {
             left = right = 0;
         }
     }
+    
     return maxlength;
 }
 
@@ -108,8 +109,8 @@ int main(int argc, const char * argv[]) {
     
     std::cout << "Algorithm to find the longest valid parenthesis in a given string\n";
 //    int maxlen = longestValidParenthesisDP("())()()");
-    int maxlen = longestValidParentisUsingStack("())()()");
-//    int maxlen = longestValidParenthesesNoExtraSpace("())()()");
+    int maxlen = longestValidParentisUsingStack(")()())");
+//    int maxlen = longestValidParenthesesNoExtraSpace("()()(()");
     cout<<"Maximum length of substring with valid parenthesis - "<<maxlen<<endl;
     return 0;
 }

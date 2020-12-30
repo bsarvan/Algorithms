@@ -11,9 +11,14 @@
 using namespace std;
 
 int longestIncreasingSubsequenceDP(vector<int> A) {
+    // Vector L to hold the length of longest increasing subsequence until ith position
+    // Worst case the maximum length of longest subsequence can be 1
     vector<int> L(A.size(),1);
     
+    // Compute the length of the longest subsequence until each index i.
     for (int i = 1; i<A.size(); i++) {
+        
+        // Compute the number of digits less than the digit at index i
         for (int j = 0; j < i; j++) {
             if (A[i] > A[j]) {
                 L[i] = max(L[i], L[j] + 1);

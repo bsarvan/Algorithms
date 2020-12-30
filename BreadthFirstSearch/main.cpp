@@ -148,9 +148,9 @@ int main()
     g.addEdge(2, 3);
     g.addEdge(3, 3);
     
-    cout << "Following is Breadth First Traversal "
+    cout << "Following is Breadth Traversal "
     << "(starting from vertex 2) \n";
-    //g.BFS(0);
+    g.BFS(0);
     //g.DFS(0);
     //g.DFS_Iterative(0);
     

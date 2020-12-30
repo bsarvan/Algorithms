@@ -21,31 +21,67 @@ int minCoins(int coins[], int m, int V)
     int res = INT_MAX;
     
     // Try every coin that has smaller value than V
+    cout<<"Value - "<<V<<endl;;
     for (int i=0; i<m; i++)
     {
         if (coins[i] <= V)
         {
-            
+            if (i != 0) {
+                cout<<coins[i]<<endl;
+            } else {
+                cout<<coins[i]<<" ";
+            }
             int sub_res = minCoins(coins, m, V-coins[i]);
-            cout<<"Value - "<<V<<", sub_res - "<<sub_res<<endl;
             
             // Check for INT_MAX to avoid overflow and see if
             // result can minimized
             if (sub_res != INT_MAX && sub_res + 1 < res)
                 res = sub_res + 1;
         }
+        cout<<endl<<"================="<<endl;
     }
-    cout<<"========================"<<endl;
+    cout<<"*******************"<<endl;
     return res;
 }
 
+
+// DP Approach
+
+int minCoinsDP(int coins[], int m, int V)
+{
+    // table[i] will be storing the minimum number of coins
+    // required for i value.  So table[V] will have result
+    int table[V+1];
+  
+    // Base case (If given value V is 0)
+    table[0] = 0;
+  
+    // Initialize all table values as Infinite
+    for (int i=1; i<=V; i++)
+        table[i] = INT_MAX;
+  
+    // Compute minimum coins required for all
+    // values from 1 to V
+    for (int i=1; i<=V; i++)
+    {
+        // Go through all coins smaller than i
+        for (int j=0; j<m; j++)
+          if (coins[j] <= i)
+          {
+              int sub_res = table[i-coins[j]];
+              if (sub_res != INT_MAX && sub_res + 1 < table[i])
+                  table[i] = sub_res + 1;
+          }
+    }
+    return table[V];
+}
 // Driver program to test above function
 int main()
 {
     int coins[] = {4, 5, 3, 1};
     int m = sizeof(coins)/sizeof(coins[0]);
-    int V = 11;
+    int V = 10;
     cout << "Minimum coins required is "
-    << endl<<minCoins(coins, m, V)<<endl;
+    << endl<<minCoinsDP(coins, m, V)<<endl;
     return 0;
 }

@@ -639,6 +639,28 @@ void BuildExteriorOfBinaryTree(struct node* root) {
     
 }
 
+
+struct node * BuildBSTFromPostOrder(vector<int> seq, int start, int end) {
+    
+    if (start < end){
+        return nullptr;
+    }
+    
+    int transition = start - 1;
+    while(transition >= 0 && seq[transition] > seq[start]) {
+        transition--;
+    }
+  
+    
+    struct node *root = new node(seq[start]);
+    root->right = BuildBSTFromPostOrder(seq, start - 1, transition + 1);
+    root->left = BuildBSTFromPostOrder(seq, transition, end);
+    
+    return root;
+}
+
+
+
 // Driver Program to test above functions
 int main()
 {
@@ -656,43 +678,47 @@ int main()
     insert(root, 70);
     insert(root, 60);
     insert(root, 80);
-    inorder(root);
+    
+    postOrder(root);
     cout<<endl;
     
-    //BuildExteriorOfBinaryTree(root);
-    buildNodeLevelList(root);
+    /* Build BST from a post order sequence*/
+    vector<int> postorder = {20,40,30,60,80,70,50};
+    struct node* bst_root = BuildBSTFromPostOrder(postorder,postorder.size() - 1, 0);
+    postOrder(bst_root);
+    cout<<endl;
+//    BuildExteriorOfBinaryTree(root);
+//    buildNodeLevelList(root);
     
 //    unordered_set<int> S;
-//  inorderFindPair(root, S, 100);
+//    inorderFindPair(root, S, 100);
        
 #if 0
-    vector<int> preOrder = {50,30,20,-1,-1,40,-1,-1,70,60,-1,-1,80,-1,-1};
-    struct node *BinaryTree;
-    size_t j = 0;
-    buildTreeFromPreorderSeq(BinaryTree, preOrder, j);
-    inorder(BinaryTree);
+    /* Build BST from PreOrder Sequence with delimiters */
+//    vector<int> preOrder = {50,30,20,-1,-1,40,-1,-1,70,60,-1,-1,80,-1,-1};
+//    struct node *BinaryTree;
+//    size_t j = 0;
+//    buildTreeFromPreorderSeq(BinaryTree, preOrder, j);
+//    inorder(BinaryTree);
     
-
-    
-    printf("Height of BST is %d\n", height(root));
-    cout<<"Number of Nodes in Tree - "<<countNodes(root)<<endl;
-    cout<<"Number of Nodes in Tree - "<<countNodes_v2(root)<<endl;
-    
-    
-
-    
-    string S;
-    serialize(root, S);
-    //postOrder(root);
-    cout<<S<<endl;
-    
-    struct node *N;
-    size_t i = 0;
-    deserialize(N, S, i );
-
-    inorder(N);
-    cout<<endl;
-
+    /* Compute height and number of nodes in a BST */
+//    printf("Height of BST is %d\n", height(root));
+//    cout<<"Number of Nodes in Tree - "<<countNodes(root)<<endl;
+//    cout<<"Number of Nodes in Tree - "<<countNodes_v2(root)<<endl;
+//
+    /* Serializing and Deserializing the BST Start*/
+//    string S;
+//    serialize(root, S);
+//    //postOrder(root);
+//    cout<<S<<endl;
+//
+//    struct node *N;
+//    size_t i = 0;
+//    deserialize(N, S, i );
+//
+//    inorder(N);
+//    cout<<endl;
+    /* Serializing and Deserializing the BST Start*/
     
     vector<int> preOrder = {50,30,20,-1,-1,40,-1,-1,70,60,-1,-1,80,-1,-1};
     struct node *BinaryTree;

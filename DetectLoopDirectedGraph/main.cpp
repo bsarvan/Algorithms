@@ -16,8 +16,7 @@ bool helper(list<int> *graph, int u, bool* visited, bool* recStack)
 {
     visited[u]=true;
     recStack[u]=true;
-    list<int>::iterator i;
-    //for(i = graph[u].begin();i!=graph[u].end();++i)
+   
     for (auto n:graph[u])
     {
         if(recStack[n]) //if vertice v is found in recursion stack of this DFS traversal

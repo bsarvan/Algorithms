@@ -67,13 +67,12 @@ int sumRange_v2(struct Node *root, int low, int high) {
         sumRange_v2(root->right, low, high);
     }
     
-    if (high < root->val) {
+    if (high < root->val) { 
         sumRange_v2(root->left, low, high);
     }
     
     return 0;
 }
-
 
 int main(int argc, const char * argv[]) {
     
@@ -94,9 +93,9 @@ int main(int argc, const char * argv[]) {
     
     int sum = 0;
     
-    SumRange(root,4, 9, sum);
-    
-    cout<<"Sum of Nodes within Range - "<<sum<<endl;
+//    SumRange(root,4, 9, sum);
+//
+//    cout<<"Sum of Nodes within Range - "<<sum<<endl;
     cout<<"Sum of Nodes within Range on new function - "<<sumRange_v2(root, 4, 9)<<endl;
     cout<<endl;
     

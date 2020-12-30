@@ -23,10 +23,6 @@ string intToRoman(int num) {
 }
 
 int main(int argc, const char * argv[]) {
-    string s = "128";
-    int n = std::stoi(s);
-    int result = n & (n-1);
-    cout<<"Power of 2 ? - "<<result<<endl;
     
     cout<<"300 in Roman is - "<<intToRoman(300)<<endl;
     

@@ -78,7 +78,7 @@ bool WordBreak(string s, vector<string> &dict) {
     cout<<"Input String - "<<s<<endl;
     
     for(int i = 1; i<=size; i++) {
-        cout<<"Susbstring  - "<<s.substr(0,i)<<endl;
+        cout<<"Susbstring  - "<<s.substr(0,i)<<" - "<<i<<endl;
         if (find(dict.begin(), dict.end(), s.substr(0,i)) != dict.end() &&
             WordBreak(s.substr(i,size - i), dict)) {
             return true;
@@ -94,7 +94,11 @@ int main(int argc, const char * argv[]) {
     
     vector<string> dict = {"cats", "dog", "sand", "and", "cat"};
     
-    bool result = WordBreak("catsandog", dict);
+    string S = "catsanddog";
+    
+    cout<<S.substr(0,2)<<endl;
+    
+    bool result = WordBreak(S, dict);
     cout<<"Result is "<<result<<endl<<endl;
     
     return 0;

@@ -28,6 +28,13 @@
  Explanation: The first 2 pairs are returned from the sequence:
  [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
  
+ 
+ Algorithm -
+ We one by one find k smallest sum pairs, starting from least sum pair. The idea is to keep track of all elements of arr2[]
+ which have been already considered for every element arr1[i1] so that in an iteration we only consider next element.
+ For this purpose, we use an index array index2[] to track the indexes of next elements in the other array. It simply means
+ that which element of second array to be added with the element of first array in each and every iteration. We increment
+ value in index array for the element that forms next minimum value pair.
  */
 
 #include <iostream>
@@ -49,14 +56,17 @@ vector<pair<int,int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2, int
     int n1 = nums1.size();
     int n2 = nums2.size();
 
+    // Stores current index in arr2[] for
+    // every element of arr1[]. Initially
+    // all values are considered 0.
+    // Here current index is the index before
+    // which all elements are considered as
+    // part of output.
     vector<int> index2(n2,0);
 
     while(k > 0) {
         int min_sum = INT_MAX;
         int min_index = 0;
-        
-        cout<<"Index2 - ";
-        printVector(index2);
         
         for(int i = 0; i < n2; i++) {
             cout<<"nums1 - "<<nums1[i]<<", nums2 - "<<nums2[index2[i]]<<endl;
@@ -68,6 +78,7 @@ vector<pair<int,int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2, int
         
         R.emplace_back(make_pair(nums1[min_index], nums2[index2[min_index]]));
         index2[min_index]++;
+        cout<<"Index2 - "; printVector(index2);
         k--;
         
     }
@@ -96,7 +107,7 @@ vector<pair<int,int>> kSmallestPairs(vector<int> &A, vector<int> &B, int k) {
 #endif
 
 int main(int argc, const char * argv[]) {
-    vector<int> A = {1,3,11};
+    vector<int> A = {5,9,11};
     vector<int> B = {2,4,8};
     
     vector<pair<int,int>> result = kSmallestPairs(A,B,3);

@@ -44,21 +44,22 @@ void Graph::addEdge(int v, int w)
 }
 
 // A recursive function used by topologicalSort
-void Graph::topologicalSortUtil(int v, bool visited[],
+void Graph::topologicalSortUtil(int u, bool visited[],
                                 stack<int> &Stack)
 {
     // Mark the current node as visited.
-    visited[v] = true;
+    visited[u] = true;
     
     // Recur for all the vertices adjacent to this vertex
     list<int>::iterator i;
-    for (i = adj[v].begin(); i != adj[v].end(); ++i)
-        if (!visited[*i])
-            topologicalSortUtil(*i, visited, Stack);
+//    for (i = adj[v].begin(); i != adj[v].end(); ++i)
+    for (auto v:adj[u])
+        if (!visited[v])
+            topologicalSortUtil(v, visited, Stack);
     
     // Push current vertex to stack which stores result
-    cout<<v<<endl;
-    Stack.push(v);
+//    cout<<v<<endl;
+    Stack.push(u);
 }
 
 // The function to do Topological Sort. It uses recursive

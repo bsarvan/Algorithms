@@ -102,7 +102,7 @@ void searchWord(TrieNode *root, bool Hash[], string str)
 // Prints all words present in dictionary.
 void PrintAllWords(char Arr[], TrieNode *root, int n)
 {
-    // create a 'has' array that will store all present
+    // create a 'Hash' array that will store all present
     // character in Arr[]
     bool Hash[SIZE];
 
@@ -136,7 +136,7 @@ int main()
 {
     // Let the given dictionary be following
     char Dict[][20] = {"go", "bat", "me", "eat",
-                    "goal", "boy", "run", "game"} ;
+                    "goal", "boy", "run", "game", "bbbb"} ;
 
     // Root Node of Trie
     TrieNode *root = getNode();

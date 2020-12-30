@@ -12,25 +12,29 @@ using namespace std;
 
 string addBinaryString(string A, string B) {
     
-    int carry = 0;
+    int val = 0;
     string res;
+    int carry = 0;
     
     for (int i = A.size() - 1; i>=0;i--) {
         int n1 = A[i] - '0';
         int n2 = B[i] - '0';
         
-        int val = n1^n2;
+        int sum = n1^n2^carry;
+        cout<<"Val - "<<sum;
+        res.insert(0,to_string(sum));
         
-        int sum = val ^ carry;
-        
-        if (val || sum) {
+        val = n1 & n2;
+        if (val || val & carry)
             carry = 1;
-        }
+        else
+            carry = 0;
         
-        cout<<to_string(sum)<<" ";
+        cout<<", Carry - "<<carry<<endl;
+        
     }
     cout<<endl;
-    return "";
+    return res;
 }
 
 int main(int argc, const char * argv[]) {
@@ -38,8 +42,8 @@ int main(int argc, const char * argv[]) {
     
     string a = "101";
     string b = "001";
-    addBinaryString(a, b);
+    string res = addBinaryString(a, b);
     
-    std::cout << "Hello, World!\n";
+    std::cout <<res<<endl;
     return 0;
 }

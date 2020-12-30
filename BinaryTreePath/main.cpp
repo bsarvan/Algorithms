@@ -72,13 +72,32 @@ TreeNode *UpsideDown(TreeNode *root) {
     
     if (L) {
         TreeNode *ret = UpsideDown(L);
-        cout<<"Processing Node "<<L->val<<endl;
+        cout<<"Processing Node "<<root->val<<endl;
+        cout<<"ret - "<<ret<<endl;
         L->left = R;
         L->right = parent;
         return ret;
     }
     return root;
 }
+
+TreeNode* upsideDownBinaryTree(TreeNode* root) {
+    if (!root || !root->left) {
+        return root;
+    }
+    
+    TreeNode* newRoot = upsideDownBinaryTree(root->left);
+    cout<<"root - "<<root->val<<", root->left - "<<root->left<<", root->right - "<<root->right<<endl;
+    root->left->left = root->right;
+    root->left->right = root;
+    root->left = NULL;
+    root->right = NULL;
+    
+    cout<<"New Root - "<<newRoot->val<<endl;
+    return newRoot;
+}
+
+
 
 int main(int argc, const char * argv[]) {
     
@@ -101,8 +120,8 @@ int main(int argc, const char * argv[]) {
 //    }
     
     printInorder(root);
-    UpsideDown(root);
-    printInorder(root);
+    TreeNode *newRoot = upsideDownBinaryTree(root);
+    printInorder(newRoot);
     
     return 0;
 }

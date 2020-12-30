@@ -28,11 +28,15 @@ string findReplace(string S, vector<int> indexes, vector<string> src, vector<str
     
     int i = 0;
     while (i < S.size()) {
-        cout<<S[i]<<endl;
+        
+        // Check if the index is match to be replaced
         if (match[i] >= 0) {
+            // Append the target pattern to the result
             ans+=tgt[match[i]];
+            // Move the index by the length of the replaced pattern
             i+=src[match[i]].size();
         } else {
+            // For index not to be replaced, add the character to the result string
             ans += S[i];
             i++;
         }

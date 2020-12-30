@@ -9,6 +9,8 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 bool isAdjacent(string a, string b) {
@@ -80,7 +82,43 @@ int WordLadderLength(string beginWord, string endWord, vector<string> wordList) 
     return 0;
 }
 
+using ll = int;
+int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+    queue<pair<string, ll>> q;
+    q.push({beginWord, 0});
 
+    unordered_set<string> s;
+    unordered_map<string, bool> vis;
+    for (auto &word : wordList) {
+        s.insert(word);
+    }
+
+    while (!q.empty()) {
+        auto tp = q.front();
+
+        if (tp.first == endWord) {
+            return tp.second + 1;
+        }
+        
+        q.pop();
+
+        if (vis[tp.first]) continue;
+        vis[tp.first] = 1;
+
+        for (int i = 0; i < 26; ++i) {
+            char c = 'a' + i;
+            for (int j = 0; j < tp.first.size(); ++j) {
+                string &temp = tp.first;
+                char orig = temp[j];
+                temp[j] = c;
+                if (s.find(temp) != s.end()) q.push({temp, tp.second + 1});
+                temp[j] = orig;
+            }
+        }
+    }
+
+    return 0;
+}
 
 int TransformString(vector<string> D, const string S, const string T) {
     struct StringWithDistance {
@@ -135,11 +173,11 @@ int main() {
 //    string endWord = "c";
     
     
-    int len = WordLadderLength(startWord, endWord, WordList);
-    //int l = TransformString(WordList, startWord, endWord);
+//    int len = WordLadderLength(startWord, endWord, WordList);
+    int l = TransformString(WordList, startWord, endWord);
     
-    cout<<"Length from Function WordLadderLength - "<<len<<endl;
-    //out<<"Length from Function TransformString - "<<l<<endl;
+//    cout<<"Length from Function WordLadderLength - "<<len<<endl;
+    cout<<"Length from Function TransformString - "<<l<<endl;
     
     return 0;
 }

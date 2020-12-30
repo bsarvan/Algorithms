@@ -55,7 +55,7 @@ int solve(string A) {
 }
 
 
-int findMinimumCharactersforPalindrome(string A) {
+int findMinimumCharactersToAddAtBeginforPalindrome(string A) {
     int start = 0 , end = A.length()-1;
     int temp_end = end;
     /*Idea is to find longest palindrome length starting from index 0 . Differece of
@@ -66,9 +66,7 @@ int findMinimumCharactersforPalindrome(string A) {
         {
             start++;
             temp_end--;
-        }
-        else
-        {
+        } else {
             start = 0;
             temp_end = --end;
         }
@@ -101,7 +99,7 @@ size_t findMinimumCharactersToAddAtEndforPalindrome(string A) {
 int main(int argc, const char * argv[]) {
     cout<<"Program to find minimum characters to make the string palindrome"<<endl;
     //int num = solve("AACECAAAA");
-    int num2 = findMinimumCharactersforPalindrome("AACECAAAA");
+    int num2 = findMinimumCharactersToAddAtBeginforPalindrome("AACECAAAA");
     size_t num3 = findMinimumCharactersToAddAtEndforPalindrome("AAACAB");
     cout<<"Number of characters needed to insert before the string to make it palindrom - "<<num2<<endl;
     cout<<"Number of characters to append at the end of the string to make it palindrome - "<<num3<<endl;

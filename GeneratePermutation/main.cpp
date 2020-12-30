@@ -32,7 +32,7 @@ int main(int argc, const char * argv[]) {
     
     
     vector<vector<int>> results;
-    permute(input,0, &results);
+    permute(input, 0, &results);
     for (auto c:results) {
         for (auto b:c) {
             cout<<b<<" ";

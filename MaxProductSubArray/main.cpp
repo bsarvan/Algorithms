@@ -6,18 +6,35 @@
 //  Copyright © 2020 bsarvan. All rights reserved.
 //
 
+/*
+ Max Product SubArray
+ 
+ Given an array that contains both positive and negative integers, find the product of the maximum product subarray. Expected Time complexity is O(n) and only O(1) extra space can be used.
+
+ Examples:
+
+ Input: arr[] = {6, -3, -10, 0, 2}
+ Output:   180  // The subarray is {6, -3, -10}
+
+ Input: arr[] = {-1, -3, -10, 0, 60}
+ Output:   60  // The subarray is {60}
+
+ Input: arr[] = {-2, -40, 0, -2, -3}
+ Output:   80  // The subarray is {-2, -40}
+ 
+ */
 #include <iostream>
-#include <stdio.h>
+using namespace std;
 
-// Utility function to find minimum of two numbers
-int min(int x, int y) {
-    return (x < y) ? x : y;
-}
-
-// Utility function to find maximum of two numbers
-int max(int x, int y) {
-    return (x > y) ? x : y;
-}
+//// Utility function to find minimum of two numbers
+//int min(int x, int y) {
+//    return (x < y) ? x : y;
+//}
+//
+//// Utility function to find maximum of two numbers
+//int max(int x, int y) {
+//    return (x > y) ? x : y;
+//}
 
 // Function to return maximum product of a sub-array of given array
 int maxProduct(int arr[], int n)
@@ -53,8 +70,7 @@ int main(void)
     int arr[] = { -6, 4, -5, 8, -10, 0, 8 };
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("The maximum product of a sub-array is %d",
-            maxProduct(arr, n));
+    cout<<"The maximum product of a sub-array is - "<<maxProduct(arr, n)<<endl;
 
     return 0;
 }

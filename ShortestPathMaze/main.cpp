@@ -91,7 +91,7 @@ int BFS(int mat[][COL], Point src, Point dest)
                 !visited[row][col])
             {
                 // mark cell as visited and enqueue it
-                visited[row][col] = true;
+                visited[row][col] = true; 
                 queueNode Adjcell = { {row, col},
                     curr.dist + 1 };
                 q.push(Adjcell);

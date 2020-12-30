@@ -27,6 +27,7 @@ int findMedian(vector<vector<int> > &A) {
         cout<<"min-"<<min<<",max-"<<max<<",mid-"<<mid<<endl;
         int cnt = 0;
         for (int i = 0; i < n; ++i) {
+            //Find count of elements smaller than mid
             cnt += upper_bound(&A[i][0], &A[i][m], mid) - &A[i][0];
             cout<<"Row - "<<i<<";cnt - "<<cnt<<endl;
         }

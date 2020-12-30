@@ -44,6 +44,14 @@ Graph* createGraph(int V, int E)
     return graph;
 }
 
+
+void PrintParent(int parent[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout<<parent[i]<<" ";
+    }
+    cout<<endl;
+}
+
 // A utility function to find the subset of an element i
 int find(int parent[], int i)
 {
@@ -84,7 +92,10 @@ int isCycle( Graph* graph )
         if (x == y)
             return 1;
 
-        Union(parent, x, y);
+//        Union(parent, x, y);
+        Union(parent, graph->edge[i].src, graph->edge[i].dest);
+        
+        PrintParent(parent, graph->V);
     }
     return 0;
 }

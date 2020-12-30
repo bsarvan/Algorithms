@@ -160,6 +160,39 @@ int shortest(int grid[ROW][COL], int row, int col)
     return dis[row - 1][col - 1];
 }
   
+
+int findMinimumCostPath(vector<vector<int>> grid) {
+    vector<vector<int>> dist(grid.size(), vector<int>(grid[0].size(), INT_MAX));
+    set<struct cell> st;
+    
+    vector<vector<int>> dirs = {{0,1},{0,-1},{1,0},{-1,0}};
+    
+    st.insert(cell(0,0,0));
+    dist[0][0] = grid[0][0];
+    
+    while(!st.empty()) {
+        cell k = *st.begin();
+        st.erase(st.begin());
+        
+        for (auto d:dirs) {
+            int X = k.x + d[0];
+            int Y = k.y + d[1];
+            
+            if (dist[X][Y] > dist[k.x][k.y] + grid[X][Y]) {
+                
+                if (dist[X][Y] != INT_MAX){
+                    st.erase(st.find(cell(X, Y, dist[X][Y])));
+                }
+                
+                // Update the distance in the dist matrix
+                dist[X][Y] = dist[k.x][k.y] + grid[X][Y];
+                st.insert(cell(X, Y, dist[X][Y]));
+            }
+        }
+    }
+    return dist[dist.size() - 1][dist[0].size() - 1];
+}
+
 // Driver code to test above methods
 int main()
 {
@@ -172,14 +205,25 @@ int main()
 //        99, 32, 111, 41, 20
 //    };
     
-    int grid[ROW][COL] =
-    {
-        1, 2, 4, 12,
-        4, 1, 5, 6,
-        2, 3, 7, 9
-    };
+//    int grid[ROW][COL] =
+//    {
+//        1, 2, 4, 12,
+//        4, 1, 5, 6,
+//        2, 3, 7, 9
+//    };
+    
+    vector<vector<int>> grid =
+                            {
+                                {1, 2, 4, 12},
+                                {4, 1, 5, 6},
+                                {2, 3, 7, 9}
+                            };
 
   
-    cout << shortest(grid, ROW, COL) << endl;
+//    cout << shortest(grid, ROW, COL) << endl;
+    
+    int result = findMinimumCostPath(grid);
+    cout<<"The minimum cost to traverse the path is "<<result<<endl;
     return 0;
 }
+

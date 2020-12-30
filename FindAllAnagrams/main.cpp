@@ -43,13 +43,16 @@
 
 #include <iostream>
 #include <unordered_map>
-using namespace std;L
+#include <string>
+#include <vector>
+using namespace std;
 
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
         if (s.empty() || s.size() < p.size()) return {};
 
+        // Build the character frequency map for pattern
         unordered_map<char, int> mp;
         for (int i = 0; i < p.size(); i++) mp[p[i]] ++;
 
@@ -62,6 +65,7 @@ public:
                     mp[s[i]] --;
                 }
             } else {
+                cout<<"Index - "<<i<<endl;
                 int start = i - l;
                 if (mp.count(s[start])) {
                     if (mp[s[start]] >= 0) numToFind ++;
@@ -80,8 +84,46 @@ public:
 };
 
 
+vector<int> findAnagrams_v2(string S, string p) {
+    vector<int> s_map(26, 0);
+    vector<int> p_map(26, 0);
+    vector<int> result;
+    
+    //Build the char_count map for characters in S and p
+    for (int i = 0; i < p.size(); i++) {
+        s_map[S[i] - 'a']++;
+        p_map[p[i] - 'a']++;
+    }
+    
+    int i = 0;
+    for (i = 0; i <= S.size() - p.size(); i++) {
+        if (s_map == p_map) {
+            result.emplace_back(i);
+        }
+        s_map[S[i] - 'a']--;
+        s_map[S[i + p.size()] - 'a']++;
+    }
+    
+    if (s_map == p_map) {
+        result.emplace_back(i);
+    }
+    return result;
+}
+
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    cout<<"Algorithm to find all anagrams in a string"<<endl;
+//    Solution sol;
+    
+    string S = "abab";
+    string p = "ab";
+    
+//    vector<int> result = sol.findAnagrams(S, p);
+    vector<int> result = findAnagrams_v2(S, p);
+    for (auto i:result) {
+        cout<<i<<" ";
+    }
+    cout<<endl;
     return 0;
 }

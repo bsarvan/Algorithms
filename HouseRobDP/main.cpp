@@ -11,8 +11,20 @@
 using namespace std;
 
 int Rob(int n, vector<int> &nums) {
+    // Return zero if the input vector is empty
+    if (nums.empty()) {
+        return 0;
+    }
+    
+    //If there is only one house to rob, return the
+    //amount available to rob in that house
+    if (nums.size() == 1) {
+        return nums[0];
+    }
+    
     vector<int> R(n);
     
+    //If more than one house available to rob, compute the maximum profit
     R[0] = nums[0];
     R[1] = max(nums[0], nums[1]);
     for (int i = 2; i < n; i++) {

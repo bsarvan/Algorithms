@@ -70,7 +70,7 @@ public:
 
 int main(int argc, const char * argv[]) {
     Solution obj;
-    string res = obj.minRemoveToMakeValid("l(e(e(t(c)o)de)");
+    string res = obj.minRemoveToMakeValid("l(e(etc)o)de)((()");
     cout<<res<<endl;
     return 0;
 }

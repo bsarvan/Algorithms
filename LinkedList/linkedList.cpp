@@ -281,9 +281,9 @@ Node *RemoveAllDuplicates (Node* A) {
             return NULL;
         }
         
-        Node* fakeHead = new Node();
-        fakeHead->next = A;
-        Node* pre = fakeHead;
+        Node* dummy = new Node();
+        dummy->next = A;
+        Node* pre = dummy;
         Node* cur = A;
         while (cur != NULL) {
             while (cur->next != NULL && cur->data == cur->next->data) {
@@ -296,7 +296,7 @@ Node *RemoveAllDuplicates (Node* A) {
             }
             cur = cur->next;
         }
-        return fakeHead->next;
+        return dummy->next;
 }
 
 /* Function to remove duplicates from unsorted list */

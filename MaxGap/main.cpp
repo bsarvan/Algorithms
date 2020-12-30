@@ -95,17 +95,19 @@ void maxGapV2(vector<int> V) {
         cout<<v.first<<"->"<<v.second<<endl;
     }
     
+    cout<<"Computing the max gap"<<endl;
     int i = 0;
     int j = 1;
     int diff = 0;
     while(i<vp.size() && j<vp.size()){
+        cout<<"comparing - "<<vp[i].second<<" "<<vp[j].second<<endl;
         if (vp[i].second < vp[j].second) {
-            cout<<vp[i].second<<" "<<vp[j].second<<endl;
             diff = max(diff, vp[j].second - vp[i].second);
-            j++;
+//            j++;
         } else {
             i++;
         }
+        j++;
     }
     
     cout<<"Gap - "<<diff<<endl;
@@ -118,9 +120,9 @@ int main(int argc, const char * argv[]) {
     //vector<int> A = {3,5,4,2};
     vector<int> A = {10,4,2,5,12,8,9,7};
     
-    int result = maximumGap(A);
-    
-    cout<<"The maximum gap is "<<result<<endl;
+//    int result = maximumGap(A);
+//
+//    cout<<"The maximum gap is "<<result<<endl;
     
     maxGapV2(A);
     

@@ -42,7 +42,7 @@ vector<int> findDiagonalOrder(vector<vector<int>>& matrix) {
     for (int k = 0; k <= m + n - 2; k++) {
         const int start = max(0, k - n + 1);
         const int end = min(m - 1, k);
-        cout<<"Start - "<<start<<", End - "<<end<<endl;
+        cout<<"k - "<<k<<", Start - "<<start<<", End - "<<end<<endl;
         if ((k % 2) == 0) {
             for (int i = end; i >= start; i--) {
                 r.push_back(matrix[i][k - i]);

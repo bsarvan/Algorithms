@@ -45,6 +45,25 @@ void countSmallerRight(int A[], int len)
     cout<<endl;
 }
 
+// Algorithm to count the number of smaller elemments to the right
+// with duplicates in the array
+void countSmallerToRight_v2(vector<int> A) {
+    vector<int> aux_array;
+    vector<int> smallCount;
+    
+    for (int i = A.size() - 1; i >=0 i-- ) {
+        aux_array.emplace_back(A[i]);
+        auto it = lower_bound(A.begin(), A.end(), A[i]);
+        int count = distance(A.begin(), it);
+        smallCount.emplace_front(count);
+    }
+    
+    for (auto s:smallCount) {
+        cout<<s<<" ";
+    }
+    cout<<endl;
+}
+
 // Driver code
 int main()
 {

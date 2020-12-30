@@ -46,7 +46,7 @@ public:
     }
     
     
-    TrieNode *findPrefix(const char* pre) {
+    TrieNode *findPrefix(string pre) {
         TrieNode *curr = root;
         
         for (int i=0;pre[i];i++) {
@@ -117,7 +117,9 @@ int main() {
     bool found = dict.search("bharat");
     cout<<"Search result is - "<<(found == true? "TRUE":"FALSE")<<endl;
     
-    TrieNode *pre = dict.findPrefix("bhaa");
+    string prefix = "bhar";
+    cout<<"Find words with prefix - "<<prefix<<endl;
+    TrieNode *pre = dict.findPrefix(prefix);
     if (pre) {
         dict.printAllChildren(pre);
     }

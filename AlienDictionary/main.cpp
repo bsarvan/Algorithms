@@ -7,6 +7,23 @@
 //
 
 // A C++ program to order of characters in an alien language
+
+
+/*
+ Given a sorted dictionary (array of words) of an alien language, find order of characters in the language.
+ 
+ Input:  words[] = {"baa", "abcd", "abca", "cab", "cad"}
+ Output: Order of characters is 'b', 'd', 'a', 'c'
+ Note that words are sorted and in the given language "baa"
+ comes before "abcd", therefore 'b' is before 'a' in output.
+ Similarly we can find other orders.
+
+ Input:  words[] = {"caa", "aaa", "aab"}
+ Output: Order of characters is 'c', 'a', 'b'
+ 
+ */
+
+
 #include <iostream>
 #include <list>
 #include <stack>
@@ -127,13 +144,13 @@ void printOrder(string words[], int n, int alpha)
 // Driver program to test above functions
 int main()
 {
-    //string words[] = {"caa", "aaa", "aab"};
-    string words[] = {  "wrt",
-        "wrf",
-        "er",
-        "ett",
-        "rftt"};
-    
-    printOrder(words, 5, 26);
+    string words[] = {"caa", "aaa", "aab"};
+//    string words[] = {  "wrt",
+//        "wrf",
+//        "er",
+//        "ett",
+//        "rftt"};
+//    
+    printOrder(words, 3,3);
     return 0;
 }

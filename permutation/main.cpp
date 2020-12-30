@@ -36,14 +36,14 @@ void permute(char *a, int l, int r)
     {
         for (i = l; i <= r; i++)
         {
-            cout<<"Index  - "<<l<<", Swapping "<<a[l]<<", "<<a[i]<<endl;
             swap((a+l), (a+i));
             permute(a, l+1, r);
             swap((a+l), (a+i)); //backtrack
-            cout<<"=================="<<endl;
+            
         }
     }
 }
+
 
 /* Driver program to test above functions */
 int main()

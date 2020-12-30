@@ -22,7 +22,7 @@ typedef struct person_ {
 void print(vector<Person> person)
 {
     for (auto &p:person){
-        cout<<"Name - "<<p.name<<",Age - "<<p.age<<endl;
+        cout<<"Name - "<<p.name<<",    Age - "<<p.age<<endl;
     }
 }
 
@@ -50,6 +50,7 @@ void GroupByAge(vector<Person> person){
     for (auto &m:age_to_offset){
         cout<<"key - "<<m.first<<", Offset - "<<m.second<<endl;
     }
+    
     cout<<"=============================="<<endl;
     
     while(age_to_offset.size()){
@@ -57,32 +58,17 @@ void GroupByAge(vector<Person> person){
         cout<<"from->first - "<<from->first<<", from->second - "<<from->second<<endl;
         auto to = age_to_offset.find(person[from->second].age);
         cout<<"to->first - "<<to->first<<", to->second - "<<to->second<<endl;
-        cout<<"Person[from->second] - "<<person[from->second].name<<", Person[to->second] - "<<person[to->second].name<<endl;
+        cout<<"Swappng - Person[from->second] - "<<person[from->second].name<< ", Person[to->second] - "<<person[to->second].name<<endl;
         swap(person[from->second], person[to->second]);
         print(person);
         cout<<endl;
         --age_to_count[to->first];
-        for (auto &m:age_to_offset){
-            cout<<"Before key - "<<m.first<<", Offset - "<<m.second<<endl;
-        }
         if (age_to_count[to->first] > 0){
-            cout<<"To->second - "<<to->second<<endl;
             ++to->second;
-            
-            for (auto &m:age_to_offset){
-                cout<<"After key - "<<m.first<<", Offset - "<<m.second<<endl;
-            }
         }else {
             age_to_offset.erase(to);
         }
     }
-    cout<<"=============================="<<endl;
-    
-    cout<<"Persons group by age"<<endl;
-    for(auto &k:person){
-        cout<<"Name - "<<k.name<<",Age - "<<k.age<<endl;
-    }
-    return;
 }
 
 
@@ -95,11 +81,13 @@ int main(int argc, const char * argv[]) {
     person.emplace_back(Person{11,"Ron"});
     person.emplace_back(Person{12,"Rob"});
     person.emplace_back(Person{14,"Jack"});
-    person.emplace_back(Person{13,"Jill"});
+//    person.emplace_back(Person{13,"Jill"});
 
     print(person);
     
     GroupByAge(person);
+    
+    print(person);
     return 0;
     
 }

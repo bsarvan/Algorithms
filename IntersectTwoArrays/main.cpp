@@ -29,7 +29,7 @@ vector<int> intersectArrays(vector<int> a, vector<int> b) {
 }
 
 int main(int argc, const char * argv[]) {
-    cout<<"Program to find the intersect of two arrays"<<endl;
+    cout<<"Algorithm to find the intersect of two sorted arrays"<<endl;
     vector<int> A = {2,3,3,5,7,11};
     vector<int> B = {3,3,7,15,31};
     

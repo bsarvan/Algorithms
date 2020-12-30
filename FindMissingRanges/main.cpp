@@ -79,16 +79,21 @@ vector<string> findMissingRangesV2(vector<int> A, int start, int end) {
         }
         prev = curr;
     }
+    
+    if (A[A.size() - 1] < end) {
+        result.emplace_back(to_string(A[A.size() - 1] + 1) + "->" + to_string(end));
+    }
+    
     return result;
 }
 
 
 int main(int argc, const char * argv[]) {
-    vector<int> R = {3, 50, 75};
+    vector<int> R = {0,1, 3, 50, 75};
     cout<<"Program to find the missing ranges in stream of numbers"<<endl;
     
     
-    //Solution sol;
+    Solution sol;
     
 //    vector<string> result = sol.findMissingRanges(R, 0, 99);
     vector<string> result = findMissingRangesV2(R, 0, 99);
