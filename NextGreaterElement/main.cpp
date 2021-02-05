@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <stack>
+#include <vector>
 using namespace std;
 
 /* prints element and NGE pair for all
@@ -78,14 +79,43 @@ void printArray(int a[], int size){
     }
     cout<<endl;
 }
+
+
+void nextGreater(vector<int> A) {
+  stack<int> st;
+  
+  for (int i = 0; i < A.size(); i++) {
+    
+    if (!st.empty()) {
+      while(!st.empty() and st.top() < A[i]) {
+        cout<<st.top()<<" -> "<<A[i]<<endl;
+        st.pop();
+      }
+    }
+    st.push(A[i]);
+  }
+  
+  while(!st.empty()) {
+    cout<<st.top()<<" -> -1"<<endl;
+    st.pop();
+  }
+  
+  return;
+}
+
+
 /* Driver program to test above functions */
 int main()
 {
     //int arr[] = {11, 5, 7, 13, 21, 3};
-    int arr[] = {11, 5, 7, 1, 2, 13};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    printArray(arr, n);
-    printNGE(arr, n);
+//    int arr[] = {11, 5, 7, 1, 2, 13};
+    vector<int> input = {11, 5, 7, 1, 2, 13};
+    
+//    int n = sizeof(arr)/sizeof(arr[0]);
+//    printArray(arr, n);
+//    printNGE(arr, n);
+    
+    nextGreater(input);
     return 0;
 }
 

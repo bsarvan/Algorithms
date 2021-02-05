@@ -44,12 +44,13 @@ int diffPossible(vector<int> &A, int B) {
 }
 
 
+
 int main(int argc, const char * argv[]) {
     
     cout<<"Algorithm to find if the elements exists with diff equal to K"<<endl;
     vector<int> A = {1,3,5,6};
     
-    int result = diffPossible(A, 4);
+    int result = diffPossible_v2(A, 4);
     
     string res = result == 1? "YES":"NO";
     cout<<res<<endl;

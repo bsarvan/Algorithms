@@ -18,18 +18,19 @@
 #include <string>
 using namespace std;
 
-void powerSet(string S, int index=-1, string curr = "") {
+void powerSet(string S, int index=0, string curr = "") {
     size_t n = S.length();
+    
+    cout<<curr<<endl;
     
     if (index == n) {
         return;
     }
     
-    cout<<curr<<endl;
-    
-    for (int i = index+1; i < n; i++) {
+
+    for (int i = index; i < n; i++) {
         curr+=S[i];
-        powerSet(S,i,curr);
+        powerSet(S,i + 1,curr);
         curr.erase(curr.size() - 1);
     }
     

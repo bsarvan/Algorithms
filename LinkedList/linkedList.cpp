@@ -44,7 +44,7 @@ Node * createCycle(Node *head)
 	}
 	cout<<endl;
 	Node *prev = curr;
-	cout<<"Cycle loopback Node -"<<curr->data<<endl;
+	cout<<"Cycle loopback Node - "<<curr->data<<endl;
 	curr = head;
 
 	while(m>0)
@@ -52,7 +52,7 @@ Node * createCycle(Node *head)
 		curr=curr->next;
 		m--;
 	}
-	cout<<"Cycle Start Node -"<<curr->data<<endl;
+	cout<<"Cycle Start Node - "<<curr->data<<endl;
 	curr->next = prev;
 
 	return head;
@@ -82,14 +82,22 @@ Node *HasCycle(Node *head)
         fast = fast->next->next;
 		cout<<"Cycle - "<<cycle<<",Slow - "<<slow->data<<",Fast - "<<fast->data<<endl;
 		if (slow == fast){
-			cout<<"Cycle detected at Node - "<<slow->data<<endl;
-			slow = head;
-			while(slow!=fast){
-                slow = slow->next;
-                fast = fast->next;
-				cout<<"Slow - "<<slow->data<<", Fast - "<<fast->data<<endl;
+			cout<<"Loop point at Node - "<<slow->data<<endl;
+            
+            Node *loopPoint = slow;
+            // To fix the loop, iterate together from head and loop point
+            // until both the iterators point to the same node.
+            Node *firstPointer = head;
+			Node *secondPointer = loopPoint;
+			while(firstPointer->next!=secondPointer->next){
+                firstPointer = firstPointer->next;
+                secondPointer = secondPointer->next;
+				cout<<"FirstPointer - "<<firstPointer->data<<", SecondPointer - "<<secondPointer->data<<endl;
 			}
-			return slow;
+            
+            // Fix the loop in the list by setting the next of fast iterator to nullptr
+            secondPointer->next = NULL;
+			return firstPointer;
 		}
 		cycle++;
 	}	
@@ -271,6 +279,19 @@ Node *RemoveDuplicates(Node *head){
         iter->next = next_distinct;
         iter = next_distinct;
     }
+    return head;
+}
+
+Node *RemoveDuplicates_v2(Node *head) {
+    Node* curr = head;
+    while (curr) {
+        if (curr->next!= nullptr && curr->next->data == curr->data) {
+            curr->next = curr->next->next;
+        } else {
+            curr = curr->next;
+        }
+    }
+    
     return head;
 }
 
@@ -521,6 +542,8 @@ int main()
     Insert(head,6);
     Insert(head,7);
     Insert(head,8);
+    Insert(head,9);
+    Insert(head,10);
 #if 0
     head = Insert(head,5);
     head = Insert(head,6);
@@ -529,13 +552,18 @@ int main()
     Insert(head,9);
 #endif
     
-
+    Print(head);
+    
+    head = createCycle(head);
+    Node *cyclePtr = HasCycle(head);
+    cout<<"Cycle Start at Node - "<<cyclePtr->data<<endl;
     Print(head);
     
     //Node *h = deleteOdd(head);
-    Node *node = deleteKNodeFromLast(head,3);
-    
-    Print(node);
+    //Node *node = deleteKNodeFromLast(head,3);
+//    Node *node = RemoveDuplicates_v2(head);
+//
+//    Print(node);
     //ListTraverse(head);
     
  

@@ -44,18 +44,21 @@ public:
             }
             if (s[i]== ')') {
                 if (st.empty()) {
+                    // Mark the excess opening bracess
                     indexesToRemove.emplace(i);
                 } else
                     st.pop();
             }
         }
         
+        // Get the unmatched Opening braces
         while(!st.empty()) {
             cout<<"S Top - "<<st.top()<<endl;
             indexesToRemove.emplace(st.top());
             st.pop();
         }
         
+        // Remove the characters with the indices in the indexesToRemove vector
         string result;
         for(int i=0;i<s.size();i++) {
             if (indexesToRemove.find(i) == indexesToRemove.end()) {

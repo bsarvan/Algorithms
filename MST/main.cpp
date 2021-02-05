@@ -126,6 +126,60 @@ public:
     }
 };
 
+
+// Prims Algorithm on Graph as Adjacency Matrix
+
+vector<vector<int>> G = {
+  {0, 9, 75, 0, 0},
+  {9, 0, 95, 19, 42},
+  {75, 95, 0, 51, 66},
+  {0, 19, 51, 0, 31},
+  {0, 42, 66, 31, 0}};
+
+
+
+void PrimsAlgorithm(vector<vector<int>> G) {
+    
+    int V = 5;
+    vector<bool> selected(G.size(), false);
+    int no_edges = 0;
+    int min_weight = INT_MAX;
+    int x = 0;
+    int y = 0;
+    while(no_edges < V - 1) {
+        
+        x = 0;
+        y = 0;
+        for (int i = 0; i < G.size(); i++) {
+            if (selected[i]) {
+                for (int j = 0; j < G[0].size(); j++) {
+                    if (!selected[j] and G[i][j]) {
+                        if (min_weight > G[i][j]) {
+                            min_weight = G[i][j];
+                            x = i;
+                            y = j;
+                        }
+                    }
+                }
+            }
+        }
+        cout << x << " - " << y << " :  " << G[x][y];
+        cout << endl;
+        selected[y] = true;
+        no_edges++;
+    }
+    
+    
+    for (int i = 0; i < selected.size(); i++) {
+        if (selected[i]) {
+            cout<<i<<" ";
+        }
+    }
+    
+    cout<<endl;
+    return;
+    
+}
 int main(int argc, const char * argv[]) {
     cout<<"Prims Algorithm to find the MST"<<endl;
     
@@ -151,6 +205,13 @@ int main(int argc, const char * argv[]) {
         
         cout<<v<<" - "<<w<<"; wt - "<<edge.getWeight()<<endl;
     }
+    
+    cout<<endl;
+    cout<<"=============================================="<<endl;
+    
+    cout<<"Prims Algorith on Adjacency Matrix"<<endl;
+    
+    PrimsAlgorithm(G);
     
     return 0;
 }

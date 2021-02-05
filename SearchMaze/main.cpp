@@ -25,7 +25,7 @@ bool isValid(Coordinate cur, vector<vector<Color>> maze) {
     return (cur.x < maze.size() && cur.y < maze[0].size() && maze[cur.x][cur.y] == WHITE);
 }
 
-bool SearchMazeHelper(Coordinate curr, Coordinate dest, vector<vector<Color>> *maze, vector<Coordinate> &path) {
+bool SearchMazeHelper(Coordinate curr, Coordinate dest, vector<vector<Color>> &maze, vector<Coordinate> &path) {
     
     if (curr == dest) {
         return true;
@@ -35,8 +35,8 @@ bool SearchMazeHelper(Coordinate curr, Coordinate dest, vector<vector<Color>> *m
     
     for (const vector<int> &s : dir ) {
         Coordinate next{curr.x + s[0], curr.y + s[1]};
-        if (isValid(next, *maze)) {
-            (*maze)[next.x][next.y] = BLACK;
+        if (isValid(next, maze)) {
+            maze[next.x][next.y] = BLACK;
             path.emplace_back(next);
             if (SearchMazeHelper(next, dest, maze, path)) {
                 return true;
@@ -53,7 +53,7 @@ vector<Coordinate> SearchMaze(vector<vector<Color>> maze, Coordinate s, Coordina
     
     maze[s.x][s.y] = BLACK;
     path.emplace_back(s);
-    if (SearchMazeHelper(s, d, &maze, path)) {
+    if (SearchMazeHelper(s, d, maze, path)) {
 //        path.pop_back();
     }
     

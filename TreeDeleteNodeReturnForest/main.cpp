@@ -27,8 +27,9 @@ public:
             return nullptr;
         }
         
+        // Check if the node is a leaf node
         if (!root->left && !root->right) {
-            // leaf node
+            // If node to deleted is a leaf node return nullptr
             if (toDel.find(root->val) != toDel.end()) {
                 return nullptr;
             }

@@ -213,7 +213,7 @@ void InOrderTraversal(struct node *root) {
 bool isValidBST(struct node *root) {
     stack<struct node *> S;
     struct node *curr = root;
-    int prevNode = 0;
+    int prevNode = INT_MIN;
     
     while(!S.empty() || curr) {
         if (curr) {
@@ -395,8 +395,7 @@ struct node* RebuildBST(vector<int> A, int start, int end) {
  }
 
 
-struct node* RebuildBSTFromRange(vector<int> A, int low, int high, int *root_index_ptr) {
-    int &root_index = *root_index_ptr;
+struct node* RebuildBSTFromRange(vector<int> A, int low, int high, size_t &root_index) {
     
     if (root_index == A.size()) {
         return nullptr;
@@ -408,8 +407,10 @@ struct node* RebuildBSTFromRange(vector<int> A, int low, int high, int *root_ind
         return nullptr;
     }
     
-    auto left = RebuildBSTFromRange(A, low, root, root_index_ptr);
-    auto right = RebuildBSTFromRange(A, root, high, root_index_ptr);
+    root_index++;
+    
+    auto left = RebuildBSTFromRange(A, low, root, root_index);
+    auto right = RebuildBSTFromRange(A, root, high, root_index);
     struct node *N = new node(root);
     N->left = left;
     N->right = right;
@@ -498,9 +499,9 @@ void deserialize(struct node *&root, string s, size_t &offset) {
 
 
 void buildTreeFromPreorderSeq(struct node *&root, vector<int> V, size_t &offset) {
-    int key = V[offset++];
+    int key = V[++];
     
-    if (key == -1) {
+    if (key == -offset1) {
         return;
     }
     root = new node(key);
@@ -660,6 +661,26 @@ struct node * BuildBSTFromPostOrder(vector<int> seq, int start, int end) {
 }
 
 
+struct node *BuildBSTFromPostOrderRange(vector<int> A, int min, int max, size_t &root_index) {
+    if (root_index > 0) {
+        return nullptr;
+    }
+    
+    int val = A[root_index];
+    
+    if (val < min || val > max) {
+        return nullptr;
+    }
+    root_index--;
+    
+    struct node* root = new node(val);
+    root->right = BuildBSTFromPostOrderRange(A, val, max, root_index);
+    root->left = BuildBSTFromPostOrderRange(A, min, val, root_index);
+    
+    return root;
+}
+
+
 
 // Driver Program to test above functions
 int main()
@@ -685,8 +706,22 @@ int main()
     /* Build BST from a post order sequence*/
     vector<int> postorder = {20,40,30,60,80,70,50};
     struct node* bst_root = BuildBSTFromPostOrder(postorder,postorder.size() - 1, 0);
+    size_t root_index = postorder.size() - 1;
+    struct node* bst_from_range = BuildBSTFromPostOrderRange(postorder, INT_MIN, INT_MAX, root_index);
     postOrder(bst_root);
+    postOrder(bst_from_range);
     cout<<endl;
+    
+    
+    vector<int> PreOrder = {50, 30, 20, 40, 70, 60, 80};
+    
+    cout<<"Build BST from PreOrder Traversed Info"<<endl;
+    root_index = 0;
+    struct node *N = RebuildBSTFromRange(PreOrder, INT_MIN, INT_MAX, root_index);
+    cout<<endl;
+    inorder(N);
+    cout<<endl;
+    
 //    BuildExteriorOfBinaryTree(root);
 //    buildNodeLevelList(root);
     
@@ -749,6 +784,7 @@ int main()
     cout<<"Build BST from PreOrder Traversed Info"<<endl;
     
     struct node *N = RebuildBST(PreOrder, 0, PreOrder.size());
+
     cout<<endl;
     inorder(N);
     cout<<endl;

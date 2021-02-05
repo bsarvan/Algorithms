@@ -109,7 +109,7 @@ int main(int argc, const char * argv[]) {
     
     std::cout << "Algorithm to find the longest valid parenthesis in a given string\n";
 //    int maxlen = longestValidParenthesisDP("())()()");
-    int maxlen = longestValidParentisUsingStack(")()())");
+    int maxlen = longestValidParentisUsingStack("(())");
 //    int maxlen = longestValidParenthesesNoExtraSpace("()()(()");
     cout<<"Maximum length of substring with valid parenthesis - "<<maxlen<<endl;
     return 0;

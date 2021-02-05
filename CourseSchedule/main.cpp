@@ -94,12 +94,15 @@ public:
         vector<int> in(numCourses);
         stack<int> S;
         
+        // Build the graph and also the table mapping the number of incoming edges
         for(auto x: prerequisites) {
             g[x[0]].insert(x[1]);
             in[x[1]]++;
         }
         
         queue<int> q;
+        
+        // Enqueue all the nodes with no incoming edges
         for(int i = 0;i<numCourses;i++) {
             if(in[i] == 0) {
                 q.push(i);

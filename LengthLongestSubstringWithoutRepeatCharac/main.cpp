@@ -13,7 +13,7 @@
  
  Example 1:
  
- Input: "abcabcbb"
+ Input: "abca bcbb"
  Output: 3
  Explanation: The answer is "abc", with the length of 3.
  Example 2:
@@ -89,6 +89,8 @@ size_t LongestSubStringWithDistinctCharacters(string S) {
     size_t longest_dup_free_sub_string_start_idx = 0, result = 0;
     
     for (size_t i = 0; i < S.size(); i++) {
+        // dup_idx to have a pair of objects
+        // Iterator to the inserted object and
         auto dup_idx = most_recent_occurance.emplace(S[i], i);
         
         if (!dup_idx.second) {

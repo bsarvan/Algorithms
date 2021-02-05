@@ -22,7 +22,7 @@ struct Endpoint {
     
     bool operator <(const Endpoint &that) const {
         bool ret = (time != that.time ? time < that.time : isStart && !that.isStart);
-        cout<<"Comparison result "<<ret<<endl;
+        cout<<"Comparing "<<that.time<<" and "<<time<<", Comparison result "<<ret<<endl;
         return ret;
     }
     

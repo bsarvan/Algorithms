@@ -10,6 +10,8 @@
 #include <vector>
 using namespace std;
 
+// R[i][j] is the maximum possible value by selecting the packages in [1,2,3...., i] with weight limit j
+
 int KnapSack(int n, int w, vector<int> V, vector<int> W) {
     vector<vector<int>> R(n + 1, vector<int> (w+1, 0));
     

@@ -28,7 +28,7 @@ bool checkDiagonal (vector<vector<int>> M, int row, int col) {
 
 
 bool is_toeplitz(vector<vector<int>> A) {
-    vector<vector<int>> values(A.size(), vector<int>(A[0].size()));
+//    vector<vector<int>> values(A.size(), vector<int>(A[0].size()));
     
     for (int col = 0;col<A[0].size();col++) {
         int result = checkDiagonal(A, 0, col);
@@ -37,7 +37,7 @@ bool is_toeplitz(vector<vector<int>> A) {
         }
     }
     
-    for (int row = 1; row<A[0].size();row++) {
+    for (int row = 1; row<A.size();row++) {
         int result = checkDiagonal(A, row, 0);
         if (!result) {
             return false;

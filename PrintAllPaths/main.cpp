@@ -82,7 +82,7 @@ void printRootToleafPathIterative(Node* root)
         string path = p.second;
 
         // add current node to the existing path
-        string delim = (path == "") ? "\n" : " -> ";
+        string delim = (path == "") ? "\n" : "->";
         path += (delim + to_string(curr->data));
 
         // if leaf node, print the path

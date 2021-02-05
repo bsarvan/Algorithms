@@ -109,7 +109,7 @@ void KruskalMST(Graph* graph)
     // order of their weight. If we are not allowed to
     // change the given graph, we can create a copy of
     // array of edges
-    qsort(graph->edge, graph->E, sizeof(graph->edge[0]), myComp);
+        qsort(graph->edge, graph->E, sizeof(graph->edge[0]), myComp);
 
     // Allocate memory for creating V ssubsets
     subset *subsets = new subset[( V * sizeof(subset) )];

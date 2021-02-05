@@ -73,11 +73,12 @@ int RobinKarp_v2(string T, string P) {
             cout<<"Found a match at index  - "<<i - P.size()<<endl;
         }
         
+        // Remove the first character of the window
         t_hash -= T[i-P.size()];
+        // Divide the previous hash with the prime number
         t_hash /= prime;
+        // Multiply the new character with last power computed.
         t_hash += (T[i] * power);
-        
-//        cout<<"Index - "<<i<<", Hash - "<<t_hash<<endl;
     }
     
     if ((t_hash == p_hash) && (T.compare(T.size() - P.size(), P.size(), P) == 0)) {

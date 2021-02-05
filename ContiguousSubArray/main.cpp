@@ -46,6 +46,7 @@ vector <int> CountSubarrays(vector <int> arr) {
     
     vector<int> result;
     
+    // Time Complexity in the worst case O(n2) with a complete decreasing array
     for (int i = 0; i < arr.size(); i++) {
         int count = 1;
         int j = i - 1;

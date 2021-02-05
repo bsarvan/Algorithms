@@ -44,34 +44,38 @@ vector<string> buildDinstinctPermutations(string S) {
 
 
 
-void permuteUtil(vector<int> &A, int l, set<vector<int>> &s, vector<vector<int>> &result) {
-    size_t n = A.size() - 1;
-    if ( l == n) {
-        if (s.find(A) == s.end()) {
-            s.emplace(A);
-            result.emplace_back(A);
+class Solution {
+    void permuteUtil(vector<int> &A, int l, set<vector<int>> &s, vector<vector<int>> &result) {
+        int n = A.size() - 1;
+        if ( l == n) {
+            if (s.find(A) == s.end()) {
+                s.emplace(A);
+                result.emplace_back(A);
+            }
+            return;
         }
+
+        for (int i = l;i<=n;i++) {
+            if ((i==l) || (A[i] != A[l])) {
+                swap(A[l], A[i]);
+                permuteUtil(A, l+1, s, result);
+                swap(A[l],A[i]);
+            }
+        }
+
         return;
     }
+public:
     
-    for (int i = l;i<=n;i++) {
-        if ((i==l) || (A[i] != A[l])) {
-            swap(A[l], A[i]);
-            permuteUtil(A, l+1, s, result);
-            swap(A[l],A[i]);
-        }
-    }
     
-    return;
-}
+    vector<vector<int>> permuteUnique(vector<int>& A) {
+        vector<vector<int>> result;
+        set<vector<int>> S;
 
-vector<vector<int>> permute(vector<int> &A) {
-    vector<vector<int>> result;
-    set<vector<int>> S;
-    
-    permuteUtil(A,0,S,result);
-    return result;
-}
+        permuteUtil(A,0,S,result);
+        return result;
+    }
+};
 
 
 

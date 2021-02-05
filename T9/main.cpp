@@ -32,7 +32,6 @@ void getValidWords(string number, int index, string partialOutput, vector<string
     vector<char> letters = getT9Chars(digit);
     
     for (auto letter:letters) {
-        //cout<<" - "<<prefix<<", letter - "<<letter<<endl;
         getValidWords(number, index + 1, partialOutput + letter, results);
     }
 }

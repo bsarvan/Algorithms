@@ -22,7 +22,7 @@ int Rob(int n, vector<int> &nums) {
         return nums[0];
     }
     
-    vector<int> R(n);
+    vector<int> R   ;
     
     //If more than one house available to rob, compute the maximum profit
     R[0] = nums[0];

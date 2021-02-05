@@ -6,6 +6,34 @@
 //  Copyright © 2019 bsarvan. All rights reserved.
 //
 
+
+/*
+ 
+ You want to build a house on an empty land which reaches all buildings in the shortest amount of distance. You can only move up, down, left and right. You are given a 2D grid of values 0, 1 or 2, where:
+
+ Each 0 marks an empty land which you can pass by freely.
+ Each 1 marks a building which you cannot pass through.
+ Each 2 marks an obstacle which you cannot pass through.
+ Example:
+
+ Input: [[1,0,2,0,1],[0,0,0,0,0],[0,0,1,0,0]]
+
+ 1 - 0 - 2 - 0 - 1
+ |   |   |   |   |
+ 0 - 0 - 0 - 0 - 0
+ |   |   |   |   |
+ 0 - 0 - 1 - 0 - 0
+
+ Output: 7
+
+ Explanation: Given three buildings at (0,0), (0,4), (2,2), and an obstacle at (0,2),
+              the point (1,2) is an ideal empty land to build a house, as the total
+              travel distance of 3+3+1=7 is minimal. So return 7.
+ 
+ 
+ */
+
+
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -86,7 +114,7 @@ void printGrid(vector<vector<int>> G) {
     return;
 }
 
-void shortestDistanceHelper(int row, int col, vector<vector<int>> &grid, vector<vector<int>> &dist, vector<vector<int>> &reach, vector<vector<int>> &visited) {
+void shortestDistanceHelper(int row, int col, vector<vector<int>> &grid, vector<vector<int>> &dist, vector<vector<int>> &reach, vector<vector<int>> &visited, vector<vector<int>> &total) {
     vector<vector<int>> dir = {{0,1},{0,-1},{1,0},{-1,0}};
     queue<pair<int, int>> Q;
     
@@ -101,8 +129,7 @@ void shortestDistanceHelper(int row, int col, vector<vector<int>> &grid, vector<
             
             if (x >=0 && x < grid.size() && y >= 0 && y < grid[0].size() && !visited[x][y] && grid[x][y] == 0) {
                 dist[x][y] = dist[cell.first][cell.second] + 1;
-                cout<<"Dist Grid - "<<endl;
-                printGrid(dist);
+                total[x][y] += dist[x][y];
                 reach[x][y] += 1;
                 visited[x][y] = true;
                 Q.emplace(x,y);
@@ -122,12 +149,14 @@ int shortestDistance(vector<vector<int>> grid) {
 
     vector<vector<int>> dist(m,vector<int>(n,0));
     vector<vector<int>> reach(m,vector<int>(n,0));
+    vector<vector<int>> total(m,vector<int>(n,0));
+    
     int numBuildings = 0;
     for (int i=0;i<m;i++) {
         for (int j=0;j<n;j++) {
             vector<vector<int>> visited(m,vector<int>(n,0));
             if (grid[i][j] == 1) {
-                shortestDistanceHelper(i, j , grid, dist, reach, visited);
+                shortestDistanceHelper(i, j , grid, dist, reach, visited, total);
                 numBuildings++;
             }
         }
@@ -135,11 +164,14 @@ int shortestDistance(vector<vector<int>> grid) {
     
     cout<<"Number of Buildings in the grid - "<<numBuildings<<endl;
     
+    cout<<"Distance Grid - "<<endl;
+    printGrid(dist);
+    printGrid(reach);
     int minDist = INT_MAX;
     for (int i=0;i<grid.size();i++) {
         for(int j=0;j<grid[0].size();j++) {
             if (grid[i][j] == 0 && reach[i][j] == numBuildings) {
-                minDist = min(minDist, dist[i][j]);
+                minDist = min(minDist, total[i][j]);
             }
         }
     }
@@ -153,7 +185,7 @@ struct Cell {
     int y;
     int step;
     
-    coordinate(int x1, int y1, int step1) {
+    Cell(int x1, int y1, int step1) {
         x = x1;
         y = y1;
         step = step1;
@@ -202,7 +234,7 @@ int findShortestDistance(vector<vector<int>> grid) {
         for(int j = 0; j < grid[0].size(); j++) {
             if (grid[i][j] == 1) {
                 numOfBuildings++;
-                bfs(grid, dist, visited, i, j);
+                bfs(grid, distance, count, i, j);
             }
         }
     }
@@ -220,7 +252,7 @@ int main(int argc, const char * argv[]) {
     cout<<"The input grid - "<<endl;
     printGrid(grid);
 //    Solution sol;
-    int result = findShortestDistance(grid);
+    int result = shortestDistance(grid);
     cout<<"Shortest Distance - "<<result<<endl;
     
     return 0;

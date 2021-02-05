@@ -48,15 +48,13 @@ int main(int argc, const char * argv[]) {
    
     Solution sol;
     
-    vector<string> S = sol.findStrobogrammatic(2);
+    vector<string> S = sol.findStrobogrammatic(3);
     
     for(auto s:S) {
         cout<<s<<" ";
     }
     
     cout<<endl;
-    
-    
-    std::cout << "Hello, World!\n";
+
     return 0;
 }

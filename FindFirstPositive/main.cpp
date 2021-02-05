@@ -26,6 +26,7 @@
  */
 /* C++ program to find the smallest positive missing number */
 #include <iostream>
+#include <vector>
 using namespace std;
 
 /* Utility to swap to integers */
@@ -108,16 +109,45 @@ int findMissing(int arr[], int size)
     return findMissingPositive(arr + shift, size - shift);
 }
 
+
+void printVector(vector<int> arr) {
+    for(auto a : arr) {
+        cout<<a<<" ";
+    }
+    cout<<endl;
+}
+
+int SmallestPositiveMissingNumber(vector<int> arr) {
+    for (int i = 0; i < arr.size(); i++) {
+        while(arr[i] != i + 1 and arr[i] < arr.size()) {
+            swap(arr[i], arr[arr[i] - 1]);
+        }
+    }
+    
+    for( int i = 0; i < arr.size(); i++) {
+        if (arr[i] != i + 1) {
+            return i + 1;
+        }
+    }
+    
+    return -1;
+}
+
+
+
+
 // Driver code
 int main()
 {
     //int arr[] = {0, 10, 2, -10, -20};
     //int arr[] = {2,4,3,-1,10};
-    int arr[] = {1,8,7,5};
-    //int arr[] = {1,2,0};
-    printArray(arr, 3);
-    int arr_size = sizeof(arr)/sizeof(arr[0]);
-    int missing = findMissing(arr, arr_size);
+//    int arr[] = {1,8,7,5};
+//    //int arr[] = {1,2,0};
+//    printArray(arr, 3);
+//    int arr_size = sizeof(arr)/sizeof(arr[0]);
+//    int missing = findMissing(arr, arr_size);
+    vector<int> arr1 = {1,8,7,5};
+    int missing = SmallestPositiveMissingNumber(arr1);
     cout << "The smallest positive missing number is " << missing<<endl;
     return 0;
 }

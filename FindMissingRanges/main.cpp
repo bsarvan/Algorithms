@@ -69,7 +69,7 @@ vector<string> findMissingRangesV2(vector<int> A, int start, int end) {
     int prev = start - 1;
     
     for (int i=0;i<A.size();i++) {
-        int curr = (i == A.size())?end + 1:A[i];
+        int curr = A[i];
         if (curr - prev >= 2) {
             if (prev + 1 == curr - 1) {
                 result.emplace_back(to_string(prev + 1));
@@ -89,7 +89,8 @@ vector<string> findMissingRangesV2(vector<int> A, int start, int end) {
 
 
 int main(int argc, const char * argv[]) {
-    vector<int> R = {0,1, 3, 50, 75};
+//    vector<int> R = {0,1, 3, 50, 75};
+    vector<int> R = {10, 15, 50, 75, 80};
     cout<<"Program to find the missing ranges in stream of numbers"<<endl;
     
     

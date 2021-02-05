@@ -53,7 +53,7 @@ public:
         int sum = 0;
         int count = 0;
         
-        mp.emplace(0,1);
+        mp.emplace(0,0);
         //Build the map of cummulative sums
         for (const int &v : nums) {
             sum += v;
@@ -68,13 +68,38 @@ public:
         
         return count;
     }
+    
+    
+    int subarraySum_v3(vector<int>& nums, int k) {
+            unordered_map<int, int> mp;
+            int cum_sum = 0;
+            int count = 0;
+            
+            //Build the map of cummulative sums
+            for (const int &v : nums) {
+                cum_sum += v;
+                
+                if (cum_sum == k) {
+                    count++;
+                }
+                
+                if (mp.find(cum_sum - k) != mp.end()) {
+                    count += mp[cum_sum - k];
+                }
+                mp[cum_sum]++;
+            }
+            
+            return count;
+        }
 };
 
 
+
+
 int main(int argc, const char * argv[]) {
-    cout<<"Algorithm to compute the maximum continous subarray with sum equal to K"<<endl;
-    vector<int> input = {1,1,1};
-    int K = 2;
+    cout<<"Algorithm to compute the total number of maximum continous subarray with sum equal to K"<<endl;
+    vector<int> input = {1,2,3};
+    int K = 3;
     Solution sol;
     
     int result = sol.subarraySum(input, K);

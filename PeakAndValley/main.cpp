@@ -26,7 +26,8 @@ int findMaxIndex(vector<int> A, int a, int b, int c) {
 
 int main(int argc, const char * argv[]) {
     
-    vector<int> A = {9, 1, 0, 4, 8, 7};
+//    vector<int> A = {9, 1, 0, 4, 8, 7};
+    vector<int> A = {5, 1, 3, 2, 4};
     
     cout<<"Input Array - ";
     for(auto c:A)
@@ -34,6 +35,7 @@ int main(int argc, const char * argv[]) {
     
     cout<<endl;
     
+    sort(A.begin(), A.end());
     
     for (int i = 1; i < A.size(); i+=2) {
         int maxIndex = findMaxIndex(A, i-1, i, i+1);

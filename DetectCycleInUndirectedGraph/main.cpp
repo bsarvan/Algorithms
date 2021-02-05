@@ -74,10 +74,33 @@ bool isCyclicDisconntected(vector<int> adj[], int V)
     return false;
 }
 
+
+
+bool isCyclePresentUndirectedDFS(vector<int> *adj, int index, int parentIndex, vector<bool> &visited) {
+    cout<<"Recursing for node "<<index<<endl;
+    visited[index] = true;
+    
+    for(auto n : adj[index]) {
+        if (!visited[n]) {
+            visited[n] = true;
+            if (isCyclePresentUndirectedDFS(adj, n, index, visited))
+                return true;
+        } else if (parentIndex != n) {
+            // If the current node is already visited, it should be a child of the previous node.
+            // If NOT , its a cycle detected from node "index" to "n"
+            cout<<"Loop Detected at node "<<index<<" "<<n<<endl;
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+
 // Driver program to test methods of graph class
 int main()
 {
-    int V = 3;
+    int V = 5;
     vector<int> adj[V];
 //    addEdge(adj, 0, 1);
 //    addEdge(adj, 1, 2);
@@ -85,14 +108,25 @@ int main()
 //    addEdge(adj, 2, 4);
 //    addEdge(adj, 3, 4);
 
-    addEdge(adj, 0, 1);
-    addEdge(adj, 0, 2);
-    addEdge(adj, 1, 2);
+    addEdge(adj, 0,1);
+    addEdge(adj, 1,2);
+    addEdge(adj, 2,3);
+    addEdge(adj, 2,4);
+    addEdge(adj, 3, 4);
     
     if (isCyclicDisconntected(adj, V))
         cout << "Yes"<<endl;
     else
         cout << "No"<<endl;
 
+    
+    vector<bool> visited(V, false);
+    bool result = isCyclePresentUndirectedDFS(adj, 0, -1, visited);
+    
+    if (result)
+        cout<<"Graph has a cycle"<<endl;
+    else
+        cout<<"Graph does not have a cycle"<<endl;
+    
     return 0;
 }

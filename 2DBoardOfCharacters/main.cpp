@@ -26,17 +26,12 @@
 #include <string>
 using namespace std;
 
-
+// isValid function to validate index boundaries and if the next character is equal to character at index in string.
 bool isValid(vector<vector<char>> board, int row, int col, int index, string S) {
-    return (row >=0 && row < board.size() && col >= 0 && col < board[0].size());
+    return (row >=0 && row < board.size() && col >= 0 && col < board[0].size() && S[index] != board[row][col]);
 }
 
 bool existsUtil(vector<vector<char>> board, vector<vector<bool>> &visited, int x, int y, int index, string S) {
-
-    if (S[index] != board[x][y]) {
-        cout<<"returning false"<<endl;
-        return false;
-    }
     
     if (index == S.size() - 1) {
         return true;
@@ -52,7 +47,7 @@ bool existsUtil(vector<vector<char>> board, vector<vector<bool>> &visited, int x
         
         
         if (isValid(board, row, col, index, S) && !visited[row][col]) {
-            cout<<"Checking cell - "<<board[row][col]<<endl;
+            
             if (existsUtil(board, visited, row, col, index + 1, S)) {
                 return true;
             }
@@ -65,6 +60,8 @@ bool existsUtil(vector<vector<char>> board, vector<vector<bool>> &visited, int x
 
 bool exists(vector<vector<char>> board, string S) {
     
+    // Since the sequence can be begin from any where in the grid, we got to
+    // check all the elements in the grid.
     for (int i = 0; i < board.size(); i++) {
         for (int j = 0; j < board[0].size(); j++) {
             vector<vector<bool>> visited(board.size(), vector<bool>(board[0].size(), false));

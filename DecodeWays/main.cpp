@@ -72,9 +72,31 @@ int decodeWays(string S) {
     return (decodeWaysHelper(S, S.size(), memo));
 }
 
+
+void DecodeWaysHelper_v2(string S, int index, string curr) {
+    if (index == S.size()  - 1) {
+        return;
+    }
+    
+    if(!curr.empty())
+        cout<<curr<<endl;
+    
+    for(int i = index; i < S.size(); i++) {
+        DecodeWaysHelper_v2(S, i + 1, curr + S[i]);
+    }
+}
+void DecodeWays_v2(string S) {
+    string curr;
+    DecodeWaysHelper_v2(S, 0, curr);
+}
+
+
 int main(int argc, const char * argv[]) {
     cout<<"Program to test number of ways to decode a numeric string"<<endl;
     int result = decodeWays("229");
     cout<<"Decode Ways - "<<result<<endl<<endl;
+    
+    DecodeWays_v2("229");
+    
     return 0;
 }

@@ -193,6 +193,22 @@ int findMinimumCostPath(vector<vector<int>> grid) {
     return dist[dist.size() - 1][dist[0].size() - 1];
 }
 
+
+
+int findMinimumCost(vector<vector<int>> grid, int m, int n) {
+    
+    if ( m < 0 or n < 0) {
+        return INT_MAX;
+    }
+    
+    if (m == 0 and n == 0) {
+        return grid[0][0];
+    }
+    
+    return (min(findMinimumCost(grid, m - 1, n), findMinimumCost(grid, m, n - 1)) + grid[m][n]);
+}
+
+
 // Driver code to test above methods
 int main()
 {
@@ -212,17 +228,16 @@ int main()
 //        2, 3, 7, 9
 //    };
     
-    vector<vector<int>> grid =
-                            {
-                                {1, 2, 4, 12},
-                                {4, 1, 5, 6},
-                                {2, 3, 7, 9}
-                            };
+    vector<vector<int>> grid =  {
+        { 4, 7, 8, 6, 4 },
+        { 6, 7, 3, 9, 2 },
+        { 3, 8, 1, 2, 4 },
+        { 7, 1, 7, 3, 7 },
+        { 2, 9, 8, 9, 3 }
+    };
 
   
-//    cout << shortest(grid, ROW, COL) << endl;
-    
-    int result = findMinimumCostPath(grid);
+    int result = findMinimumCost(grid, grid.size() - 1, grid[0].size() - 1);
     cout<<"The minimum cost to traverse the path is "<<result<<endl;
     return 0;
 }

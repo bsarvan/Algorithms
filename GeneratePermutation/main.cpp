@@ -28,7 +28,7 @@ void permute(vector<int> &input, int index, vector<vector<int>> *results) {
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    vector<int> input = {1,2,3};
+    vector<int> input = {1,2,3, 4};
     
     
     vector<vector<int>> results;

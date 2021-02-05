@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
+#include <unordered_map>
 using namespace std;
 
 string minWindow(string s, string t) {
@@ -41,9 +43,43 @@ string minWindow(string s, string t) {
     return min == INT_MAX? "" : s.substr(left, min);
 }
 
+
+
+
+string FindMinimumWindowString(string text, string query_string) {
+    list<int> loc;
+    unordered_map<char, list<int>::iterator> dict;
+    int start = 0;
+    int minLen = INT_MAX;
+    
+    for (auto const c : query_string) {
+        dict.emplace(c, loc.end());
+    }
+    
+    for (int i = 0; i < text.size(); i++) {
+        auto iter = dict.find(text[i]);
+        if (iter != dict.end()) {
+            if (iter->second != loc.end()) {
+                loc.erase(iter->second);
+            }
+            
+            loc.emplace_back(i);
+            iter->second = --loc.end();
+        }
+        
+        if (loc.size() == query_string.size()) {
+            if (minLen > i - loc.front()) {
+                minLen = i - loc.front();
+                start = loc.front();
+            }
+        }
+    }
+    
+    return text.substr(start, minLen + 1);
+}
 int main(int argc, const char * argv[]) {
     cout<<"Program to find minimum window sub string to contain all letters of string"<<endl;
-    string result = minWindow("ADOBECADEBANC", "ABC");
+    string result = FindMinimumWindowString("ADOBECADEBANC", "ABC");
     cout<<"Result - "<<result<<endl<<endl;
     return 0;
 }

@@ -13,6 +13,8 @@
  Array Input - [1,10,20, 0, 59, 63, 0, 88, 0]
  */
 #include <iostream>
+#include <vector>
+using namespace std;
 
 
 void MoveAllZeros(vector<int> &nums) {
@@ -21,15 +23,16 @@ void MoveAllZeros(vector<int> &nums) {
     }
     
     int write_index = nums.size() - 1;
+    size_t nums_size = nums.size() - 1;
 
-    for(int index = nums.size() - 1; index >=0 ; index-- ) {
+    for(int index = nums_size; index >=0 ; index-- ) {
         if (nums[index] != 0) {
-            nums[write_index] == nums[index];
+            nums[write_index--] = nums[index];
         }
     }
     
     while(write_index >= 0 ) {
-        nums[write_index] = 0;
+        nums[write_index--] = 0;
     }
     return;
 }

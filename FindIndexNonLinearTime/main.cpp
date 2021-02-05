@@ -43,25 +43,65 @@ int FindIndexOfNumber(vector<int> A, int target) {
         cout<<"Search Left"<<endl;
     }
     
-//    while(1) {
-//        int m = (l + r)/2;
-//        if (A[m] == target) {
-//            return m;
-//        } else if (A[m] > target) {
-//            r = m;
-//        } else {
-//            l = (m + 1) % A.size();
-//        }
-//    }
+    while(1) {
+        int m = (l + r)/2;
+        if (A[m] == target) {
+            return m;
+        } else if (A[m] > target) {
+            r = m;
+        } else {
+            l = (m + 1) % A.size();
+        }
+    }
     
     return 0;
 }
 
-int main(int argc, const char * argv[]) {
+
+int search(vector<int> A, int low, int high, int target) {
+    int mid = low + (high - low)/2;
+    if (A[mid] == target) {
+        return mid;
+    }
+    
+    if (low > high) {
+        return -1;
+    }
+    
+    if (A[mid] > A[low]) {
+        if (target >= A[low] and target < A[mid]) {
+            return search(A, low, mid - 1, target);
+        } else {
+            return search(A, mid + 1, high, target);
+        }
+    } else if (A[mid] < A[high]) {
+        if (target > A[mid] and target <= A[high]) {
+            return search(A, mid + 1, high, target);
+        } else {
+            return search(A, low, mid - 1, target);
+        }
+    } else if (A[low] == A[mid]) {
+        if (A[mid] != A[high]) {
+            return search(A, mid + 1, high, target);
+        } else {
+            int result = search(A, low, mid - 1, target);
+            if (result == -1) {
+                return search(A, mid + 1, high, target);
+            } else {
+                return result;
+            }
+        }
+    }
+    return -1;
+}
+
+int main() {
     vector<int> V = {13, 18, 25, 2, 8, 10};
     
     cout<<"Algorithm to find the index of a number in less than linear time"<<endl;
     int result = FindIndexOfNumber(V, 8);
+//    int result = search(V, 0, V.size() - 1, 8);
+    
     
     cout<<"Index of target is "<<result<<endl;
     return 0;

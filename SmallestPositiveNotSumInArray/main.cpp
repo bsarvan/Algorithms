@@ -33,7 +33,8 @@ int smallestSum(vector<int> A) {
 }
 
 int main(int argc, const char * argv[]) {
-    vector<int> A = {1,2,3,10};
+//    vector<int> A = {1,2,3,10};
+    vector<int> A = {1,1,3,5,8,21};
     
     cout<<"Smallest Sum  - ";
     cout<<smallestSum(A)<<endl;

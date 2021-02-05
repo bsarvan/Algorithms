@@ -15,7 +15,8 @@ struct Student {
     int gpa;
     
     bool operator<(const struct Student &that) const {
-        return name < that.name;
+        cout<<"Comparing "<<that.gpa<<" and "<<gpa<<endl;
+        return gpa < that.gpa;
     }
 };
 
@@ -35,12 +36,13 @@ int main(int argc, const char * argv[]) {
         cout<<s.name<<" "<<s.gpa<<endl;
     }
     
+    cout<<"====================="<<endl;
     
-    sort(students.begin(), students.end(), [] (const Student &a, const Student &b) -> bool { return a.gpa < b.gpa;});
-    
-    for (auto s:students) {
-        cout<<s.name<<" "<<s.gpa<<endl;
-    }
+//    sort(students.begin(), students.end(), [] (const Student &a, const Student &b) -> bool { return a.gpa < b.gpa;});
+//
+//    for (auto s:students) {
+//        cout<<s.name<<" "<<s.gpa<<endl;
+//    }
     
     
     return 0;
