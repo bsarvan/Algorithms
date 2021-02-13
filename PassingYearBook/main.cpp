@@ -88,7 +88,9 @@ vector <int> findSignatureCounts(vector <int> arr) {
     
     for (int idx = 0; idx < arr.size(); idx++){
         int next = idx;
+        cout<<"Processing index - "<<idx<<endl;
         while(arr[next] != idx + 1) {
+            cout<<"Looping"<<endl;
             result[idx]++;
             next = arr[next] - 1;
         }

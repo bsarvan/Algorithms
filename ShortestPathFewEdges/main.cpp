@@ -98,6 +98,16 @@ void PrintPath(vector<int> parent, int d) {
     }
 }
 
+void PrintAllPaths(vector<int> parent) {
+    for (int i = 0; i < parent.size(); i++) {
+        cout<<"Path to "<<i<<" - ";
+        PrintPath(parent, i);
+        cout<<endl;
+    }
+    
+}
+
+
 void ShortestPathWithLeastEdges(vector<vector<int>> grid, int S, int E) {
     vector<int> distTo(grid.size(), INT_MAX);
     vector<bool> ShortestPathSet(grid.size(), false);
@@ -131,6 +141,9 @@ void ShortestPathWithLeastEdges(vector<vector<int>> grid, int S, int E) {
         PrintPath(parent, E);
         cout<<endl<<endl;
     }
+    
+    cout<<"All Shortest Paths to the vertices are -"<<endl;
+    PrintAllPaths(parent);
 }
 
 

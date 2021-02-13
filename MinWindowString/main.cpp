@@ -47,6 +47,7 @@ string minWindow(string s, string t) {
 
 
 string FindMinimumWindowString(string text, string query_string) {
+    // List of indexes of the text string
     list<int> loc;
     unordered_map<char, list<int>::iterator> dict;
     int start = 0;
@@ -63,6 +64,7 @@ string FindMinimumWindowString(string text, string query_string) {
                 loc.erase(iter->second);
             }
             
+            // For the character found, add the index to the list
             loc.emplace_back(i);
             iter->second = --loc.end();
         }

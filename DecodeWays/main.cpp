@@ -38,8 +38,10 @@
 
 #include <iostream>
 #include <string>
+#include <unordered_set>
 using namespace std;
 
+// Return the number of ways to decode a string
 int decodeWaysHelper(string S, size_t k, int *memo) {
     int result;
     
@@ -73,21 +75,34 @@ int decodeWays(string S) {
 }
 
 
-void DecodeWaysHelper_v2(string S, int index, string curr) {
-    if (index == S.size()  - 1) {
-        return;
+void DecodeWaysHelper_v2(string S, int index, int k, string curr, unordered_set<string> &unique) {
+
+    if (curr.size() <= k) {
+        unique.emplace(curr);
     }
     
-    if(!curr.empty())
-        cout<<curr<<endl;
+//    if(!curr.empty())
+//        cout<<curr<<endl;
+//
+//    if (index == S.size()) {
+//        return;
+//    }
+
     
     for(int i = index; i < S.size(); i++) {
-        DecodeWaysHelper_v2(S, i + 1, curr + S[i]);
+        curr += S[i];
+        DecodeWaysHelper_v2(S, i + 1, k, curr, unique);
+        curr.erase(curr.size() - 1);
     }
 }
 void DecodeWays_v2(string S) {
     string curr;
-    DecodeWaysHelper_v2(S, 0, curr);
+    unordered_set<string> set;
+    DecodeWaysHelper_v2(S, 0, 2, curr, set);
+    
+    for (auto s : set) {
+        cout<<s<<endl;
+    }
 }
 
 

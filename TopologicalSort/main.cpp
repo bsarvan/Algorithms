@@ -58,7 +58,7 @@ void Graph::topologicalSortUtil(int u, bool visited[],
             topologicalSortUtil(v, visited, Stack);
     
     // Push current vertex to stack which stores result
-//    cout<<v<<endl;
+    // Push u as we have finished procesing all the nodes of u
     Stack.push(u);
 }
 

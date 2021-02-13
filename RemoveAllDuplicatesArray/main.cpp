@@ -21,7 +21,9 @@ vector<int> RemoveAllDuplicates(vector<int> &A) {
     vector<int> result;
     
     for(int i = 0; i < A.size(); i++) {
+        cout<<"outer loop"<<endl;
         while(A[i] != A[A[i] - 1]) {
+            cout<<"Inner Loop"<<endl;
             swap(A[i], A[A[i] - 1]);
             printVector(A);
         }

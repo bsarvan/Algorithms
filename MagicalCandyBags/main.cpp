@@ -79,7 +79,6 @@ int maxCandies(vector <int> arr, int k) {
 
 
 
-
 // These are the tests we use to determine if the solution is correct.
 // You can add your own at the bottom, but they are otherwise not editable!
 void printInteger(int n) {

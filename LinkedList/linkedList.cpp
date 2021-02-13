@@ -84,11 +84,10 @@ Node *HasCycle(Node *head)
 		if (slow == fast){
 			cout<<"Loop point at Node - "<<slow->data<<endl;
             
-            Node *loopPoint = slow;
             // To fix the loop, iterate together from head and loop point
             // until both the iterators point to the same node.
             Node *firstPointer = head;
-			Node *secondPointer = loopPoint;
+			Node *secondPointer = slow;
 			while(firstPointer->next!=secondPointer->next){
                 firstPointer = firstPointer->next;
                 secondPointer = secondPointer->next;

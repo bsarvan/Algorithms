@@ -11,6 +11,13 @@
 using namespace std;
 
 
+void printVector(vector<int> arr) {
+    for( auto a : arr) {
+        cout<<a<<" ";
+    }
+    cout<<endl;
+}
+
 void ApplyPermutation(vector<int> *perm_ptr, vector<char> *A_ptr) {
     vector<int> &perm = *perm_ptr;
     vector<char> &A = *A_ptr;
@@ -26,12 +33,12 @@ void ApplyPermutation(vector<int> *perm_ptr, vector<char> *A_ptr) {
     }
 
     cout<<"Permute Array - ";
-    for (auto v:perm) {
-        cout<<v<<" ";
-    }
+    printVector(perm);
     cout<<endl;
     
     for_each(perm.begin(), perm.end(), [&](int &x) { x +=perm.size();});
+    
+    printVector(perm);
 }
 
 
@@ -42,7 +49,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "Program to compute the permutation of the elements of array"<<endl;
     
     ApplyPermutation(&perm, &A);
-    
+    cout<<"Result after applying permutation"<<endl;
     for (auto c:A) {
         cout<<c<<" ";
     }

@@ -143,16 +143,15 @@ void PrimsAlgorithm(vector<vector<int>> G) {
     int V = 5;
     vector<bool> selected(G.size(), false);
     int no_edges = 0;
-    int min_weight = INT_MAX;
-    int x = 0;
-    int y = 0;
+    
     while(no_edges < V - 1) {
         
-        x = 0;
-        y = 0;
+        int x = 0, y = 0, min_weight = INT_MAX;
         for (int i = 0; i < G.size(); i++) {
+            // Look for the edges only if the source vertex is included in MST
             if (selected[i]) {
                 for (int j = 0; j < G[0].size(); j++) {
+                    // Evaluate the vertex which is not yet included in MST
                     if (!selected[j] and G[i][j]) {
                         if (min_weight > G[i][j]) {
                             min_weight = G[i][j];

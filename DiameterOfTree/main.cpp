@@ -66,6 +66,38 @@ int diameter(list<int>* adj, int n)
     return maxCount;
 }
 
+
+
+//====================================================================================
+
+// Find the Diameter of the Tree using the Height
+
+struct TreeNode {
+    int val;
+    struct TreeNode *left, *right;
+    TreeNode (int v):val(v), left(nullptr), right(nullptr) {}
+};
+
+
+class Solution {
+public:
+    int ComputeDiameter(TreeNode *root, int &ans) {
+        if (root == nullptr) {
+            return 0;
+        }
+        
+        int lheight = ComputeDiameter(root->left, ans);
+        int rheight = ComputeDiameter(root->right, ans);
+        
+        ans = max(ans, lheight + rheight + 1);
+        
+        return 1 + max(lheight, rheight);
+    }
+};
+
+
+
+
 /* Driver program to test above functions*/
 int main()
 {
@@ -93,5 +125,22 @@ int main()
     /* maxCount will have diameter of tree */
     cout << "Diameter of the given tree is "
         << diameter(adj, n) << endl;
+    
+    // Binary Tree
+    
+    TreeNode *root = new TreeNode(1);
+    
+    root->left  = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    
+    Solution sol;
+    int ans = 0;
+    sol.ComputeDiameter(root, ans);
+    
+    cout<<"Diameter of Binary Tree is "<<ans<<endl;
+    
+    
     return 0;
 }

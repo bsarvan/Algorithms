@@ -33,6 +33,7 @@ int insertNode(TreeNode *root, int val) {
             curr->count++;
             if(curr->left == NULL) {
                 curr->left = new TreeNode(val);
+                cout<<"count Left - "<<curr->count<<endl;
                 break;
             } else {
                 curr = curr->left;
@@ -42,6 +43,7 @@ int insertNode(TreeNode *root, int val) {
             thisCount += curr->count;
             if(curr->right == NULL) {
                 curr->right = new TreeNode(val);
+                cout<<"count Right - "<<curr->count<<endl;
                 break;
             } else {
                 curr = curr->right;
@@ -74,7 +76,8 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     cout<<"Program to Count Smaller Numbers to Right of Array"<<endl;
 //    vector<int> A = {5,2,8,1,7,0};
-    vector<int> A = {5,2,8,15,11,12,14,10};
+//    vector<int> A = {5,2,8,15,11,12,14,10};
+    vector<int> A = {10,2,1,5,3};
     vector <int> R = countSmaller(A);
     
     for (auto c:R) {

@@ -19,6 +19,14 @@
 #include <vector>
 using namespace std;
 
+
+void printVector(vector<int> arr) {
+    for (auto a : arr) {
+        cout<<a<<" ";
+    }
+    cout<<endl;
+}
+
 void IndexArray(vector<int> &A) {
     
     for (int i = 0; i < A.size(); i++) {
@@ -29,6 +37,8 @@ void IndexArray(vector<int> &A) {
             int temp = A[curr];
             A[curr] = value;
             value = curr = temp;
+            
+            printVector(A);
         }
         
         if (value != -1) {

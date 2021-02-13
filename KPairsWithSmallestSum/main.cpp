@@ -85,7 +85,8 @@ vector<pair<int,int>> kSmallestPairs(vector<int> &nums1, vector<int> &nums2, int
     return R;
 }
 
-
+// Brute Force Algorithm
+// Find all the pairs, sort the pairs  and pick the first k pairs
 #if 0
 vector<pair<int,int>> kSmallestPairs(vector<int> &A, vector<int> &B, int k) {
     vector<pair<int,int>> pairs;
